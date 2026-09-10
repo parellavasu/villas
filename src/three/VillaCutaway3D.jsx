@@ -1,295 +1,210 @@
-import React, { useRef, useMemo } from 'react';
+import React, { useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, Html, Float } from '@react-three/drei';
+import { OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 
 function ArchitecturalVillaModel({
   activeFloor = 'all',
-  isExploded = false,
-  villaType = 'east',
-  stage = 8
+  villaType = 'east' // 'east' | 'west'
 }) {
   const groupRef = useRef();
 
-  // Vertical offsets when in exploded axonometric mode
-  const yOffsetGround = isExploded ? 0 : 0;
-  const yOffsetFirst = isExploded ? 3.5 : (activeFloor === 'ground' ? 50 : 0);
-  const yOffsetSecond = isExploded ? 7.0 : (activeFloor === 'ground' || activeFloor === 'first' ? 50 : 0);
-
-  // Ground visibility
-  const showGround = activeFloor === 'all' || activeFloor === 'ground' || isExploded;
-  const showFirst = (activeFloor === 'all' || activeFloor === 'first' || isExploded) && stage >= 3;
-  const showSecond = (activeFloor === 'all' || activeFloor === 'second' || isExploded) && stage >= 4;
+  const isEast = villaType === 'east';
+  const showGround = activeFloor === 'all' || activeFloor === 'ground';
+  const showFirst = activeFloor === 'all' || activeFloor === 'first';
+  const showTerrace = activeFloor === 'all' || activeFloor === 'terrace';
 
   useFrame(() => {
-    if (groupRef.current && !isExploded && activeFloor === 'all') {
-      groupRef.current.rotation.y += 0.002;
+    if (groupRef.current) {
+      // Rotate orientation based on East vs West
+      const targetRotY = isEast ? 0 : Math.PI;
+      groupRef.current.rotation.y = THREE.MathUtils.lerp(groupRef.current.rotation.y, targetRotY, 0.05);
     }
   });
 
   return (
     <group ref={groupRef} position={[0, -2, 0]}>
-      {/* 1. Plot Base & 180 sq.ft Private Backyard Garden (30ft x 40ft Footprint) */}
+      {/* 1. Plot Base & 180 sq.ft Private Backyard Garden */}
       <group position={[0, 0, 0]}>
-        {/* Foundation plinth */}
+        {/* Foundation Plinth Slab */}
         <mesh position={[0, 0.1, 0]} receiveShadow>
-          <boxGeometry args={[11, 0.2, 14]} />
-          <meshStandardMaterial color="#2B3033" roughness={0.9} />
+          <boxGeometry args={[12, 0.25, 15]} />
+          <meshStandardMaterial color="#EFECE6" roughness={0.8} />
         </mesh>
 
-        {/* 180 sq.ft Landscaped Backyard */}
-        <mesh position={[0, 0.22, 5.2]} receiveShadow>
-          <boxGeometry args={[9.5, 0.05, 3.0]} />
-          <meshStandardMaterial color="#263E2E" roughness={0.8} />
+        {/* 180 sq.ft Private Garden Courtyard */}
+        <mesh position={[0, 0.24, 5.5]} receiveShadow>
+          <boxGeometry args={[10.5, 0.05, 3.2]} />
+          <meshStandardMaterial color="#31483D" roughness={0.7} />
         </mesh>
 
-        {/* Garden frangipani / foliage tree */}
-        <group position={[3.2, 0.25, 5.2]}>
+        {/* Teak Sit-Out Deck */}
+        <mesh position={[-2.5, 0.26, 4.8]}>
+          <boxGeometry args={[4, 0.04, 1.8]} />
+          <meshStandardMaterial color="#B8A58A" roughness={0.5} />
+        </mesh>
+
+        {/* Garden Frangipani Tree */}
+        <group position={[3.5, 0.25, 5.5]}>
           <mesh position={[0, 0.9, 0]}>
             <cylinderGeometry args={[0.08, 0.12, 1.8, 8]} />
-            <meshStandardMaterial color="#4A3B2C" />
+            <meshStandardMaterial color="#5C5042" />
           </mesh>
           <mesh position={[0, 2.0, 0]} castShadow>
-            <dodecahedronGeometry args={[0.8, 1]} />
-            <meshStandardMaterial color="#375A44" roughness={0.6} />
+            <sphereGeometry args={[0.9, 10, 10]} />
+            <meshStandardMaterial color="#406B52" roughness={0.6} />
           </mesh>
         </group>
-
-        {/* Backyard timber deck */}
-        <mesh position={[-2.5, 0.23, 4.4]}>
-          <boxGeometry args={[3.8, 0.04, 1.8]} />
-          <meshStandardMaterial color="#8C6747" roughness={0.7} />
-        </mesh>
       </group>
 
-      {/* 2. GROUND FLOOR (880 sq.ft) */}
+      {/* 2. GROUND LEVEL (Living, Dining, Chef Kitchen, Double-Height Foyer) */}
       {showGround && (
-        <group position={[0, yOffsetGround, 0]}>
-          {/* Foundation & Columns (Stage >= 1) */}
-          {stage >= 1 && (
-            <group>
-              {/* RCC Footings / Columns */}
-              {[-4, 0, 4].map((x) =>
-                [-4, 0, 3].map((z) => (
-                  <mesh key={`col-${x}-${z}`} position={[x, 1.1, z]} castShadow>
-                    <boxGeometry args={[0.35, 2.0, 0.35]} />
-                    <meshStandardMaterial color="#70767A" roughness={0.8} />
-                  </mesh>
-                ))
-              )}
-            </group>
-          )}
+        <group position={[0, 0.25, 0]}>
+          {/* Main Ground Slab */}
+          <mesh position={[0, 0.1, -0.6]} receiveShadow>
+            <boxGeometry args={[10.5, 0.2, 9.2]} />
+            <meshStandardMaterial color="#FAF9F6" roughness={0.4} />
+          </mesh>
 
-          {/* Floor Slab (Stage >= 3) */}
-          {stage >= 3 && (
-            <mesh position={[0, 0.2, -0.5]} receiveShadow>
-              <boxGeometry args={[9.5, 0.15, 8.5]} />
-              <meshStandardMaterial color="#E3DDD3" roughness={0.6} />
-            </mesh>
-          )}
+          {/* Living Pavilion Walls */}
+          <mesh position={[-2.6, 1.3, -0.6]} castShadow receiveShadow>
+            <boxGeometry args={[4.8, 2.2, 8.8]} />
+            <meshStandardMaterial color="#FAF9F6" roughness={0.6} />
+          </mesh>
 
-          {/* Wall Enclosures & Rooms (Stage >= 4) */}
-          {stage >= 4 && (
-            <group>
-              {/* Living & Dining Hall Walls */}
-              <mesh position={[-2.4, 1.2, -0.5]} castShadow receiveShadow>
-                <boxGeometry args={[4.2, 1.9, 8.0]} />
-                <meshStandardMaterial color="#FAF6F0" roughness={0.5} />
-              </mesh>
-              {/* Kitchen & Guest Bedroom */}
-              <mesh position={[2.5, 1.2, 0.5]} castShadow receiveShadow>
-                <boxGeometry args={[4.0, 1.9, 6.0]} />
-                <meshStandardMaterial color="#EDE7DD" roughness={0.5} />
-              </mesh>
-              {/* Car Portico (East or West configuration) */}
-              <mesh position={[villaType === 'east' ? 2.5 : -2.5, 1.2, -3.5]}>
-                <boxGeometry args={[3.8, 0.2, 3.8]} />
-                <meshStandardMaterial color="#2B3830" roughness={0.4} metalness={0.2} />
-              </mesh>
-            </group>
-          )}
+          {/* Dining & Kitchen Volume */}
+          <mesh position={[2.8, 1.3, 0.4]} castShadow receiveShadow>
+            <boxGeometry args={[4.4, 2.2, 6.8]} />
+            <meshStandardMaterial color="#EFECE6" roughness={0.6} />
+          </mesh>
 
-          {/* Glass Doors opening to Backyard (Stage >= 5) */}
-          {stage >= 5 && (
-            <mesh position={[-1.5, 1.1, 3.5]}>
-              <boxGeometry args={[3.2, 1.8, 0.08]} />
-              <meshStandardMaterial color="#99C1B9" transparent opacity={0.4} roughness={0.1} />
-            </mesh>
-          )}
+          {/* Double-Height Glass Entryway */}
+          <mesh position={[0.5, 2.4, 4.1]}>
+            <planeGeometry args={[3.6, 4.4]} />
+            <meshPhysicalMaterial color="#A4C2B4" transmission={0.7} opacity={0.8} transparent roughness={0.1} />
+          </mesh>
 
-          {/* Interior Warm Light */}
-          {stage >= 7 && (
-            <pointLight position={[0, 1.5, 0]} color="#FFDFB0" intensity={1.5} distance={8} />
-          )}
-
-          {/* Label when active */}
-          {(activeFloor === 'ground' || isExploded) && (
-            <Html position={[-5.5, 1.2, 0]} center>
-              <div className="bg-charcoal-900/95 border border-bronze-500/60 px-3 py-1.5 rounded text-xs font-mono text-ivory-100 whitespace-nowrap shadow-xl">
-                <span className="text-bronze-400 font-bold">LEVEL 00</span> | GROUND FLOOR (880 SQ.FT)
-              </div>
-            </Html>
-          )}
+          {/* Warm Interior Lighting */}
+          <pointLight position={[-1, 1.5, 0]} color="#FFE8D0" intensity={2} distance={8} />
         </group>
       )}
 
-      {/* 3. FIRST FLOOR (850 sq.ft) */}
+      {/* 3. UPPER LEVEL (Master Suite, Guest Suites, Balconies) */}
       {showFirst && (
-        <group position={[0, 2.1 + yOffsetFirst, 0]}>
-          {/* Floor Slab */}
-          <mesh position={[0, 0, -0.2]} receiveShadow>
-            <boxGeometry args={[9.8, 0.2, 9.2]} />
-            <meshStandardMaterial color="#D1CBC1" roughness={0.7} />
+        <group position={[0, 2.8, 0]}>
+          {/* First Floor Slab */}
+          <mesh position={[0, 0.1, 0]} castShadow receiveShadow>
+            <boxGeometry args={[11, 0.25, 10]} />
+            <meshStandardMaterial color="#EFECE6" roughness={0.7} />
           </mesh>
 
           {/* Master Bedroom Suite */}
-          <mesh position={[-2.2, 1.1, -0.2]} castShadow receiveShadow>
-            <boxGeometry args={[4.8, 2.0, 8.2]} />
-            <meshStandardMaterial color="#FAF6F0" roughness={0.4} />
+          <mesh position={[2.4, 1.3, 0.2]} castShadow receiveShadow>
+            <boxGeometry args={[5.2, 2.2, 8.4]} />
+            <meshStandardMaterial color="#FAF9F6" roughness={0.6} />
           </mesh>
 
-          {/* Children Suite & Upper Lounge */}
-          <mesh position={[2.4, 1.1, 0.2]} castShadow receiveShadow>
-            <boxGeometry args={[4.2, 2.0, 7.4]} />
-            <meshStandardMaterial color="#EDE7DD" roughness={0.4} />
+          {/* Guest Suite & Home Office */}
+          <mesh position={[-2.8, 1.3, -1.0]} castShadow receiveShadow>
+            <boxGeometry args={[4.6, 2.2, 6.2]} />
+            <meshStandardMaterial color="#EFECE6" roughness={0.6} />
           </mesh>
 
-          {/* Cantilever Master Balcony */}
-          <group position={[-2.2, 0.8, -4.6]}>
-            <mesh position={[0, -0.6, 0]}>
-              <boxGeometry args={[4.2, 0.15, 1.6]} />
-              <meshStandardMaterial color="#27382F" />
-            </mesh>
-            {/* Glass Railing */}
-            <mesh position={[0, 0.1, -0.7]}>
-              <boxGeometry args={[4.2, 0.8, 0.05]} />
-              <meshStandardMaterial color="#99C1B9" transparent opacity={0.5} />
-            </mesh>
-          </group>
-
-          {/* Architectural Wooden Louvers (Stage >= 6) */}
-          {stage >= 6 && (
-            <group position={[villaType === 'east' ? 4.6 : -4.6, 1.1, 0]}>
-              {[-1.5, -0.7, 0.1, 0.9, 1.7].map((lz, idx) => (
-                <mesh key={idx} position={[0, 0, lz]}>
-                  <boxGeometry args={[0.08, 1.9, 0.15]} />
-                  <meshStandardMaterial color="#BA996E" metalness={0.3} roughness={0.5} />
-                </mesh>
-              ))}
-            </group>
-          )}
-
-          {/* Interior Warm Light */}
-          {stage >= 7 && (
-            <pointLight position={[0, 1.2, 0]} color="#FFE1BA" intensity={1.4} distance={7} />
-          )}
-
-          {(activeFloor === 'first' || isExploded) && (
-            <Html position={[-5.5, 1.1, 0]} center>
-              <div className="bg-charcoal-900/95 border border-bronze-500/60 px-3 py-1.5 rounded text-xs font-mono text-ivory-100 whitespace-nowrap shadow-xl">
-                <span className="text-bronze-400 font-bold">LEVEL 01</span> | FIRST FLOOR (850 SQ.FT)
-              </div>
-            </Html>
-          )}
-        </group>
-      )}
-
-      {/* 4. SECOND FLOOR (532 sq.ft + Stargazing Terrace) */}
-      {showSecond && (
-        <group position={[0, 4.3 + yOffsetSecond, 0]}>
-          {/* Slab */}
-          <mesh position={[0, 0, -0.2]} receiveShadow>
-            <boxGeometry args={[9.8, 0.2, 9.2]} />
-            <meshStandardMaterial color="#D1CBC1" roughness={0.7} />
-          </mesh>
-
-          {/* Entertainment Lounge & Studio */}
-          <mesh position={[-1.5, 1.0, -1.2]} castShadow receiveShadow>
-            <boxGeometry args={[6.0, 1.8, 6.0]} />
-            <meshStandardMaterial color="#2B3630" roughness={0.5} />
-          </mesh>
-
-          {/* Open Stargazing Terrace Wooden Deck */}
-          <mesh position={[1.8, 0.1, 2.0]}>
-            <boxGeometry args={[5.2, 0.05, 4.2]} />
-            <meshStandardMaterial color="#825E3B" roughness={0.6} />
-          </mesh>
-
-          {/* Modern Rooftop Pergola Canopy */}
-          <group position={[1.8, 2.0, 2.0]}>
-            {[-1.8, -0.9, 0, 0.9, 1.8].map((px, idx) => (
-              <mesh key={idx} position={[px, 0, 0]}>
-                <boxGeometry args={[0.08, 0.12, 4.4]} />
-                <meshStandardMaterial color="#BA996E" metalness={0.7} />
+          {/* Teak Wood Privacy Louver Screen */}
+          <group position={[-2.8, 1.3, 4.4]}>
+            {[-1.5, -1, -0.5, 0, 0.5, 1, 1.5].map((lx, i) => (
+              <mesh key={i} position={[lx, 0, 0]} castShadow>
+                <boxGeometry args={[0.08, 2.0, 0.25]} />
+                <meshStandardMaterial color="#B8A58A" roughness={0.4} />
               </mesh>
             ))}
           </group>
 
-          {(activeFloor === 'second' || isExploded) && (
-            <Html position={[-5.5, 1.0, 0]} center>
-              <div className="bg-charcoal-900/95 border border-bronze-500/60 px-3 py-1.5 rounded text-xs font-mono text-ivory-100 whitespace-nowrap shadow-xl">
-                <span className="text-bronze-400 font-bold">LEVEL 02</span> | PENTHOUSE & TERRACE (532 SQ.FT)
-              </div>
-            </Html>
-          )}
+          {/* Balcony Glass Railing */}
+          <mesh position={[2.4, 0.7, 4.8]}>
+            <boxGeometry args={[5.0, 0.85, 0.05]} />
+            <meshPhysicalMaterial color="#C5DCD2" transparent opacity={0.6} roughness={0.1} />
+          </mesh>
+        </group>
+      )}
+
+      {/* 4. TERRACE LOUNGE & ARCHITECTURAL OVERHANG */}
+      {showTerrace && (
+        <group position={[0, 5.2, 0]}>
+          {/* Terrace Deck Slab */}
+          <mesh position={[0, 0.1, 0]} castShadow>
+            <boxGeometry args={[11.5, 0.2, 10.5]} />
+            <meshStandardMaterial color="#31483D" roughness={0.6} />
+          </mesh>
+
+          {/* Shaded Pergola Pavilion */}
+          <group position={[1.5, 1.1, -1.5]}>
+            <mesh position={[0, 1.1, 0]}>
+              <boxGeometry args={[4.5, 0.1, 4.5]} />
+              <meshStandardMaterial color="#B8A58A" roughness={0.5} />
+            </mesh>
+            {[[-2, -2], [2, -2], [-2, 2], [2, 2]].map(([px, pz], i) => (
+              <mesh key={i} position={[px, 0.5, pz]}>
+                <cylinderGeometry args={[0.06, 0.06, 1.1, 6]} />
+                <meshStandardMaterial color="#31483D" />
+              </mesh>
+            ))}
+          </group>
+
+          {/* Terrace Glass Parapet */}
+          <mesh position={[0, 0.5, 5.1]}>
+            <boxGeometry args={[10.5, 0.8, 0.05]} />
+            <meshPhysicalMaterial color="#C5DCD2" transparent opacity={0.5} roughness={0.1} />
+          </mesh>
         </group>
       )}
     </group>
   );
 }
 
-export default function VillaCutaway3D({
-  activeFloor = 'all',
-  isExploded = false,
-  villaType = 'east',
-  stage = 8
-}) {
-  return (
-    <div className="w-full h-[540px] relative rounded-2xl overflow-hidden border border-white/10 bg-charcoal-950 shadow-2xl">
-      <Canvas
-        shadows
-        camera={{ position: [14, 12, 16], fov: 38 }}
-        gl={{ antialias: true, alpha: true }}
-      >
-        <color attach="background" args={['#080A0C']} />
-        <ambientLight intensity={0.6} color="#E8EEEC" />
-        <directionalLight
-          castShadow
-          position={[18, 25, 15]}
-          intensity={1.6}
-          color="#FFF3E0"
-          shadow-mapSize-width={1024}
-          shadow-mapSize-height={1024}
-        />
-        <directionalLight position={[-15, 10, -10]} intensity={0.5} color="#A3C4BC" />
+export default function VillaCutaway3D({ activeFloor = 'all', villaType = 'east' }) {
+  const [autoRotate, setAutoRotate] = useState(true);
 
-        <ArchitecturalVillaModel
-          activeFloor={activeFloor}
-          isExploded={isExploded}
-          villaType={villaType}
-          stage={stage}
-        />
+  return (
+    <div className="w-full h-full min-h-[440px] sm:min-h-[500px] lg:min-h-[580px] relative select-none">
+      <Canvas
+        camera={{ position: [0, 9, 20], fov: 38 }}
+        gl={{ antialias: true, alpha: true }}
+        dpr={[1, 1.5]}
+      >
+        <ambientLight intensity={1.1} color="#FFFDF9" />
+        <directionalLight position={[14, 20, 14]} intensity={1.8} color="#FFF8EE" castShadow />
+        <directionalLight position={[-12, 12, -12]} intensity={0.5} color="#D4E4DC" />
+
+        <ArchitecturalVillaModel activeFloor={activeFloor} villaType={villaType} />
 
         <OrbitControls
-          enableZoom={true}
-          maxDistance={35}
-          minDistance={10}
-          maxPolarAngle={Math.PI / 2.05}
-          minPolarAngle={Math.PI / 8}
+          autoRotate={autoRotate}
+          autoRotateSpeed={1.8}
+          enableRotate={true}
+          enableZoom={false}
+          enablePan={false}
+          maxPolarAngle={Math.PI / 2.2}
+          minPolarAngle={Math.PI / 6}
         />
       </Canvas>
 
-      {/* 3D Viewport Controls & Orientation Marker */}
-      <div className="absolute top-4 left-4 flex items-center space-x-2 bg-charcoal-900/90 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 text-xs font-mono text-stone-300">
-        <span className="w-2 h-2 rounded-full bg-bronze-400 animate-pulse"></span>
-        <span className="uppercase">TYPE A — {villaType} AXONOMETRIC 3D</span>
-        <span className="text-white/20">|</span>
-        <span className="text-bronze-400">{isExploded ? "DISSECTED LAYERS" : activeFloor.toUpperCase()}</span>
+      {/* Orientation Compass Badge */}
+      <div className="absolute top-4 left-4 pointer-events-none bg-white/90 backdrop-blur-md px-3 py-1.5 border border-[#C5A880]/40 text-[11px] font-mono text-[#141917] uppercase flex items-center space-x-2 shadow-xs">
+        <span className="w-2 h-2 rounded-full bg-[#B89047]" />
+        <span>ORIENTATION: {villaType === 'east' ? 'EAST ENTRY · MORNING SUN' : 'WEST ENTRY · SUNSET GARDEN'}</span>
       </div>
 
-      <div className="absolute bottom-4 right-4 bg-charcoal-900/80 backdrop-blur-md px-3 py-1 rounded text-[11px] font-mono text-stone-400 border border-white/10 pointer-events-none">
-        DRAG TO ORBIT • PINCH TO ZOOM
-      </div>
+      {/* 360° Auto-Rotate Toggle Button */}
+      <button
+        type="button"
+        onClick={() => setAutoRotate(!autoRotate)}
+        className="absolute top-4 right-4 z-10 bg-white/95 hover:bg-[#FAF8F5] active:scale-95 transition-all backdrop-blur-md px-3 py-1.5 border border-[#C5A880]/40 text-[11px] font-mono tracking-wider text-[#141917] uppercase flex items-center space-x-2 shadow-xs cursor-pointer"
+        title="Toggle 360° Auto-Rotation"
+      >
+        <span className={`w-2 h-2 rounded-full transition-colors ${autoRotate ? 'bg-[#B89047] animate-pulse' : 'bg-stone-400'}`} />
+        <span className="font-semibold text-[#B89047]">{autoRotate ? '360° ROTATING' : 'ROTATION PAUSED'}</span>
+      </button>
     </div>
   );
 }

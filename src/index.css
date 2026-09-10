@@ -9,26 +9,26 @@
   }
 
   body {
-    background-color: #070809;
-    color: #F3EFE8;
+    background-color: #F7F6F2;
+    color: #1D2421;
     overflow-x: hidden;
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Manrope', sans-serif;
   }
 
-  /* Custom minimal architectural scrollbar */
+  /* Quiet-Luxury Minimal Architectural Scrollbar */
   ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+    width: 5px;
+    height: 5px;
   }
   ::-webkit-scrollbar-track {
-    background: #0B0E10;
+    background: #EFECE6;
   }
   ::-webkit-scrollbar-thumb {
-    background: #273D30;
-    border-radius: 3px;
+    background: #C7C2B6;
+    border-radius: 2px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #BA996E;
+    background: #31483D;
   }
 }
 
@@ -53,40 +53,153 @@ html.lenis, html.lenis body {
   pointer-events: none;
 }
 
-/* Architectural blueprint grid */
-.bg-blueprint-grid {
-  background-size: 40px 40px;
+/* Clean Warm Ivory Canvas (Zero Grid Lines) */
+.bg-architectural-grid {
+  background-color: #F7F6F2;
+}
+
+/* Dark blueprint drafting grid */
+.bg-architectural-grid-dark {
+  background-size: 48px 48px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(231, 228, 221, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(231, 228, 221, 0.05) 1px, transparent 1px);
 }
 
-.bg-blueprint-dots {
-  background-image: radial-gradient(rgba(186, 153, 110, 0.15) 1px, transparent 1px);
-  background-size: 24px 24px;
+/* Subtle paper texture overlay */
+.bg-paper-texture {
+  background-color: #F7F6F2;
+  background-image: radial-gradient(rgba(49, 72, 61, 0.04) 0.75px, transparent 0.75px);
+  background-size: 20px 20px;
 }
 
-/* Glassmorphism restrained luxury */
-.glass-luxury {
-  background: rgba(16, 20, 23, 0.7);
+/* Soft ivory glass */
+.glass-ivory {
+  background: rgba(247, 246, 242, 0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(49, 72, 61, 0.1);
 }
 
-.glass-luxury-bronze {
-  background: rgba(19, 31, 23, 0.6);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(186, 153, 110, 0.2);
+/* Dark charcoal glass */
+.glass-charcoal {
+  background: rgba(23, 32, 28, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(231, 228, 221, 0.1);
 }
 
-/* Noise overlay */
-.bg-subtle-noise {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+/* Architectural smooth transition */
+.arch-transition {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Text glow */
-.text-glow-bronze {
-  text-shadow: 0 0 25px rgba(186, 153, 110, 0.4);
+/* =========================================================
+   REALISTIC LIVING ARCHITECTURAL CAMERA ANIMATIONS
+   Creates smooth, continuous, filmic motion for all images
+   ========================================================= */
+
+/* Cinematic Slow Zoom & Push (Motorized Cinema Dolly) */
+@keyframes cinematicPush {
+  0% {
+    transform: scale(1.0) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: scale(1.06) translate3d(-1.8%, -1.2%, 0);
+  }
+  100% {
+    transform: scale(1.0) translate3d(1.2%, 0.8%, 0);
+  }
 }
+
+/* Drone Hover & Drift for Aerial Views */
+@keyframes droneHover {
+  0% {
+    transform: scale(1.0) translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.05) translate3d(-1.5%, -1.8%, 0) rotate(0.4deg);
+  }
+  100% {
+    transform: scale(1.0) translate3d(0, 0, 0) rotate(0deg);
+  }
+}
+
+/* Horizontal Cinema Pan for Interior & Architecture */
+@keyframes cinemaPan {
+  0% {
+    transform: scale(1.03) translate3d(-1.8%, 0, 0);
+  }
+  50% {
+    transform: scale(1.06) translate3d(1.8%, -0.8%, 0);
+  }
+  100% {
+    transform: scale(1.03) translate3d(-1.8%, 0, 0);
+  }
+}
+
+/* Ambient Golden Hour Sunlight Sweep */
+@keyframes lightSweep {
+  0% {
+    opacity: 0.10;
+    transform: translateX(-30%) skewX(-15deg);
+  }
+  50% {
+    opacity: 0.28;
+    transform: translateX(30%) skewX(-15deg);
+  }
+  100% {
+    opacity: 0.10;
+    transform: translateX(-30%) skewX(-15deg);
+  }
+}
+
+/* Gentle Living Pulse for Landscape */
+@keyframes livingBreeze {
+  0%, 100% {
+    transform: scale(1.0) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: scale(1.04) translate3d(0.8%, -1.0%, 0);
+  }
+}
+
+@keyframes gentleBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+/* Motion Classes */
+.animate-cinematic-push {
+  animation: cinematicPush 14s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate;
+  will-change: transform;
+}
+
+.animate-drone-hover {
+  animation: droneHover 16s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.animate-cinema-pan {
+  animation: cinemaPan 14s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.animate-living-breeze {
+  animation: livingBreeze 12s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.animate-light-sweep {
+  animation: lightSweep 9s ease-in-out infinite;
+}
+
+.animate-gentle-bounce {
+  animation: gentleBounce 2.2s ease-in-out infinite;
+}
+
+

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ArrowRight, Download, Calendar, Mail, Phone, ShieldCheck, Sparkles } from 'lucide-react';
+import { ArrowRight, Download, ShieldCheck } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import Logo from './Logo';
 
 export default function FinalReveal({ onOpenBooking }) {
   const [inquirySubmitted, setInquirySubmitted] = useState(false);
@@ -19,7 +20,7 @@ export default function FinalReveal({ onOpenBooking }) {
         particleCount: 60,
         spread: 70,
         origin: { y: 0.8 },
-        colors: ['#BA996E', '#E8E2D7', '#375242']
+        colors: ['#0284C7', '#0A2540', '#38BDF8']
       });
     } catch (err) {
       // ignore
@@ -27,53 +28,49 @@ export default function FinalReveal({ onOpenBooking }) {
   };
 
   return (
-    <section id="reveal" className="relative py-36 px-6 md:px-12 bg-charcoal-950 border-t border-white/10 overflow-hidden text-center">
-      {/* Subtle Atmospheric Vignette Glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-bronze-500/5 rounded-full blur-[160px] pointer-events-none"></div>
+    <section id="reveal" className="relative py-36 px-6 md:px-12 bg-gradient-to-r from-white via-sky-50/50 via-45% to-navy-950/15 border-t border-sky-100 overflow-hidden text-center">
+      {/* Subtle Blue Radial Glow */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-sky-100/30 rounded-full blur-[160px] pointer-events-none"></div>
 
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Editorial Sub-Headline */}
-        <div className="inline-flex items-center space-x-2 text-xs font-mono tracking-widest text-bronze-400 uppercase mb-6">
-          <Sparkles size={14} />
-          <span>CHAPTER 12 // THE ARCHITECTURAL FINALE</span>
+        <div className="inline-flex items-center space-x-3 text-xs font-mono tracking-widest text-cobalt-600 uppercase mb-6 font-bold">
+          <span>13 / THE ARCHITECTURAL FINALE</span>
+          <div className="w-10 h-[1.5px] bg-cobalt-600"></div>
         </div>
 
-        <h3 className="text-xl sm:text-2xl md:text-3xl font-cinzel text-stone-300 uppercase tracking-widest mb-4">
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-sans text-slate-500 uppercase tracking-wide mb-2 font-bold">
           FROM 10 ACRES OF LAND
         </h3>
 
-        <h2 className="text-3xl sm:text-5xl md:text-6xl font-cinzel font-bold text-ivory-100 uppercase tracking-wider mb-8">
-          TO A PLACE TO BELONG.
+        <h2 className="text-3xl sm:text-5xl md:text-6xl font-sans font-extrabold text-navy-900 uppercase tracking-tight mb-8">
+          TO A PLACE <span className="text-cobalt-600">TO BELONG.</span>
         </h2>
 
         {/* Master Monogram Emblem */}
-        <div className="w-16 h-16 mx-auto rounded-full border border-bronze-500/50 bg-charcoal-900/80 flex items-center justify-center text-bronze-400 font-cinzel text-xl font-bold tracking-widest shadow-glow-bronze mb-8">
-          AG
+        <div className="mb-8 flex justify-center transform hover:scale-105 transition-transform duration-300">
+          <Logo size="hero" />
         </div>
 
-        {/* Brand Lockup & Living Landscape Creed */}
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-cinzel font-bold text-ivory-100 uppercase tracking-widest mb-6">
-          ANTELIA GROVES
-        </h1>
-
-        <div className="max-w-2xl mx-auto space-y-2 mb-14 text-sm sm:text-base font-mono tracking-widest text-bronze-400 uppercase">
+        {/* Living Landscape Creed */}
+        <div className="max-w-2xl mx-auto space-y-2 mb-14 text-sm sm:text-base font-sans tracking-wide text-cobalt-600 uppercase font-extrabold">
           <p>A VIBRANT LIFESTYLE.</p>
           <p>A THOUGHTFULLY PLANNED COMMUNITY.</p>
           <p>A LANDSCAPE DESIGNED FOR LIVING.</p>
         </div>
 
         {/* VIP Private Inquiry & Dossier Request Box */}
-        <div className="max-w-2xl mx-auto p-8 sm:p-10 rounded-3xl border border-bronze-500/40 bg-charcoal-900/80 backdrop-blur-xl shadow-2xl text-left">
-          <div className="flex items-center justify-between pb-6 mb-6 border-b border-white/10">
+        <div className="max-w-2xl mx-auto p-8 sm:p-10 rounded-3xl border border-sky-200 bg-white/95 backdrop-blur-xl shadow-arch-card text-left">
+          <div className="flex items-center justify-between pb-6 mb-6 border-b border-slate-100">
             <div>
-              <span className="text-[10px] font-mono tracking-widest text-bronze-400 uppercase">
+              <span className="text-[10px] font-mono tracking-widest text-cobalt-600 uppercase font-bold">
                 PRIVATE RESIDENCE INQUIRY
               </span>
-              <h4 className="text-xl font-cinzel text-ivory-100 uppercase mt-1">
+              <h4 className="text-xl font-sans text-navy-900 uppercase font-extrabold mt-1">
                 Schedule a Private Site Tour
               </h4>
             </div>
-            <div className="hidden sm:flex items-center space-x-1 text-xs font-mono text-emerald-400">
+            <div className="hidden sm:flex items-center space-x-1 text-xs font-mono text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 font-semibold">
               <ShieldCheck size={16} />
               <span>BY APPOINTMENT ONLY</span>
             </div>
@@ -81,13 +78,13 @@ export default function FinalReveal({ onOpenBooking }) {
 
           {inquirySubmitted ? (
             <div className="py-8 text-center space-y-3">
-              <div className="w-12 h-12 mx-auto rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">
+              <div className="w-12 h-12 mx-auto rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 flex items-center justify-center font-bold text-xl">
                 ✓
               </div>
-              <h5 className="text-lg font-cinzel text-ivory-100 uppercase">
+              <h5 className="text-lg font-sans text-navy-900 uppercase font-bold">
                 Inquiry Received
               </h5>
-              <p className="text-xs text-stone-300 max-w-sm mx-auto leading-relaxed">
+              <p className="text-xs text-slate-600 max-w-sm mx-auto leading-relaxed">
                 Our Senior Architectural Curator will contact you with the complete Antelia Groves masterplan dossier and coordinates.
               </p>
             </div>
@@ -95,7 +92,7 @@ export default function FinalReveal({ onOpenBooking }) {
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-[10px] font-mono tracking-widest text-stone-400 uppercase block mb-1.5">
+                  <label className="text-[10px] font-mono tracking-widest text-slate-500 uppercase block mb-1.5 font-semibold">
                     Full Name
                   </label>
                   <input
@@ -104,12 +101,12 @@ export default function FinalReveal({ onOpenBooking }) {
                     placeholder="E.g. Dr. Julian Vance"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full bg-charcoal-950 border border-white/10 focus:border-bronze-400 rounded-lg px-4 py-3 text-xs font-mono text-ivory-100 outline-none transition-colors"
+                    className="w-full bg-slate-50 border border-slate-200 focus:border-cobalt-500 focus:bg-white rounded-lg px-4 py-3 text-xs font-sans text-navy-900 outline-none transition-colors"
                   />
                 </div>
 
                 <div>
-                  <label className="text-[10px] font-mono tracking-widest text-stone-400 uppercase block mb-1.5">
+                  <label className="text-[10px] font-mono tracking-widest text-slate-500 uppercase block mb-1.5 font-semibold">
                     Phone Number
                   </label>
                   <input
@@ -118,14 +115,14 @@ export default function FinalReveal({ onOpenBooking }) {
                     placeholder="+91 98765 43210"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full bg-charcoal-950 border border-white/10 focus:border-bronze-400 rounded-lg px-4 py-3 text-xs font-mono text-ivory-100 outline-none transition-colors"
+                    className="w-full bg-slate-50 border border-slate-200 focus:border-cobalt-500 focus:bg-white rounded-lg px-4 py-3 text-xs font-sans text-navy-900 outline-none transition-colors"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-[10px] font-mono tracking-widest text-stone-400 uppercase block mb-1.5">
+                  <label className="text-[10px] font-mono tracking-widest text-slate-500 uppercase block mb-1.5 font-semibold">
                     Email Address
                   </label>
                   <input
@@ -134,18 +131,18 @@ export default function FinalReveal({ onOpenBooking }) {
                     placeholder="julian.vance@example.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full bg-charcoal-950 border border-white/10 focus:border-bronze-400 rounded-lg px-4 py-3 text-xs font-mono text-ivory-100 outline-none transition-colors"
+                    className="w-full bg-slate-50 border border-slate-200 focus:border-cobalt-500 focus:bg-white rounded-lg px-4 py-3 text-xs font-sans text-navy-900 outline-none transition-colors"
                   />
                 </div>
 
                 <div>
-                  <label className="text-[10px] font-mono tracking-widest text-stone-400 uppercase block mb-1.5">
+                  <label className="text-[10px] font-mono tracking-widest text-slate-500 uppercase block mb-1.5 font-semibold">
                     Villa Orientation Preference
                   </label>
                   <select
                     value={formData.villaPreference}
                     onChange={(e) => setFormData({ ...formData, villaPreference: e.target.value })}
-                    className="w-full bg-charcoal-950 border border-white/10 focus:border-bronze-400 rounded-lg px-4 py-3 text-xs font-mono text-ivory-100 outline-none transition-colors"
+                    className="w-full bg-slate-50 border border-slate-200 focus:border-cobalt-500 focus:bg-white rounded-lg px-4 py-3 text-xs font-sans text-navy-900 outline-none transition-colors"
                   >
                     <option value="East Facing Type A">Type A — East Facing (1,200 sq.ft)</option>
                     <option value="West Facing Type A">Type A — West Facing (1,200 sq.ft)</option>
@@ -157,15 +154,15 @@ export default function FinalReveal({ onOpenBooking }) {
               <div className="pt-4 flex flex-col sm:flex-row items-center gap-4">
                 <button
                   type="submit"
-                  className="w-full sm:w-auto flex-1 bg-gradient-to-r from-bronze-600 to-bronze-500 hover:from-bronze-500 hover:to-bronze-400 text-charcoal-950 font-bold py-3 px-6 rounded-lg text-xs font-mono uppercase tracking-wider flex items-center justify-center space-x-2 transition-all shadow-glow-bronze active:scale-95"
+                  className="w-full sm:w-auto flex-1 bg-navy-900 hover:bg-cobalt-600 text-white font-bold py-3.5 px-6 rounded-lg text-xs font-sans uppercase tracking-widest flex items-center justify-center space-x-2 transition-all shadow-glow-navy active:scale-95 group"
                 >
-                  <span>REQUEST PRIVATE SITE VISIT & DOSSIER</span>
-                  <ArrowRight size={15} />
+                  <span>REQUEST PRIVATE SITE VISIT</span>
+                  <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
                 </button>
                 <button
                   type="button"
                   onClick={onOpenBooking}
-                  className="w-full sm:w-auto px-5 py-3 rounded-lg border border-white/15 hover:border-bronze-400 text-xs font-mono uppercase tracking-wider text-stone-300 hover:text-ivory-100 transition-colors flex items-center justify-center space-x-2"
+                  className="w-full sm:w-auto px-5 py-3.5 rounded-lg border border-sky-200 hover:border-cobalt-500 text-xs font-sans uppercase tracking-wider text-slate-700 hover:text-cobalt-600 transition-colors flex items-center justify-center space-x-2 bg-white font-semibold"
                 >
                   <Download size={14} />
                   <span>SPECIFICATIONS PDF</span>
@@ -174,7 +171,7 @@ export default function FinalReveal({ onOpenBooking }) {
             </form>
           )}
 
-          <div className="mt-6 pt-4 border-t border-white/5 flex flex-wrap items-center justify-between gap-4 text-[10px] font-mono text-stone-400">
+          <div className="mt-6 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4 text-[10px] font-mono text-slate-400">
             <span>RERA REGISTERED MASTERPLAN</span>
             <span>PRIVACY RESPECTED • NO UNSOLICITED CALLS</span>
           </div>

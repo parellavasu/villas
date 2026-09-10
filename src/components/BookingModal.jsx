@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { X, Calendar, Download, Check, ShieldCheck } from 'lucide-react';
-import confetti from 'canvas-confetti';
+import { X, CheckCircle2, ArrowRight } from 'lucide-react';
 
 export default function BookingModal({ isOpen, onClose }) {
   const [submitted, setSubmitted] = useState(false);
@@ -8,9 +7,9 @@ export default function BookingModal({ isOpen, onClose }) {
     name: '',
     phone: '',
     email: '',
-    visitDate: '',
+    typology: '4 BHK Luxury Villa (3,000 Sq.Ft)',
+    date: '',
     notes: '',
-    villaModel: 'Type A East'
   });
 
   if (!isOpen) return null;
@@ -18,147 +17,156 @@ export default function BookingModal({ isOpen, onClose }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
-    try {
-      confetti({
-        particleCount: 50,
-        spread: 60,
-        origin: { y: 0.6 },
-        colors: ['#BA996E', '#E8E2D7', '#2E4839']
-      });
-    } catch (err) {
-      // ignore
-    }
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-charcoal-950/85 backdrop-blur-md animate-fade-in">
-      <div className="relative w-full max-w-lg rounded-2xl border border-bronze-500/40 bg-charcoal-900 p-8 shadow-2xl overflow-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-charcoal-950/60 backdrop-blur-sm animate-fade-in">
+      <div className="relative w-full max-w-lg rounded-xs border border-stone-300 bg-ivory-100 p-7 sm:p-9 shadow-luxury overflow-hidden">
+        
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 p-2 rounded-full text-stone-400 hover:text-ivory-100 hover:bg-white/10 transition-colors"
+          className="absolute top-5 right-5 p-2 text-charcoal-500 hover:text-charcoal-900 hover:bg-stone-200/50 rounded-xs transition-colors"
+          aria-label="Close"
         >
-          <X size={20} />
+          <X size={18} />
         </button>
 
         {submitted ? (
-          <div className="py-10 text-center space-y-4">
-            <div className="w-14 h-14 mx-auto rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-2xl">
-              ✓
+          <div className="py-8 text-center space-y-4">
+            <div className="w-12 h-12 mx-auto rounded-full bg-forest-100 text-forest-700 border border-forest-300 flex items-center justify-center">
+              <CheckCircle2 className="w-6 h-6" />
             </div>
-            <h3 className="text-2xl font-cinzel text-ivory-100 uppercase">
-              Reservation Confirmed
+            <h3 className="text-[22px] font-sans font-semibold text-charcoal-900">
+              Appointment Registered
             </h3>
-            <p className="text-xs text-stone-300 max-w-sm mx-auto leading-relaxed">
-              Thank you, {formData.name || 'Valued Guest'}. A private concierge representative has reserved your inspection appointment and sent the digital masterplan dossier to {formData.email || 'your email'}.
+            <p className="text-[13.5px] text-charcoal-600 max-w-sm mx-auto leading-relaxed">
+              Thank you, {formData.name || 'Valued Guest'}. An architectural advisory director has been assigned to coordinate your private consultation and review the Antelia Groves portfolio with you.
             </p>
-            <div className="pt-4">
+            <div className="pt-3">
               <button
-                onClick={onClose}
-                className="px-6 py-2.5 rounded-lg bg-bronze-500 text-charcoal-950 font-mono font-bold text-xs uppercase tracking-wider hover:bg-bronze-400 transition-colors shadow-glow-bronze"
+                onClick={() => {
+                  setSubmitted(false);
+                  onClose();
+                }}
+                className="px-6 py-2.5 bg-forest-700 text-white text-[11.5px] font-semibold uppercase tracking-[0.18em] rounded-xs hover:bg-forest-800 transition-colors"
               >
-                RETURN TO EXPLORATION
+                RETURN TO PRESENTATION
               </button>
             </div>
           </div>
         ) : (
           <div>
             <div className="mb-6">
-              <span className="text-[10px] font-mono tracking-widest text-bronze-400 uppercase">
-                // ANTELIA GROVES PRIVATE REGISTRY
-              </span>
-              <h3 className="text-2xl font-cinzel text-ivory-100 uppercase font-semibold mt-1">
-                Schedule Private Site Tour
+              <div className="text-[10px] font-mono tracking-[0.25em] text-forest-700 uppercase">
+                PRIVATE ARCHITECTURAL ADVISORY
+              </div>
+              <h3 className="text-[22px] font-sans font-semibold text-charcoal-900 mt-1">
+                Schedule a Consultation
               </h3>
-              <p className="text-xs text-stone-400 mt-1">
-                Experience the 10-acre sanctuary firsthand with our senior architectural lead.
+              <p className="text-[13px] text-charcoal-600 mt-1 font-normal">
+                Receive confidential project blueprints, pricing, and personalized plot reservation details.
               </p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="text-[10px] font-mono tracking-widest text-stone-400 uppercase block mb-1">
-                  Full Name
+                <label className="text-[10.5px] font-mono tracking-widest text-charcoal-600 uppercase block mb-1">
+                  FULL NAME
                 </label>
                 <input
                   type="text"
                   required
-                  placeholder="Your Full Name"
+                  placeholder="e.g. Dr. Raghavendra Rao"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full bg-charcoal-950 border border-white/10 focus:border-bronze-400 rounded-lg px-4 py-2.5 text-xs font-mono text-ivory-100 outline-none"
+                  className="w-full bg-white border border-stone-300 focus:border-forest-700 rounded-xs px-3.5 py-2 text-[13px] font-sans text-charcoal-900 outline-none transition-colors"
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-[10px] font-mono tracking-widest text-stone-400 uppercase block mb-1">
-                    Mobile Phone
+                  <label className="text-[10.5px] font-mono tracking-widest text-charcoal-600 uppercase block mb-1">
+                    MOBILE NUMBER
                   </label>
                   <input
                     type="tel"
                     required
-                    placeholder="+91..."
+                    placeholder="+91 98765 43210"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full bg-charcoal-950 border border-white/10 focus:border-bronze-400 rounded-lg px-4 py-2.5 text-xs font-mono text-ivory-100 outline-none"
+                    className="w-full bg-white border border-stone-300 focus:border-forest-700 rounded-xs px-3.5 py-2 text-[13px] font-sans text-charcoal-900 outline-none transition-colors"
                   />
                 </div>
-
                 <div>
-                  <label className="text-[10px] font-mono tracking-widest text-stone-400 uppercase block mb-1">
-                    Preferred Date
+                  <label className="text-[10.5px] font-mono tracking-widest text-charcoal-600 uppercase block mb-1">
+                    EMAIL ADDRESS
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    placeholder="name@domain.com"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="w-full bg-white border border-stone-300 focus:border-forest-700 rounded-xs px-3.5 py-2 text-[13px] font-sans text-charcoal-900 outline-none transition-colors"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="text-[10.5px] font-mono tracking-widest text-charcoal-600 uppercase block mb-1">
+                    PREFERRED TYPOLOGY
+                  </label>
+                  <select
+                    value={formData.typology}
+                    onChange={(e) => setFormData({ ...formData, typology: e.target.value })}
+                    className="w-full bg-white border border-stone-300 focus:border-forest-700 rounded-xs px-3 py-2 text-[12.5px] font-sans text-charcoal-900 outline-none transition-colors"
+                  >
+                    <option value="3 BHK Premium Villa (2,262 Sq.Ft)">3 BHK Premium Villa (2,262 Sq.Ft)</option>
+                    <option value="4 BHK Luxury Villa (3,000 Sq.Ft)">4 BHK Luxury Villa (3,000 Sq.Ft)</option>
+                    <option value="Corner Plot Enclave">Corner Plot Enclave</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="text-[10.5px] font-mono tracking-widest text-charcoal-600 uppercase block mb-1">
+                    PREFERRED DATE
                   </label>
                   <input
                     type="date"
-                    required
-                    value={formData.visitDate}
-                    onChange={(e) => setFormData({ ...formData, visitDate: e.target.value })}
-                    className="w-full bg-charcoal-950 border border-white/10 focus:border-bronze-400 rounded-lg px-4 py-2.5 text-xs font-mono text-ivory-100 outline-none"
+                    value={formData.date}
+                    onChange={(e) => setFormData({ ...formData, date: e.target.value })}
+                    className="w-full bg-white border border-stone-300 focus:border-forest-700 rounded-xs px-3.5 py-2 text-[12.5px] font-sans text-charcoal-900 outline-none transition-colors"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="text-[10px] font-mono tracking-widest text-stone-400 uppercase block mb-1">
-                  Email
+                <label className="text-[10.5px] font-mono tracking-widest text-charcoal-600 uppercase block mb-1">
+                  SPECIAL REQUIREMENTS / NOTES
                 </label>
-                <input
-                  type="email"
-                  required
-                  placeholder="name@domain.com"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full bg-charcoal-950 border border-white/10 focus:border-bronze-400 rounded-lg px-4 py-2.5 text-xs font-mono text-ivory-100 outline-none"
+                <textarea
+                  rows={2}
+                  placeholder="Orientation preferences, Vastu specifications, investment timeline..."
+                  value={formData.notes}
+                  onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
+                  className="w-full bg-white border border-stone-300 focus:border-forest-700 rounded-xs px-3.5 py-2 text-[12.5px] font-sans text-charcoal-900 outline-none transition-colors resize-none"
                 />
-              </div>
-
-              <div>
-                <label className="text-[10px] font-mono tracking-widest text-stone-400 uppercase block mb-1">
-                  Villa Focus
-                </label>
-                <select
-                  value={formData.villaModel}
-                  onChange={(e) => setFormData({ ...formData, villaModel: e.target.value })}
-                  className="w-full bg-charcoal-950 border border-white/10 focus:border-bronze-400 rounded-lg px-4 py-2.5 text-xs font-mono text-ivory-100 outline-none"
-                >
-                  <option value="Type A East">Type A East (1200 sq.ft Land • 2262 sq.ft BUA)</option>
-                  <option value="Type A West">Type A West (1200 sq.ft Land • 2262 sq.ft BUA)</option>
-                  <option value="All Models">Comprehensive Project Masterplan Tour</option>
-                </select>
               </div>
 
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-bronze-600 to-bronze-500 hover:from-bronze-500 hover:to-bronze-400 text-charcoal-950 font-bold py-3 rounded-lg text-xs font-mono uppercase tracking-wider transition-all shadow-glow-bronze"
+                  className="w-full py-3 bg-forest-700 text-white text-[12px] font-semibold uppercase tracking-[0.2em] rounded-xs hover:bg-forest-800 transition-colors shadow-subtle flex items-center justify-center space-x-2"
                 >
-                  CONFIRM PRIVATE TOUR APPOINTMENT
+                  <span>REQUEST CONFIDENTIAL APPOINTMENT</span>
+                  <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
             </form>
           </div>
         )}
+
       </div>
     </div>
   );

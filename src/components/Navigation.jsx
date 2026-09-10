@@ -1,154 +1,180 @@
 import React, { useState, useEffect } from 'react';
-import { Volume2, VolumeX, Menu, X, Compass, ArrowUpRight } from 'lucide-react';
-import { ambientSound } from '../utils/sound';
+import Logo from './Logo';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 
 export default function Navigation({ onOpenBooking, scrollProgress = 0 }) {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [audioPlaying, setAudioPlaying] = useState(false);
+  const [activeSection, setActiveSection] = useState('VISION');
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 20);
+
+      // Determine active section
+      const sections = [
+        { id: 'vision', label: 'VISION' },
+        { id: 'overview', label: 'OVERVIEW' },
+        { id: 'about', label: 'ABOUT' },
+        { id: 'journey', label: 'PROCESS' },
+        { id: 'masterplan', label: 'MASTERPLAN' },
+        { id: 'villas', label: 'VILLAS' },
+        { id: 'portfolio', label: 'PORTFOLIO' },
+        { id: 'location', label: 'LOCATION' },
+      ];
+
+      const scrollPos = window.scrollY + 200;
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sections[i].id);
+        if (el && el.offsetTop <= scrollPos) {
+          setActiveSection(sections[i].label);
+          break;
+        }
+      }
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleSound = () => {
-    const active = ambientSound.toggle();
-    setAudioPlaying(active);
-  };
-
   const navLinks = [
-    { name: "The Land", href: "#land" },
-    { name: "Survey", href: "#survey" },
-    { name: "Masterplan", href: "#masterplan" },
-    { name: "Villas", href: "#villas" },
-    { name: "Clubhouse", href: "#clubhouse" },
-    { name: "Landscape", href: "#landscape" },
-    { name: "Mindfulness", href: "#mindfulness" },
-    { name: "Comparison", href: "#transformation" },
+    { label: 'OVERVIEW', href: '#overview' },
+    { label: 'ABOUT', href: '#about' },
+    { label: 'PROCESS', href: '#journey' },
+    { label: 'MASTERPLAN', href: '#masterplan' },
+    { label: 'VILLAS', href: '#villas' },
+    { label: 'PORTFOLIO', href: '#portfolio' },
+    { label: 'LOCATION', href: '#location' },
   ];
+
+  const handleNavClick = (href, label) => {
+    setActiveSection(label);
+    setMobileMenuOpen(false);
+    if (href === '#vision') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    const el = document.querySelector(href);
+    if (el) {
+      const headerOffset = 74;
+      const elementPosition = el.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    }
+  };
 
   return (
     <>
-      <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled
-            ? "bg-charcoal-950/85 backdrop-blur-md py-3.5 border-b border-white/10 shadow-2xl"
-            : "bg-gradient-to-b from-charcoal-950/90 via-charcoal-950/40 to-transparent py-6"
+      {/* Top Scroll Indicator */}
+      <div className="fixed top-0 left-0 right-0 h-[2px] z-50 bg-[#E7E4DD]/60">
+        <div
+          className="h-full bg-[#B89047] transition-all duration-150 ease-out"
+          style={{ width: `${scrollProgress}%` }}
+        />
+      </div>
+
+      {/* Floating Header (Fixed 74px Height, Never Overlaps Content) */}
+      <header
+        className={`fixed top-0 left-0 right-0 h-[74px] z-50 transition-all duration-300 ${
+          scrolled
+            ? 'bg-white/95 backdrop-blur-md border-b border-[#EBE7DF] shadow-subtle text-[#1D2421]'
+            : 'bg-white/90 backdrop-blur-md border-b border-[#EBE7DF]/60 text-[#1D2421]'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
-          {/* Brand Monogram & Title */}
-          <a href="#" className="flex items-center space-x-3 group">
-            <div className="w-9 h-9 rounded-sm border border-bronze-500/60 bg-charcoal-900/80 flex items-center justify-center text-bronze-400 font-cinzel font-bold text-sm tracking-widest group-hover:border-bronze-400 group-hover:bg-charcoal-800 transition-all shadow-glow-bronze">
-              AG
-            </div>
-            <div className="flex flex-col">
-              <span className="font-cinzel text-base md:text-lg tracking-widest text-ivory-100 font-semibold uppercase group-hover:text-bronze-400 transition-colors">
-                ANTELIA GROVES
-              </span>
-              <span className="text-[9px] font-mono tracking-widest text-stone-400 uppercase -mt-1">
-                10-ACRE VILLA SANCTUARY
-              </span>
-            </div>
-          </a>
-
-          {/* Desktop Nav Items */}
-          <div className="hidden lg:flex items-center space-x-8 text-xs font-mono tracking-widest uppercase text-stone-300">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="hover:text-bronze-400 transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-bronze-400 hover:after:w-full after:transition-all after:duration-300"
-              >
-                {link.name}
-              </a>
-            ))}
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 h-full flex items-center justify-between">
+          
+          {/* ZONE 1: LEFT LOGO */}
+          <div className="shrink-0">
+            <a
+              href="#vision"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('#vision', 'VISION');
+              }}
+              className="flex items-center"
+            >
+              <Logo size="md" light={false} />
+            </a>
           </div>
 
-          {/* Controls & CTA */}
-          <div className="flex items-center space-x-4">
-            {/* Ambient Soundscape Toggle */}
-            <button
-              onClick={toggleSound}
-              aria-label={audioPlaying ? "Mute ambient natural sound" : "Enable ambient natural sound"}
-              className={`p-2 rounded-full border transition-all flex items-center space-x-2 text-xs font-mono ${
-                audioPlaying
-                  ? "border-bronze-500 bg-bronze-500/10 text-bronze-400 shadow-glow-bronze"
-                  : "border-white/15 bg-charcoal-900/60 text-stone-400 hover:border-white/30"
-              }`}
-              title={audioPlaying ? "Mute nature soundscape" : "Play ambient breeze & nature sound"}
-            >
-              {audioPlaying ? <Volume2 size={16} /> : <VolumeX size={16} />}
-              <span className="hidden xl:inline text-[10px] uppercase">
-                {audioPlaying ? "SOUND ON" : "SOUND OFF"}
-              </span>
-            </button>
+          {/* ZONE 2: CENTER NAVIGATION LINKS */}
+          <nav className="hidden lg:flex items-center justify-center space-x-6 xl:space-x-8 flex-1 px-8">
+            {navLinks.map((item) => {
+              const isActive = activeSection === item.label;
+              return (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(item.href, item.label);
+                  }}
+                  className={`font-sans text-[12px] uppercase tracking-[0.2em] transition-all relative py-1.5 whitespace-nowrap ${
+                    isActive
+                      ? 'text-[#B89047] font-semibold border-b-[2px] border-[#B89047]'
+                      : 'text-[#555555] hover:text-[#B89047] font-medium'
+                  }`}
+                >
+                  {item.label}
+                </a>
+              );
+            })}
+          </nav>
 
-            {/* VIP Site Visit Booking CTA */}
+          {/* ZONE 3: RIGHT SCHEDULE VISIT CTA */}
+          <div className="hidden md:flex items-center shrink-0">
             <button
               onClick={onOpenBooking}
-              className="hidden sm:flex items-center space-x-2 bg-gradient-to-r from-bronze-600 to-bronze-500 hover:from-bronze-500 hover:to-bronze-400 text-charcoal-950 font-semibold px-4 py-2 rounded-sm text-xs font-mono tracking-wider uppercase transition-all shadow-glow-bronze active:scale-95"
+              className="inline-flex items-center space-x-2 px-5 py-2 border border-[#183C2F]/70 text-[#B89047] text-[11.5px] font-medium uppercase tracking-[0.16em] rounded-full hover:bg-[#B89047] hover:text-white transition-all duration-300 shadow-subtle group whitespace-nowrap"
             >
-              <span>INQUIRE</span>
-              <ArrowUpRight size={14} />
+              <span>SCHEDULE VISIT</span>
+              <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </button>
+          </div>
 
-            {/* Mobile Hamburger Toggle */}
+          {/* Mobile Menu Trigger */}
+          <div className="md:hidden flex items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-ivory-100 hover:text-bronze-400 transition-colors"
+              className="p-2 text-charcoal-800 hover:text-forest-700 transition-colors"
               aria-label="Toggle Menu"
             >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
+      </header>
 
-        {/* Scroll Progress Line */}
-        <div className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-forest-700 via-bronze-500 to-bronze-400 transition-all duration-150" style={{ width: `${scrollProgress}%` }}></div>
-      </nav>
-
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-charcoal-950/98 backdrop-blur-xl lg:hidden flex flex-col justify-between pt-24 pb-12 px-8">
-          <div className="flex flex-col space-y-6">
-            <span className="text-[10px] font-mono tracking-widest text-bronze-400 uppercase">
-              // PROJECT NAVIGATION
-            </span>
-            {navLinks.map((link) => (
+        <div className="fixed inset-0 z-30 bg-[#F7F6F2]/98 backdrop-blur-lg flex flex-col justify-center px-8 md:hidden">
+          <div className="flex flex-col space-y-5 text-center">
+            <div className="flex justify-center mb-4">
+              <Logo size="lg" />
+            </div>
+            {navLinks.map((item) => (
               <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-2xl font-cinzel tracking-wider text-ivory-100 hover:text-bronze-400 transition-colors"
+                key={item.label}
+                href={item.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick(item.href);
+                }}
+                className="font-sans text-[15px] uppercase tracking-[0.22em] text-charcoal-800 hover:text-forest-700 font-medium py-2 border-b border-stone-200"
               >
-                {link.name}
+                {item.label}
               </a>
             ))}
-          </div>
-
-          <div className="flex flex-col space-y-4 pt-8 border-t border-white/10">
-            <button
-              onClick={() => {
-                toggleSound();
-              }}
-              className="w-full py-3 border border-white/15 rounded text-xs font-mono uppercase text-stone-300 flex items-center justify-center space-x-2"
-            >
-              {audioPlaying ? <Volume2 size={16} /> : <VolumeX size={16} />}
-              <span>{audioPlaying ? "MUTING SOUNDSCAPE" : "ENABLE AMBIENT SOUNDSCAPE"}</span>
-            </button>
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
                 onOpenBooking();
               }}
-              className="w-full py-3 bg-bronze-500 text-charcoal-950 font-bold font-mono text-xs uppercase tracking-wider rounded shadow-glow-bronze"
+              className="mt-6 w-full py-3.5 bg-forest-700 text-white text-[13px] font-semibold uppercase tracking-[0.2em] rounded-xs"
             >
-              REQUEST PRIVATE VILLA DOSSIER
+              SCHEDULE PRIVATE VISIT
             </button>
           </div>
         </div>

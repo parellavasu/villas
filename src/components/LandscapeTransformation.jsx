@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { landscapeFeatures } from '../data/projectData';
-import { Trees, Sun, CloudSun, Moon, Sparkles, Wind, Droplets } from 'lucide-react';
+import { Sun, CloudSun, Moon, Wind } from 'lucide-react';
 
 export default function LandscapeTransformation() {
   const [activeStep, setActiveStep] = useState(4);
-  const [timeOfDay, setTimeOfDay] = useState('sunset'); // 'dawn', 'day', 'sunset'
+  const [timeOfDay, setTimeOfDay] = useState('sunset');
 
   const evolutionSteps = [
     { step: "01", name: "Graded Soil & Mineral Conditioning", desc: "Reintroducing 8,500 MT of preserved topsoil with organic mycorrhizal fungi to stimulate deep root networks." },
@@ -18,31 +18,31 @@ export default function LandscapeTransformation() {
   ];
 
   return (
-    <section id="landscape" className="relative py-28 px-6 md:px-12 bg-charcoal-950 border-t border-white/10 overflow-hidden">
+    <section id="landscape" className="relative py-28 px-6 md:px-12 bg-white border-t border-sky-100 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12">
           <div>
-            <div className="flex items-center space-x-2 text-xs font-mono tracking-widest text-emerald-400 uppercase mb-3">
-              <Trees size={14} />
-              <span>CHAPTER 07 // BIOPHILIC LIVING</span>
+            <div className="flex items-center space-x-3 text-xs font-mono tracking-widest text-cobalt-600 uppercase mb-3 font-bold">
+              <span>08 / THE LANDSCAPE</span>
+              <div className="w-10 h-[1.5px] bg-cobalt-600"></div>
             </div>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-cinzel font-semibold tracking-wider text-ivory-100 uppercase">
-              06 / WHERE LANDSCAPE BECOMES LIFE
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-sans font-extrabold tracking-tight text-navy-900 uppercase">
+              WHERE LANDSCAPE <span className="text-cobalt-600">BECOMES LIFE.</span>
             </h2>
-            <p className="mt-3 text-sm md:text-base font-editorial italic text-stone-300 max-w-xl">
+            <p className="mt-3 text-sm md:text-base font-editorial italic text-slate-600 max-w-xl">
               "Architecture provides the enclosure; landscape breathes life into the sanctuary."
             </p>
           </div>
 
           {/* Time of Day Atmosphere Switcher */}
-          <div className="mt-6 lg:mt-0 flex items-center p-1.5 rounded-full border border-white/15 bg-charcoal-900/90 shadow-xl">
+          <div className="mt-6 lg:mt-0 flex items-center p-1.5 rounded-full border border-sky-200 bg-sky-50/60 shadow-sm">
             <button
               onClick={() => setTimeOfDay('dawn')}
-              className={`px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider flex items-center space-x-2 transition-all ${
+              className={`px-4 py-1.5 rounded-full text-xs font-sans uppercase tracking-wider flex items-center space-x-2 transition-all ${
                 timeOfDay === 'dawn'
-                  ? "bg-stone-700 text-ivory-100 font-bold"
-                  : "text-stone-400 hover:text-ivory-100"
+                  ? "bg-navy-900 text-white font-bold"
+                  : "text-slate-600 hover:text-navy-900 font-semibold"
               }`}
             >
               <CloudSun size={13} />
@@ -50,10 +50,10 @@ export default function LandscapeTransformation() {
             </button>
             <button
               onClick={() => setTimeOfDay('day')}
-              className={`px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider flex items-center space-x-2 transition-all ${
+              className={`px-4 py-1.5 rounded-full text-xs font-sans uppercase tracking-wider flex items-center space-x-2 transition-all ${
                 timeOfDay === 'day'
-                  ? "bg-amber-500 text-charcoal-950 font-bold shadow-glow-bronze"
-                  : "text-stone-400 hover:text-ivory-100"
+                  ? "bg-cobalt-600 text-white font-bold shadow-sm"
+                  : "text-slate-600 hover:text-navy-900 font-semibold"
               }`}
             >
               <Sun size={13} />
@@ -61,10 +61,10 @@ export default function LandscapeTransformation() {
             </button>
             <button
               onClick={() => setTimeOfDay('sunset')}
-              className={`px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider flex items-center space-x-2 transition-all ${
+              className={`px-4 py-1.5 rounded-full text-xs font-sans uppercase tracking-wider flex items-center space-x-2 transition-all ${
                 timeOfDay === 'sunset'
-                  ? "bg-bronze-500 text-charcoal-950 font-bold shadow-glow-bronze"
-                  : "text-stone-400 hover:text-ivory-100"
+                  ? "bg-navy-900 text-white font-bold shadow-sm"
+                  : "text-slate-600 hover:text-navy-900 font-semibold"
               }`}
             >
               <Moon size={13} />
@@ -74,23 +74,23 @@ export default function LandscapeTransformation() {
         </div>
 
         {/* Environmental Metamorphosis Evolution Track */}
-        <div className="p-8 rounded-2xl border border-bronze-500/30 bg-charcoal-900/70 mb-12 shadow-2xl relative overflow-hidden">
-          <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 pb-6 border-b border-white/10">
+        <div className="p-8 rounded-2xl border border-sky-200 bg-sky-50/30 mb-12 shadow-arch-card relative overflow-hidden">
+          <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 pb-6 border-b border-slate-200">
             <div>
-              <span className="text-[10px] font-mono tracking-widest text-bronze-400 uppercase">
+              <span className="text-[10px] font-mono tracking-widest text-cobalt-600 uppercase font-bold">
                 GROWTH STAGE // 0{activeStep + 1} OF 08
               </span>
-              <h3 className="text-2xl font-cinzel text-ivory-100 uppercase mt-1">
+              <h3 className="text-2xl font-sans text-navy-900 uppercase font-extrabold mt-1">
                 {evolutionSteps[activeStep].name}
               </h3>
             </div>
-            <div className="mt-4 md:mt-0 flex items-center space-x-3 text-xs font-mono text-emerald-400">
+            <div className="mt-4 md:mt-0 flex items-center space-x-3 text-xs font-mono text-emerald-700 font-semibold bg-emerald-50 px-3 py-1.5 rounded-full border border-emerald-200">
               <Wind size={15} />
-              <span>NATURAL MICRO-CLIMATE COOLING: -3.5°C</span>
+              <span>MICRO-CLIMATE COOLING: -3.5°C</span>
             </div>
           </div>
 
-          <p className="text-sm text-stone-300 max-w-2xl leading-relaxed mb-8">
+          <p className="text-sm text-slate-600 max-w-2xl leading-relaxed mb-8 font-normal font-sans">
             {evolutionSteps[activeStep].desc}
           </p>
 
@@ -100,16 +100,16 @@ export default function LandscapeTransformation() {
               <button
                 key={s.step}
                 onClick={() => setActiveStep(idx)}
-                className={`p-3 rounded-lg border text-left transition-all ${
+                className={`p-3 rounded-xl border text-left transition-all ${
                   activeStep === idx
-                    ? "border-emerald-500 bg-forest-900/60 text-ivory-100 shadow-glow-emerald"
-                    : "border-white/10 bg-charcoal-950 text-stone-400 hover:border-white/20"
+                    ? "border-cobalt-500 bg-white text-navy-900 shadow-arch-hover ring-2 ring-sky-100"
+                    : "border-sky-100 bg-white/80 text-slate-500 hover:border-sky-200"
                 }`}
               >
-                <span className="text-[10px] font-mono text-bronze-400 block mb-1">
+                <span className="text-[10px] font-mono text-cobalt-600 block mb-1 font-bold">
                   STAGE {s.step}
                 </span>
-                <span className="text-xs font-cinzel font-semibold truncate block">
+                <span className="text-xs font-sans font-bold truncate block">
                   {s.name.split(' ')[0]}
                 </span>
               </button>
@@ -122,18 +122,18 @@ export default function LandscapeTransformation() {
           {landscapeFeatures.map((feat, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-xl border border-white/10 bg-charcoal-900/50 backdrop-blur-md group hover:border-bronze-500/40 transition-all shadow-lg"
+              className="p-6 rounded-2xl border border-sky-100 bg-white shadow-arch-card group hover:border-cobalt-300 hover:shadow-arch-hover transition-all"
             >
               <div className="flex items-center justify-between mb-4">
-                <span className="text-[10px] font-mono tracking-widest text-emerald-400 uppercase">
+                <span className="text-[10px] font-mono tracking-widest text-cobalt-600 uppercase font-bold bg-sky-50 px-2.5 py-1 rounded border border-sky-100">
                   {feat.category} SANCTUARY
                 </span>
-                <span className="text-xs font-mono text-stone-400">0{idx + 1}</span>
+                <span className="text-xs font-mono text-slate-400 font-semibold">0{idx + 1}</span>
               </div>
-              <h4 className="text-lg font-cinzel text-ivory-100 uppercase font-semibold mb-2 group-hover:text-bronze-300 transition-colors">
+              <h4 className="text-lg font-sans text-navy-900 uppercase font-bold mb-2 group-hover:text-cobalt-600 transition-colors">
                 {feat.name}
               </h4>
-              <p className="text-xs text-stone-400 leading-relaxed">
+              <p className="text-xs text-slate-500 leading-relaxed font-normal">
                 {feat.desc}
               </p>
             </div>

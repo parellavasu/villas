@@ -1,8 +1,8 @@
 import React, { useState, useRef, useCallback } from 'react';
-import { ArrowLeftRight, Sparkles, Compass } from 'lucide-react';
+import { ArrowLeftRight } from 'lucide-react';
 
 export default function BeforeAfterSlider() {
-  const [sliderPos, setSliderPos] = useState(50); // percentage 0 - 100
+  const [sliderPos, setSliderPos] = useState(50);
   const containerRef = useRef(null);
   const isDragging = useRef(false);
 
@@ -34,19 +34,19 @@ export default function BeforeAfterSlider() {
   };
 
   return (
-    <section id="transformation" className="relative py-28 px-6 md:px-12 bg-charcoal-950 border-t border-white/10 overflow-hidden select-none">
+    <section id="transformation" className="relative py-28 px-6 md:px-12 bg-white border-t border-sky-100 overflow-hidden select-none">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center space-x-2 text-xs font-mono tracking-widest text-bronze-400 uppercase mb-3">
-            <Sparkles size={14} />
-            <span>CHAPTER 11 // THE METAMORPHOSIS</span>
+          <div className="inline-flex items-center space-x-3 text-xs font-mono tracking-widest text-cobalt-600 uppercase mb-3 font-bold">
+            <span>12 / THE METAMORPHOSIS</span>
+            <div className="w-10 h-[1.5px] bg-cobalt-600"></div>
           </div>
-          <h2 className="text-4xl sm:text-6xl md:text-7xl font-cinzel font-semibold tracking-wider text-ivory-100 uppercase">
-            BEFORE & AFTER
+          <h2 className="text-4xl sm:text-6xl md:text-7xl font-sans font-extrabold tracking-tight text-navy-900 uppercase">
+            BEFORE & <span className="text-cobalt-600">AFTER.</span>
           </h2>
-          <p className="mt-4 text-sm sm:text-base font-editorial italic text-stone-300">
-            "Drag the interactive slider to witness the metamorphosis of 10 raw acres into Antelia Groves."
+          <p className="mt-4 text-sm sm:text-base font-editorial italic text-slate-600">
+            "Drag the interactive blue slider to witness the metamorphosis of 10 raw acres into Antelia Groves."
           </p>
         </div>
 
@@ -58,25 +58,20 @@ export default function BeforeAfterSlider() {
           onMouseLeave={handleMouseUp}
           onMouseMove={handleMouseMove}
           onTouchMove={handleTouchMove}
-          className="relative w-full h-[520px] sm:h-[620px] rounded-3xl overflow-hidden border border-bronze-500/40 shadow-2xl cursor-ew-resize"
+          className="relative w-full h-[520px] sm:h-[620px] rounded-3xl overflow-hidden border border-sky-200 shadow-arch-card cursor-ew-resize bg-white"
         >
-          {/* RIGHT LAYER: AFTER (ANTELIA GROVES AT DUSK) */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#091512] via-charcoal-950 to-[#121A15] p-8 sm:p-12 flex flex-col justify-between">
-            {/* Architectural Graphic representation of finished community */}
+          {/* RIGHT LAYER: AFTER (ANTELIA GROVES) */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white via-sky-50/50 to-blue-50/40 p-8 sm:p-12 flex flex-col justify-between">
             <div className="absolute inset-0 bg-blueprint-dots opacity-40 pointer-events-none"></div>
 
-            {/* Glowing Community Render Overlay */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-30">
+            {/* Completed Community SVG Graphic */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-60">
               <svg className="w-full h-full max-w-4xl" viewBox="0 0 800 600">
-                {/* 10-Acre Perimeter */}
-                <rect x="50" y="50" width="700" height="500" rx="20" fill="none" stroke="#BA996E" strokeWidth="3" />
-                {/* Roads */}
-                <path d="M 400 50 L 400 550" stroke="#375242" strokeWidth="24" strokeLinecap="round" />
-                <path d="M 50 300 L 750 300" stroke="#375242" strokeWidth="24" strokeLinecap="round" />
-                {/* Central Clubhouse & Pool */}
-                <circle cx="400" cy="300" r="80" fill="#13241C" stroke="#BA996E" strokeWidth="2" />
-                <rect x="370" y="275" width="60" height="50" rx="6" fill="#38BDF8" opacity="0.8" />
-                {/* Villas Grid Glowing Dots */}
+                <rect x="50" y="50" width="700" height="500" rx="20" fill="none" stroke="#0284C7" strokeWidth="3" />
+                <path d="M 400 50 L 400 550" stroke="#CBD5E1" strokeWidth="24" strokeLinecap="round" />
+                <path d="M 50 300 L 750 300" stroke="#CBD5E1" strokeWidth="24" strokeLinecap="round" />
+                <circle cx="400" cy="300" r="80" fill="#F0F9FF" stroke="#0A2540" strokeWidth="2" />
+                <rect x="370" y="275" width="60" height="50" rx="6" fill="#0284C7" />
                 {Array.from({ length: 12 }).map((_, r) =>
                   Array.from({ length: 16 }).map((_, c) => {
                     const cx = 90 + c * 40;
@@ -88,9 +83,9 @@ export default function BeforeAfterSlider() {
                           key={`v-${r}-${c}`}
                           cx={cx}
                           cy={cy}
-                          r="4"
-                          fill="#FFDFB0"
-                          opacity="0.85"
+                          r="5"
+                          fill="#0A2540"
+                          opacity="0.8"
                         />
                       );
                     }
@@ -102,35 +97,33 @@ export default function BeforeAfterSlider() {
 
             {/* Right Header Metadata */}
             <div className="relative z-10 text-right ml-auto">
-              <span className="inline-block px-3 py-1 rounded bg-forest-900/80 border border-emerald-500/40 text-emerald-300 font-mono text-xs uppercase tracking-widest mb-2">
+              <span className="inline-block px-3 py-1 rounded bg-sky-100 text-cobalt-600 font-mono text-xs uppercase tracking-widest mb-2 font-bold border border-sky-200">
                 AFTER // COMPLETED ENCLAVE
               </span>
-              <h3 className="text-3xl sm:text-5xl font-cinzel font-bold text-ivory-100 uppercase">
+              <h3 className="text-3xl sm:text-5xl font-sans font-extrabold text-navy-900 uppercase">
                 ANTELIA GROVES
               </h3>
-              <p className="text-xs sm:text-sm font-mono text-bronze-400 mt-1">
+              <p className="text-xs sm:text-sm font-sans text-cobalt-600 mt-1 font-bold">
                 189 BESPOKE VILLAS • 15K SQ.FT CLUBHOUSE
               </p>
             </div>
 
-            <div className="relative z-10 flex items-center justify-end text-xs font-mono text-stone-300">
-              <span className="flex items-center space-x-2 bg-charcoal-900/80 px-4 py-2 rounded-full border border-white/10">
-                <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <div className="relative z-10 flex items-center justify-end text-xs font-mono text-slate-600">
+              <span className="flex items-center space-x-2 bg-white/95 px-4 py-2 rounded-full border border-sky-200 shadow-sm">
+                <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
                 <span>LIVING MASTERPLAN • OCCUPANCY READY</span>
               </span>
             </div>
           </div>
 
-          {/* LEFT LAYER: BEFORE (RAW 10-ACRE TERRAIN) with Clip-Path */}
+          {/* LEFT LAYER: BEFORE (RAW LAND) */}
           <div
-            className="absolute inset-0 bg-[#0E1012] p-8 sm:p-12 flex flex-col justify-between overflow-hidden"
+            className="absolute inset-0 bg-[#F4F6F8] p-8 sm:p-12 flex flex-col justify-between overflow-hidden"
             style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
           >
-            {/* Topographic Contour Lines SVG */}
-            <div className="absolute inset-0 opacity-45 pointer-events-none">
+            <div className="absolute inset-0 opacity-60 pointer-events-none">
               <svg className="w-full h-full" viewBox="0 0 800 600">
-                <rect width="800" height="600" fill="#0A0C0E" />
-                {/* Contour elevation loops */}
+                <rect width="800" height="600" fill="#F8FAFC" />
                 {Array.from({ length: 14 }).map((_, i) => (
                   <ellipse
                     key={i}
@@ -139,60 +132,59 @@ export default function BeforeAfterSlider() {
                     rx={60 + i * 36}
                     ry={40 + i * 26}
                     fill="none"
-                    stroke="#4A5568"
+                    stroke="#0284C7"
                     strokeWidth="1.2"
                     strokeDasharray={i % 3 === 0 ? "4 4" : "none"}
+                    opacity={0.5}
                   />
                 ))}
-                {/* Elevation marks */}
-                <text x="380" y="290" fill="#A0AEC0" fontSize="12" fontFamily="monospace">924.0m</text>
-                <text x="380" y="240" fill="#A0AEC0" fontSize="12" fontFamily="monospace">928.0m</text>
-                <text x="380" y="190" fill="#A0AEC0" fontSize="12" fontFamily="monospace">932.0m</text>
-                {/* Survey pegs */}
-                <circle cx="100" cy="100" r="6" fill="#BA996E" />
-                <circle cx="700" cy="100" r="6" fill="#BA996E" />
-                <circle cx="700" cy="500" r="6" fill="#BA996E" />
-                <circle cx="100" cy="500" r="6" fill="#BA996E" />
+                <text x="380" y="290" fill="#0A2540" fontSize="12" fontFamily="monospace" fontWeight="bold">924.0m</text>
+                <text x="380" y="240" fill="#0A2540" fontSize="12" fontFamily="monospace" fontWeight="bold">928.0m</text>
+                <text x="380" y="190" fill="#0A2540" fontSize="12" fontFamily="monospace" fontWeight="bold">932.0m</text>
+                <circle cx="100" cy="100" r="6" fill="#0A2540" />
+                <circle cx="700" cy="100" r="6" fill="#0A2540" />
+                <circle cx="700" cy="500" r="6" fill="#0A2540" />
+                <circle cx="100" cy="500" r="6" fill="#0A2540" />
               </svg>
             </div>
 
             {/* Left Header Metadata */}
             <div className="relative z-10 max-w-sm">
-              <span className="inline-block px-3 py-1 rounded bg-stone-900/90 border border-stone-600/40 text-stone-300 font-mono text-xs uppercase tracking-widest mb-2">
+              <span className="inline-block px-3 py-1 rounded bg-white border border-slate-200 text-slate-600 font-mono text-xs uppercase tracking-widest mb-2 font-bold shadow-sm">
                 BEFORE // UNTOUCHED EARTH
               </span>
-              <h3 className="text-3xl sm:text-5xl font-cinzel font-bold text-stone-200 uppercase">
+              <h3 className="text-3xl sm:text-5xl font-sans font-extrabold text-navy-900 uppercase">
                 RAW LAND
               </h3>
-              <p className="text-xs sm:text-sm font-mono text-stone-400 mt-1">
+              <p className="text-xs sm:text-sm font-sans text-slate-500 mt-1 font-semibold">
                 10 ACRES • 12M TOPOGRAPHIC CONTOUR
               </p>
             </div>
 
-            <div className="relative z-10 flex items-center text-xs font-mono text-stone-400">
-              <span className="flex items-center space-x-2 bg-charcoal-900/80 px-4 py-2 rounded-full border border-white/10">
-                <span className="w-2 h-2 rounded-full bg-amber-400"></span>
+            <div className="relative z-10 flex items-center text-xs font-mono text-slate-600">
+              <span className="flex items-center space-x-2 bg-white/95 px-4 py-2 rounded-full border border-slate-200 shadow-sm">
+                <span className="w-2 h-2 rounded-full bg-amber-500"></span>
                 <span>ORIGINAL GEODETIC SURVEY STATE</span>
               </span>
             </div>
           </div>
 
-          {/* SPLIT SLIDER DRAG HANDLE */}
+          {/* BLUE VERTICAL SLIDER DRAG HANDLE */}
           <div
-            className="absolute top-0 bottom-0 w-[2px] bg-bronze-400 z-30"
+            className="absolute top-0 bottom-0 w-[2.5px] bg-cobalt-600 z-30"
             style={{ left: `${sliderPos}%` }}
           >
-            <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-11 h-11 rounded-full bg-bronze-500 text-charcoal-950 flex items-center justify-center shadow-glow-bronze border-2 border-ivory-100 hover:scale-110 active:scale-95 transition-transform">
+            <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-11 h-11 rounded-full bg-cobalt-600 text-white flex items-center justify-center shadow-glow-blue border-2 border-white hover:scale-110 active:scale-95 transition-transform">
               <ArrowLeftRight size={18} />
             </div>
           </div>
         </div>
 
         {/* Interactive Milestone Indicator Rail */}
-        <div className="mt-10 p-6 rounded-2xl border border-white/10 bg-charcoal-900/60 backdrop-blur-md">
-          <div className="flex items-center justify-between text-[11px] font-mono tracking-wider text-stone-400 uppercase mb-4">
+        <div className="mt-10 p-6 rounded-2xl border border-sky-100 bg-white shadow-arch-card">
+          <div className="flex items-center justify-between text-[11px] font-mono tracking-wider text-slate-500 uppercase mb-4 font-semibold">
             <span>TRANSFORMATION LIFECYCLE</span>
-            <span className="text-bronze-400 font-bold">SLIDER: {Math.round(sliderPos)}% COMPLETED</span>
+            <span className="text-cobalt-600 font-bold">SLIDER: {Math.round(sliderPos)}% COMPLETED</span>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 text-center">
@@ -207,14 +199,14 @@ export default function BeforeAfterSlider() {
               <div
                 key={idx}
                 onClick={() => setSliderPos(parseInt(step.pct))}
-                className={`p-3 rounded-lg border transition-all cursor-pointer ${
+                className={`p-3 rounded-xl border transition-all cursor-pointer ${
                   sliderPos >= parseInt(step.pct)
-                    ? "border-bronze-500/60 bg-charcoal-950 text-ivory-100"
-                    : "border-white/5 bg-charcoal-950/40 text-stone-500"
+                    ? "border-cobalt-500 bg-sky-50/80 text-navy-900 shadow-sm"
+                    : "border-slate-100 bg-slate-50/50 text-slate-400 hover:bg-slate-50"
                 }`}
               >
-                <div className="text-[10px] font-mono text-bronze-400 mb-1">{step.pct}</div>
-                <div className="text-xs font-cinzel font-semibold uppercase">{step.title}</div>
+                <div className="text-[10px] font-mono text-cobalt-600 mb-1 font-bold">{step.pct}</div>
+                <div className="text-xs font-sans font-bold uppercase">{step.title}</div>
               </div>
             ))}
           </div>

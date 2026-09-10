@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Clubhouse3D from '../three/Clubhouse3D';
 import { clubhouseDetails } from '../data/projectData';
-import { Building2, Waves, Wine, UtensilsCrossed, Bed, BookOpen, Coffee } from 'lucide-react';
+import { Building2, Waves, Wine, UtensilsCrossed, Bed, Coffee } from 'lucide-react';
 
 export default function Clubhouse() {
   const [activeSpace, setActiveSpace] = useState('all');
@@ -25,23 +25,23 @@ export default function Clubhouse() {
   ];
 
   return (
-    <section id="clubhouse" className="relative py-28 px-6 md:px-12 bg-charcoal-900 border-t border-white/10 overflow-hidden">
+    <section id="clubhouse" className="relative py-28 px-6 md:px-12 bg-gradient-to-r from-white via-[#F8FAFC] via-45% to-sky-100/50 border-t border-sky-100 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12">
           <div>
-            <div className="flex items-center space-x-2 text-xs font-mono tracking-widest text-bronze-400 uppercase mb-3">
-              <span className="w-1.5 h-1.5 bg-bronze-400 rounded-full"></span>
-              <span>CHAPTER 08 // THE SOCIAL ANCHOR</span>
+            <div className="flex items-center space-x-3 text-xs font-mono tracking-widest text-cobalt-600 uppercase mb-3 font-bold">
+              <span>09 / THE CLUBHOUSE</span>
+              <div className="w-10 h-[1.5px] bg-cobalt-600"></div>
             </div>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-cinzel font-semibold tracking-wider text-ivory-100 uppercase">
-              {clubhouseDetails.title}
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-sans font-extrabold tracking-tight text-navy-900 uppercase">
+              15,000+ SQ.FT <span className="text-cobalt-600">OF COMMUNITY.</span>
             </h2>
-            <p className="mt-3 text-sm md:text-base font-editorial italic text-stone-300 max-w-xl">
+            <p className="mt-3 text-sm md:text-base font-editorial italic text-slate-600 max-w-xl">
               "{clubhouseDetails.subtitle}"
             </p>
           </div>
-          <p className="mt-4 lg:mt-0 text-xs sm:text-sm font-light text-stone-400 max-w-lg leading-relaxed">
+          <p className="mt-4 lg:mt-0 text-xs sm:text-sm font-sans text-slate-600 max-w-lg leading-relaxed font-normal">
             Positioned at the geographical heart of the 10-acre enclave, the Clubhouse acts as an architectural pavilion for leisure, hospitality, wellness, and milestone celebrations.
           </p>
         </div>
@@ -52,10 +52,10 @@ export default function Clubhouse() {
             <button
               key={sp.id}
               onClick={() => setActiveSpace(sp.id)}
-              className={`px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider flex items-center space-x-2 transition-all ${
+              className={`px-4 py-2 rounded-full text-xs font-sans uppercase tracking-wider flex items-center space-x-2 transition-all ${
                 activeSpace === sp.id
-                  ? "bg-bronze-500 text-charcoal-950 font-bold shadow-glow-bronze"
-                  : "bg-charcoal-950 text-stone-400 border border-white/10 hover:border-white/20"
+                  ? "bg-navy-900 text-white font-bold shadow-sm"
+                  : "bg-white text-slate-600 border border-sky-200 hover:border-cobalt-400 font-semibold"
               }`}
             >
               {spaceIcons[sp.id]}
@@ -74,26 +74,26 @@ export default function Clubhouse() {
           {clubhouseDetails.spaces.map((space, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-xl border border-white/10 bg-charcoal-950/70 backdrop-blur-md flex flex-col justify-between group hover:border-bronze-500/40 transition-all shadow-lg"
+              className="p-6 rounded-2xl border border-sky-100 bg-white shadow-arch-card flex flex-col justify-between group hover:border-cobalt-300 hover:shadow-arch-hover transition-all"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-[10px] font-mono tracking-widest text-bronze-400 uppercase">
+                  <span className="text-[10px] font-mono tracking-widest text-cobalt-600 uppercase font-bold bg-sky-50 px-2.5 py-1 rounded border border-sky-100">
                     {space.level}
                   </span>
-                  <span className="text-xs font-mono text-stone-400">AMENITY 0{idx + 1}</span>
+                  <span className="text-xs font-mono text-slate-400 font-semibold">AMENITY 0{idx + 1}</span>
                 </div>
-                <h4 className="text-lg font-cinzel text-ivory-100 uppercase font-semibold mb-2 group-hover:text-bronze-300 transition-colors">
+                <h4 className="text-lg font-sans text-navy-900 uppercase font-bold mb-2 group-hover:text-cobalt-600 transition-colors">
                   {space.name}
                 </h4>
-                <p className="text-xs text-stone-400 leading-relaxed">
+                <p className="text-xs text-slate-500 leading-relaxed font-normal">
                   {space.desc}
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-[10px] font-mono text-stone-400">
+              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-[10px] font-mono text-slate-500">
                 <span>RESERVED FOR RESIDENTS & GUESTS</span>
-                <span className="text-emerald-400">ALL-SEASON ACCESS</span>
+                <span className="text-cobalt-600 font-semibold">ALL-SEASON ACCESS</span>
               </div>
             </div>
           ))}
