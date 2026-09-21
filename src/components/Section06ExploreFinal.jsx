@@ -21,7 +21,7 @@ export default function Section06ExploreFinal({ onExploreVillas, onOpenBooking }
             </span>
             <span className="w-4 h-[1.5px] bg-[#EA580C]" />
           </div>
-          <h2 className="font-serif font-bold text-[24px] sm:text-[28px] lg:text-[32px] tracking-tight text-[#111827] leading-tight mb-1">
+          <h2 className="font-display font-semibold text-[22px] sm:text-[26px] lg:text-[32px] tracking-display text-[#111827] leading-tight mb-1">
             Discover Antelia Groves
           </h2>
           <p className="text-[12px] sm:text-[13px] text-[#4B5563] font-normal leading-relaxed">
@@ -32,7 +32,7 @@ export default function Section06ExploreFinal({ onExploreVillas, onOpenBooking }
         {/* =========================================================
             2. PANORAMIC AERIAL SANCTUARY RENDER
             ========================================================= */}
-        <div className="relative aspect-[28/7] h-[85px] sm:h-[105px] lg:h-[115px] w-full rounded-xs overflow-hidden border border-gray-200 shadow-xs mb-3 sm:mb-4 group bg-[#FAFAF9]">
+        <div className="relative aspect-[28/7] h-[85px] sm:h-[105px] lg:h-[115px] w-full rounded-[14px] overflow-hidden border border-gray-200 shadow-xs mb-3 sm:mb-4 group bg-[#FAFAF9]">
           <img
             src="/images/masterplan/01_masterplan_aerial_10acres.jpg"
             alt="Antelia Groves 10-Acre Panoramic Community View"
@@ -53,11 +53,11 @@ export default function Section06ExploreFinal({ onExploreVillas, onOpenBooking }
         {/* =========================================================
             3. CENTRAL VIP CALL-TO-ACTION ESTATE CARD
             ========================================================= */}
-        <div className="max-w-2xl mx-auto text-center p-4 sm:p-5 bg-gradient-to-b from-white to-[#FFF7ED]/50 border border-[#FED7AA] rounded-sm mb-4 sm:mb-5 shadow-luxury w-full">
+        <div className="max-w-2xl mx-auto text-center p-4 sm:p-5 bg-gradient-to-b from-white to-[#FFF7ED]/50 border border-[#FED7AA] rounded-[14px] mb-4 sm:mb-5 shadow-luxury w-full">
           <div className="text-[9.5px] font-mono tracking-widest text-[#EA580C] font-semibold mb-0.5">
             Private Consultations &amp; Site Viewings
           </div>
-          <h3 className="font-serif text-[19px] sm:text-[22px] font-bold text-[#111827] mb-1 leading-tight">
+          <h3 className="font-display text-[19px] sm:text-[22px] font-semibold text-[#111827] mb-1 leading-tight tracking-display">
             Schedule Your Private Estate Experience
           </h3>
           <p className="text-[12px] sm:text-[12.5px] text-[#4B5563] mb-3 max-w-lg mx-auto leading-relaxed">
@@ -67,7 +67,7 @@ export default function Section06ExploreFinal({ onExploreVillas, onOpenBooking }
           <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
             <button
               onClick={onOpenBooking}
-              className="inline-flex items-center space-x-1.5 px-5 py-2 bg-[#EA580C] hover:bg-[#C2410C] text-white text-[10.5px] font-bold tracking-[0.16em] rounded-xs transition-all duration-300 shadow-sm group cursor-pointer"
+              className="inline-flex items-center space-x-1.5 px-6 py-2.5 bg-[#EA580C] hover:bg-[#C2410C] text-white text-[10.5px] font-bold tracking-[0.16em] rounded-full transition-all duration-300 shadow-sm group cursor-pointer"
             >
               <Calendar className="w-3.5 h-3.5 text-white" />
               <span>Schedule A Visit</span>
@@ -76,7 +76,7 @@ export default function Section06ExploreFinal({ onExploreVillas, onOpenBooking }
 
             <button
               onClick={onOpenBooking}
-              className="inline-flex items-center space-x-1.5 px-5 py-2 bg-white border-2 border-[#EA580C] text-[#EA580C] hover:bg-[#FFF7ED] text-[10.5px] font-semibold tracking-[0.16em] rounded-xs transition-all duration-300 cursor-pointer"
+              className="inline-flex items-center space-x-1.5 px-6 py-2.5 bg-white border-2 border-[#EA580C] text-[#EA580C] hover:bg-[#FFF7ED] text-[10.5px] font-semibold tracking-[0.16em] rounded-full transition-all duration-300 cursor-pointer"
             >
               <PhoneCall className="w-3.5 h-3.5 text-[#EA580C]" />
               <span>Enquire Now</span>

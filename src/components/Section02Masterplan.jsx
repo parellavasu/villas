@@ -105,7 +105,7 @@ export default function Section02Masterplan() {
                 05 / The Masterplan
               </span>
             </div>
-            <h2 className="font-serif font-bold text-[22px] sm:text-[25px] lg:text-[28px] tracking-tight text-[#111827] leading-tight">
+            <h2 className="font-display font-semibold text-[20px] sm:text-[26px] lg:text-[32px] tracking-display text-[#111827] leading-tight">
               A Community Planned Around Living
             </h2>
           </div>
@@ -125,7 +125,7 @@ export default function Section02Masterplan() {
           ].map((item, idx) => (
             <div
               key={idx}
-              className="p-2.5 sm:p-3 bg-white border border-gray-200 rounded-sm shadow-xs hover:border-[#EA580C] transition-all duration-300 flex items-center justify-between"
+              className="p-2.5 sm:p-3 bg-white border border-gray-200 rounded-[14px] shadow-xs hover:border-[#EA580C] transition-all duration-300 flex items-center justify-between"
             >
               <div>
                 <div className="text-[9px] font-mono tracking-widest text-[#EA580C] font-semibold">{item.tag}</div>
@@ -137,7 +137,7 @@ export default function Section02Masterplan() {
         </div>
 
         {/* Masterplan Interactive Viewer Card */}
-        <div className="relative rounded-sm overflow-hidden border border-gray-200 bg-white shadow-luxury">
+        <div className="relative rounded-[14px] overflow-hidden border border-gray-200 bg-white shadow-luxury">
           
           {/* Top Control Bar: Masterplan View Navigation Tabs */}
           <div className="p-2.5 sm:p-3 border-b border-gray-200 bg-[#FAFAF9] flex flex-wrap items-center justify-between gap-2">
@@ -155,7 +155,7 @@ export default function Section02Masterplan() {
                   <button
                     key={tab.id}
                     onClick={() => handleTabClick(tab.id)}
-                    className={`px-3 py-1 text-[10px] sm:text-[10.5px] font-mono tracking-wider rounded-xs transition-all cursor-pointer relative ${
+                    className={`px-3.5 py-1 text-[10px] sm:text-[10.5px] font-mono tracking-wider rounded-full transition-all cursor-pointer relative ${
                       isActive
                         ? 'bg-[#EA580C] text-white font-bold shadow-sm'
                         : 'bg-white border border-gray-200 text-[#6B7280] hover:text-[#111827] hover:border-[#EA580C]/50'
@@ -172,7 +172,7 @@ export default function Section02Masterplan() {
               {/* Distinct 3D CAD MODEL Tab */}
               <button
                 onClick={() => handleTabClick('3d')}
-                className={`px-3 py-1 text-[10px] sm:text-[10.5px] font-mono tracking-wider rounded-xs transition-all cursor-pointer flex items-center space-x-1 ml-0.5 ${
+                className={`px-3.5 py-1 text-[10px] sm:text-[10.5px] font-mono tracking-wider rounded-full transition-all cursor-pointer flex items-center space-x-1 ml-0.5 ${
                   activeTab === '3d'
                     ? 'bg-[#EA580C] text-white font-semibold shadow-sm border border-[#EA580C]'
                     : 'bg-white border-2 border-[#EA580C] text-[#EA580C] hover:bg-[#FFF7ED] font-semibold'
@@ -182,7 +182,7 @@ export default function Section02Masterplan() {
                 <Box className="w-3 h-3" />
                 <span>3D CAD Model</span>
                 {activeTab !== '3d' && (
-                  <span className="text-[8.5px] font-mono bg-[#FFF7ED] text-[#EA580C] px-1 py-0.2 rounded-xs ml-0.5 border border-[#FED7AA]">
+                  <span className="text-[8.5px] font-mono bg-[#FFF7ED] text-[#EA580C] px-1.5 py-0.2 rounded-full ml-0.5 border border-[#FED7AA]">
                     Click
                   </span>
                 )}
@@ -206,7 +206,7 @@ export default function Section02Masterplan() {
                     <button
                       key={sec.id}
                       onClick={() => setActiveSector(sec.id)}
-                      className={`px-2 py-0.5 text-[9.5px] font-mono tracking-wider rounded-xs transition-colors cursor-pointer ${
+                      className={`px-2.5 py-0.5 text-[9.5px] font-mono tracking-wider rounded-full transition-colors cursor-pointer ${
                         activeSector === sec.id
                           ? 'bg-[#EA580C] text-white font-bold'
                           : 'bg-white border border-gray-200 text-[#6B7280] hover:text-[#111827]'
@@ -218,7 +218,7 @@ export default function Section02Masterplan() {
                 </div>
               ) : (
                 /* Auto-Cycling Indicator & Pause/Play Control for Image Views */
-                <div className="flex items-center space-x-1.5 bg-white px-2 py-0.5 border border-gray-200 rounded-xs shadow-xs">
+                <div className="flex items-center space-x-1.5 bg-white px-2.5 py-0.5 border border-gray-200 rounded-full shadow-xs">
                   <span className={`w-1.5 h-1.5 rounded-full ${isAutoPlaying ? 'bg-[#EA580C] animate-pulse' : 'bg-gray-400'}`} />
                   <span className="font-mono text-[9px] text-[#EA580C] font-semibold tracking-wider hidden sm:inline">
                     {isAutoPlaying ? 'Auto-Changing' : 'Paused'}

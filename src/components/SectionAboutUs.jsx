@@ -167,17 +167,17 @@ export default function SectionAboutUs() {
               </span>
             </div>
 
-            <h2 className="font-serif font-bold text-[22px] sm:text-[25px] lg:text-[28px] leading-tight text-[#111827] tracking-tight">
+            <h2 className="font-display font-semibold text-[20px] sm:text-[26px] lg:text-[32px] leading-tight text-[#111827] tracking-display">
               Designed For Space.{' '}
               <span className="text-[#EA580C]">Scaled From Master Craftsmanship.</span>
             </h2>
           </div>
 
           {/* Mode Switcher: Perspectives vs 4 Pillars */}
-          <div className="flex items-center space-x-1.5 p-1 bg-[#FAFAF9] border border-gray-200 rounded-xs self-start lg:self-end">
+          <div className="flex items-center space-x-1.5 p-1 bg-[#FAFAF9] border border-gray-200 rounded-full self-start lg:self-end">
             <button
               onClick={() => setViewMode('perspectives')}
-              className={`px-3 py-1 font-mono text-[9.5px] tracking-wider rounded-xs transition-colors cursor-pointer ${
+              className={`px-3 py-1 font-mono text-[9.5px] tracking-wider rounded-full transition-colors cursor-pointer ${
                 viewMode === 'perspectives'
                   ? 'bg-[#EA580C] text-white font-bold shadow-xs'
                   : 'text-[#6B7280] hover:text-[#111827]'
@@ -187,7 +187,7 @@ export default function SectionAboutUs() {
             </button>
             <button
               onClick={() => setViewMode('pillars')}
-              className={`px-3 py-1 font-mono text-[9.5px] tracking-wider rounded-xs transition-colors cursor-pointer ${
+              className={`px-3 py-1 font-mono text-[9.5px] tracking-wider rounded-full transition-colors cursor-pointer ${
                 viewMode === 'pillars'
                   ? 'bg-[#EA580C] text-white font-bold shadow-xs'
                   : 'text-[#6B7280] hover:text-[#111827]'
@@ -203,7 +203,7 @@ export default function SectionAboutUs() {
             ========================================================= */}
         {viewMode === 'perspectives' ? (
           <div
-            className="bg-white border border-gray-200 rounded-sm shadow-luxury overflow-hidden mb-3 sm:mb-4"
+            className="bg-white border border-gray-200 rounded-[14px] shadow-luxury overflow-hidden mb-3 sm:mb-4"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
@@ -278,20 +278,20 @@ export default function SectionAboutUs() {
 
                 {/* Floating Architectural Badge */}
                 <div className="absolute top-2.5 left-2.5 z-20">
-                  <span className="inline-flex items-center space-x-1.5 px-2 py-0.5 bg-white/95 backdrop-blur-md border border-gray-200 text-[#111827] font-mono text-[8.5px] tracking-[0.1em] rounded-xs shadow-xs font-semibold">
+                  <span className="inline-flex items-center space-x-1.5 px-2.5 py-0.5 bg-white/95 backdrop-blur-md border border-gray-200 text-[#111827] font-mono text-[8.5px] tracking-[0.1em] rounded-full shadow-xs font-semibold">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#EA580C] animate-pulse" />
                     <span>{currentView.tag}</span>
                   </span>
                 </div>
 
                 {/* Controls: Prev/Next & Play/Pause */}
-                <div className="absolute bottom-2.5 right-2.5 z-20 flex items-center space-x-1 bg-white/95 backdrop-blur-md border border-gray-200 p-0.5 rounded-xs shadow-xs">
+                <div className="absolute bottom-2.5 right-2.5 z-20 flex items-center space-x-1 bg-white/95 backdrop-blur-md border border-gray-200 p-1 rounded-full shadow-xs">
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
                       setActiveSlide((prev) => (prev - 1 + showcaseViews.length) % showcaseViews.length);
                     }}
-                    className="p-1 text-[#111827]/80 hover:text-[#EA580C] hover:bg-[#FFF7ED] rounded-xs transition-colors cursor-pointer"
+                    className="p-1 text-[#111827]/80 hover:text-[#EA580C] hover:bg-[#FFF7ED] rounded-full transition-colors cursor-pointer"
                     title="Previous View"
                     aria-label="Previous View"
                   >
@@ -302,7 +302,7 @@ export default function SectionAboutUs() {
                       e.stopPropagation();
                       setIsAutoPlaying(!isAutoPlaying);
                     }}
-                    className="p-1 text-[#111827]/80 hover:text-[#EA580C] hover:bg-[#FFF7ED] rounded-xs transition-colors cursor-pointer"
+                    className="p-1 text-[#111827]/80 hover:text-[#EA580C] hover:bg-[#FFF7ED] rounded-full transition-colors cursor-pointer"
                     title={isAutoPlaying ? "Pause auto-rotation" : "Play auto-rotation"}
                     aria-label={isAutoPlaying ? "Pause auto-rotation" : "Play auto-rotation"}
                   >
@@ -313,7 +313,7 @@ export default function SectionAboutUs() {
                       e.stopPropagation();
                       setActiveSlide((prev) => (prev + 1) % showcaseViews.length);
                     }}
-                    className="p-1 text-[#111827]/80 hover:text-[#EA580C] hover:bg-[#FFF7ED] rounded-xs transition-colors cursor-pointer"
+                    className="p-1 text-[#111827]/80 hover:text-[#EA580C] hover:bg-[#FFF7ED] rounded-full transition-colors cursor-pointer"
                     title="Next View"
                     aria-label="Next View"
                   >
@@ -351,7 +351,7 @@ export default function SectionAboutUs() {
                   </p>
 
                   {/* Micro Specs Grid */}
-                  <div className="grid grid-cols-3 gap-1.5 p-2 bg-[#FAFAF9] border border-gray-200 rounded-xs mb-2">
+                  <div className="grid grid-cols-3 gap-1.5 p-2 bg-[#FAFAF9] border border-gray-200 rounded-[14px] mb-2">
                     {currentView.specs.map((s, idx) => (
                       <div key={idx} className="text-center">
                         <div className="font-mono text-[8.5px] text-[#6B7280] tracking-wider mb-0.5">
@@ -406,7 +406,7 @@ export default function SectionAboutUs() {
               return (
                 <div
                   key={idx}
-                  className="bg-white border border-gray-200 rounded-sm overflow-hidden shadow-sm hover:border-[#EA580C] hover:shadow-md transition-all duration-300 group flex flex-col justify-between"
+                  className="bg-white border border-gray-200 rounded-[14px] overflow-hidden shadow-sm hover:border-[#EA580C] hover:shadow-md transition-all duration-300 group flex flex-col justify-between"
                 >
                   <div className="relative aspect-[16/9] overflow-hidden bg-[#FAFAF9]">
                     <img
@@ -419,7 +419,7 @@ export default function SectionAboutUs() {
                       <span className="font-mono text-[9px] tracking-wider text-[#FED7AA] font-bold">
                         Pillar 0{idx + 1}
                       </span>
-                      <span className="font-mono text-[9px] bg-[#EA580C] px-1.5 py-0.2 rounded-xs font-semibold">
+                      <span className="font-mono text-[9px] bg-[#EA580C] px-2 py-0.5 rounded-full font-semibold">
                         {item.metric}
                       </span>
                     </div>
@@ -427,7 +427,7 @@ export default function SectionAboutUs() {
 
                   <div className="p-3">
                     <div className="flex items-center space-x-2 mb-1">
-                      <div className="w-6 h-6 rounded-xs bg-[#FFF7ED] border border-[#FED7AA] flex items-center justify-center text-[#EA580C] shrink-0">
+                      <div className="w-6 h-6 rounded-full bg-[#FFF7ED] border border-[#FED7AA] flex items-center justify-center text-[#EA580C] shrink-0">
                         <Icon className="w-3 h-3" />
                       </div>
                       <h4 className="font-sans text-[13px] font-bold tracking-[0.02em] text-[#111827]">
@@ -456,7 +456,7 @@ export default function SectionAboutUs() {
           ].map((stat, idx) => (
             <div
               key={idx}
-              className="p-2 sm:p-2.5 bg-[#FAFAF9] border border-gray-200/90 rounded-xs hover:border-[#EA580C]/60 hover:bg-white transition-all shadow-2xs group flex items-center justify-between"
+              className="p-2 sm:p-2.5 bg-[#FAFAF9] border border-gray-200/90 rounded-[14px] hover:border-[#EA580C]/60 hover:bg-white transition-all shadow-2xs group flex items-center justify-between"
             >
               <div>
                 <div className="flex items-baseline space-x-1">

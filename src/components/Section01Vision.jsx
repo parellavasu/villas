@@ -209,7 +209,7 @@ export default function Section01Vision({ onExploreJourney, onExploreVillas, onE
 
             {/* Main Wordmark Title: Antelia Groves */}
             <h1
-              className={`font-editorial text-[34px] sm:text-[42px] lg:text-[48px] xl:text-[54px] leading-[1.02] text-[#111827] font-normal tracking-[-0.01em] transition-all duration-700 delay-100 ${
+              className={`font-display font-semibold text-[32px] sm:text-[38px] lg:text-[44px] leading-tight text-[#111827] tracking-display transition-all duration-700 delay-100 ${
                 loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
               }`}
             >

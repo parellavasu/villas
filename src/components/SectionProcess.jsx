@@ -149,7 +149,7 @@ export default function SectionProcess() {
               </span>
             </div>
 
-            <h2 className="font-serif font-bold text-[22px] sm:text-[25px] lg:text-[28px] leading-tight text-[#111827] tracking-tight">
+            <h2 className="font-display font-semibold text-[20px] sm:text-[26px] lg:text-[32px] leading-tight text-[#111827] tracking-display">
               From Virgin Land To A Living Community
             </h2>
           </div>
@@ -167,7 +167,7 @@ export default function SectionProcess() {
 
             <button
               onClick={togglePlay}
-              className="w-8 h-8 rounded-xs bg-white border border-gray-200 text-[#111827] hover:border-[#EA580C] hover:text-[#EA580C] hover:bg-[#FFF7ED] flex items-center justify-center transition-colors shadow-sm shrink-0 cursor-pointer"
+              className="w-8 h-8 rounded-full bg-white border border-gray-200 text-[#111827] hover:border-[#EA580C] hover:text-[#EA580C] hover:bg-[#FFF7ED] flex items-center justify-center transition-colors shadow-sm shrink-0 cursor-pointer"
               title={isPlaying ? 'Pause auto progression' : 'Resume auto progression'}
               aria-label={isPlaying ? 'Pause auto progression' : 'Resume auto progression'}
             >
@@ -184,7 +184,7 @@ export default function SectionProcess() {
               <button
                 key={idx}
                 onClick={() => handleSelectStep(idx)}
-                className={`relative text-left p-2.5 rounded-sm border transition-all duration-300 flex flex-col justify-between group cursor-pointer ${
+                className={`relative text-left p-2.5 rounded-[14px] border transition-all duration-300 flex flex-col justify-between group cursor-pointer ${
                   isActive
                     ? 'bg-white border-[#EA580C] shadow-md ring-1 ring-[#EA580C]/30'
                     : 'bg-white border-gray-200 hover:border-[#EA580C]/60 hover:bg-[#FFF7ED]/40 shadow-xs'
@@ -228,11 +228,11 @@ export default function SectionProcess() {
         </div>
 
         {/* MAIN VISUAL & INFORMATION CONTAINER */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-7 items-center bg-white border border-gray-200 rounded-sm p-4 sm:p-5 lg:p-6 shadow-luxury">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-7 items-center bg-white border border-gray-200 rounded-[14px] p-4 sm:p-5 lg:p-6 shadow-luxury">
           
           {/* LEFT: Realistic 3D Architectural Visual */}
           <div className="lg:col-span-7 relative">
-            <div className="relative aspect-[16/10] lg:h-[310px] w-full rounded-xs overflow-hidden border border-gray-200 bg-[#FAFAF9] shadow-md group">
+            <div className="relative aspect-[16/10] lg:h-[310px] w-full rounded-[14px] overflow-hidden border border-gray-200 bg-[#FAFAF9] shadow-md group">
               <img
                 key={currentStepData.image}
                 src={currentStepData.image}
@@ -242,7 +242,7 @@ export default function SectionProcess() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#111827]/75 via-transparent to-transparent pointer-events-none" />
 
               <div className="absolute top-3 left-3 flex items-center space-x-2 pointer-events-none">
-                <span className="inline-block px-2.5 py-0.5 bg-white/95 backdrop-blur-sm text-[#EA580C] font-mono text-[9px] tracking-[0.2em] border border-gray-200 rounded-xs shadow-sm font-semibold">
+                <span className="inline-block px-2.5 py-0.5 bg-white/95 backdrop-blur-sm text-[#EA580C] font-mono text-[9px] tracking-[0.2em] border border-gray-200 rounded-full shadow-sm font-semibold">
                   {currentStepData.badge}
                 </span>
               </div>
@@ -316,7 +316,7 @@ export default function SectionProcess() {
             <div className="flex items-center justify-between pt-2.5 border-t border-gray-200">
               <button
                 onClick={() => handleSelectStep((activeStep - 1 + processSteps.length) % processSteps.length)}
-                className="inline-flex items-center space-x-1 text-[10.5px] font-mono tracking-wider text-[#6B7280] hover:text-[#EA580C] transition-colors cursor-pointer"
+                className="inline-flex items-center space-x-1 px-3 py-1 border border-gray-200 bg-white hover:border-[#EA580C] text-[10.5px] font-mono tracking-wider text-[#6B7280] hover:text-[#EA580C] rounded-full transition-colors cursor-pointer"
               >
                 <ChevronLeft className="w-3 h-3" />
                 <span>Previous</span>
@@ -328,7 +328,7 @@ export default function SectionProcess() {
 
               <button
                 onClick={() => handleSelectStep((activeStep + 1) % processSteps.length)}
-                className="inline-flex items-center space-x-1 text-[10.5px] font-mono tracking-wider text-[#EA580C] hover:text-[#C2410C] transition-colors font-semibold cursor-pointer"
+                className="inline-flex items-center space-x-1.5 px-3.5 py-1 bg-[#EA580C] hover:bg-[#C2410C] text-white text-[10.5px] font-mono tracking-wider rounded-full transition-colors font-semibold cursor-pointer shadow-xs"
               >
                 <span>Next Step</span>
                 <ChevronRight className="w-3 h-3" />

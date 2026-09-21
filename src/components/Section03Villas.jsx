@@ -43,7 +43,7 @@ export default function Section03Villas({ onSelectVilla }) {
                 06 / The Villas
               </span>
             </div>
-            <h2 className="font-serif font-bold text-[22px] sm:text-[25px] lg:text-[28px] tracking-tight text-[#111827] leading-tight">
+            <h2 className="font-display font-semibold text-[20px] sm:text-[26px] lg:text-[32px] tracking-display text-[#111827] leading-tight">
               Independent Villas. Thoughtfully Designed.
             </h2>
           </div>
@@ -60,7 +60,7 @@ export default function Section03Villas({ onSelectVilla }) {
           <div className="lg:col-span-8 flex flex-col">
             
             {/* Top Controls: Typology + Floor Level Switchers */}
-            <div className="flex flex-wrap items-center justify-between gap-2 p-2.5 bg-white border border-gray-200 rounded-sm mb-2.5 shadow-xs">
+            <div className="flex flex-wrap items-center justify-between gap-2 p-2.5 bg-white border border-gray-200 rounded-[14px] mb-2.5 shadow-xs">
               
               {/* Typology Switcher */}
               <div className="flex items-center space-x-1.5">
@@ -69,7 +69,7 @@ export default function Section03Villas({ onSelectVilla }) {
                 </span>
                 <button
                   onClick={() => setVillaType('east')}
-                  className={`px-3 py-1 text-[10.5px] font-mono tracking-wider rounded-xs transition-all cursor-pointer ${
+                  className={`px-3.5 py-1 text-[10.5px] font-mono tracking-wider rounded-full transition-all cursor-pointer ${
                     villaType === 'east'
                       ? 'bg-[#EA580C] text-white font-bold shadow-xs'
                       : 'bg-white text-[#6B7280] border border-gray-200 hover:bg-[#FFF7ED]'
@@ -79,7 +79,7 @@ export default function Section03Villas({ onSelectVilla }) {
                 </button>
                 <button
                   onClick={() => setVillaType('west')}
-                  className={`px-3 py-1 text-[10.5px] font-mono tracking-wider rounded-xs transition-all cursor-pointer ${
+                  className={`px-3.5 py-1 text-[10.5px] font-mono tracking-wider rounded-full transition-all cursor-pointer ${
                     villaType === 'west'
                       ? 'bg-[#EA580C] text-white font-bold shadow-xs'
                       : 'bg-white text-[#6B7280] border border-gray-200 hover:bg-[#FFF7ED]'
@@ -103,7 +103,7 @@ export default function Section03Villas({ onSelectVilla }) {
                   <button
                     key={lvl.id}
                     onClick={() => setActiveFloor(lvl.id)}
-                    className={`px-2 py-0.5 text-[10px] font-mono tracking-wider rounded-xs transition-all cursor-pointer ${
+                    className={`px-2.5 py-0.5 text-[10px] font-mono tracking-wider rounded-full transition-all cursor-pointer ${
                       activeFloor === lvl.id
                         ? 'bg-[#EA580C] text-white font-semibold shadow-xs'
                         : 'bg-white border border-gray-200 text-[#6B7280] hover:text-[#111827]'
@@ -117,10 +117,10 @@ export default function Section03Villas({ onSelectVilla }) {
             </div>
 
             {/* 3D Cutaway Viewport (Height Calibrated for Viewport) */}
-            <div className="h-[310px] sm:h-[350px] lg:h-[380px] rounded-sm overflow-hidden border border-gray-200 bg-white shadow-luxury relative">
+            <div className="h-[310px] sm:h-[350px] lg:h-[380px] rounded-[14px] overflow-hidden border border-gray-200 bg-white shadow-luxury relative">
               <VillaCutaway3D activeFloor={activeFloor} villaType={villaType} />
 
-              <div className="absolute bottom-3 left-3 pointer-events-none bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-xs border border-gray-200 text-[9.5px] font-mono text-[#6B7280] flex items-center space-x-1.5 shadow-xs">
+              <div className="absolute bottom-3 left-3 pointer-events-none bg-white/95 backdrop-blur-md px-3 py-1 rounded-full border border-gray-200 text-[9.5px] font-mono text-[#6B7280] flex items-center space-x-1.5 shadow-xs">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#EA580C] animate-pulse" />
                 <span>360° Interactive · Drag To Rotate</span>
               </div>
@@ -130,7 +130,7 @@ export default function Section03Villas({ onSelectVilla }) {
 
           {/* Right Column: Key Specifications Card (~35%) */}
           <div className="lg:col-span-4 flex flex-col">
-            <div className="p-4 sm:p-5 bg-white border border-gray-200 rounded-sm shadow-luxury">
+            <div className="p-4 sm:p-5 bg-white border border-gray-200 rounded-[14px] shadow-luxury">
               <div className="text-[10px] font-mono tracking-widest text-[#EA580C] mb-0.5 font-semibold">
                 Architectural Specifications
               </div>
@@ -149,7 +149,7 @@ export default function Section03Villas({ onSelectVilla }) {
 
               <button
                 onClick={onSelectVilla}
-                className="w-full mt-4 py-2.5 bg-[#EA580C] hover:bg-[#C2410C] text-white text-[11px] font-bold tracking-[0.16em] rounded-xs shadow-md transition-all flex items-center justify-center space-x-1.5 cursor-pointer"
+                className="w-full mt-4 py-2.5 bg-[#EA580C] hover:bg-[#C2410C] text-white text-[11px] font-bold tracking-[0.16em] rounded-full shadow-md transition-all flex items-center justify-center space-x-1.5 cursor-pointer"
               >
                 <span>Request Floorplan PDF</span>
                 <ArrowUpRight className="w-3.5 h-3.5 text-white" />

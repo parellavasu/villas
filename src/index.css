@@ -12,7 +12,7 @@
     background-color: #FFFFFF;
     color: #111827;
     overflow-x: hidden;
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
   }
 
   /* Sunlit White & Architectural Orange Scrollbar */
@@ -51,6 +51,18 @@ html.lenis, html.lenis body {
 
 .lenis.lenis-smooth iframe {
   pointer-events: none;
+}
+
+/* Density tokens: container 76rem and section padding 96px */
+.density-container {
+  max-width: 76rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-padding {
+  padding-top: clamp(24px, 5vh, 96px);
+  padding-bottom: clamp(24px, 5vh, 96px);
 }
 
 /* Clean Warm Ivory Canvas (Zero Grid Lines) */

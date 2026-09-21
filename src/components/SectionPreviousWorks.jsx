@@ -143,13 +143,13 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
               </span>
             </div>
 
-            <h2 className="font-serif font-bold text-[22px] sm:text-[25px] lg:text-[28px] leading-tight text-[#111827] tracking-tight">
+            <h2 className="font-display font-semibold text-[20px] sm:text-[26px] lg:text-[32px] leading-tight text-[#111827] tracking-display">
               From Krafted Homes To Antelia Groves
             </h2>
           </div>
 
           {/* Filter Tabs */}
-          <div className="flex flex-wrap items-center gap-1 p-0.5 bg-[#FAFAF9] border border-gray-200 rounded-xs">
+          <div className="flex flex-wrap items-center gap-1 p-1 bg-[#FAFAF9] border border-gray-200 rounded-full">
             {[
               { id: 'all', label: 'All Works (6)' },
               { id: 'krafted', label: 'Krafted (Legacy)' },
@@ -163,7 +163,7 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
                     setActiveFilter(tab.id);
                     setActiveProjectIdx(0);
                   }}
-                  className={`px-3 py-1 text-[9.5px] sm:text-[10px] font-mono tracking-wider rounded-xs transition-all cursor-pointer ${
+                  className={`px-3.5 py-1 text-[9.5px] sm:text-[10px] font-mono tracking-wider rounded-full transition-all cursor-pointer ${
                     isActive
                       ? 'bg-[#EA580C] text-white font-bold shadow-xs'
                       : 'text-[#6B7280] hover:text-[#111827]'
@@ -187,7 +187,7 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
                 <button
                   key={p.id}
                   onClick={() => setActiveProjectIdx(idx)}
-                  className={`text-left p-2 sm:p-2.5 rounded-xs border transition-all duration-200 cursor-pointer flex items-center justify-between group ${
+                  className={`text-left p-2 sm:p-2.5 rounded-[14px] border transition-all duration-200 cursor-pointer flex items-center justify-between group ${
                     isSelected
                       ? 'bg-[#FFF7ED] border-[#EA580C] shadow-xs ring-1 ring-[#EA580C]/20'
                       : 'bg-white border-gray-200 hover:border-[#EA580C]/40 hover:bg-[#FAFAF9]'
@@ -209,7 +209,7 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
                     </div>
                   </div>
 
-                  <span className={`font-mono text-[8.5px] tracking-wider px-1.5 py-0.5 rounded-xs shrink-0 ml-1 ${
+                  <span className={`font-mono text-[8.5px] tracking-wider px-2 py-0.5 rounded-full shrink-0 ml-1 ${
                     p.category === 'antelia'
                       ? 'bg-[#EA580C] text-white font-bold'
                       : 'bg-gray-100 text-[#4B5563]'
@@ -222,7 +222,7 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
           </div>
 
           {/* Right Column: Featured Selected Project Showcase Card (7.5 cols) */}
-          <div className="lg:col-span-8 bg-white border border-gray-200 rounded-sm shadow-luxury overflow-hidden flex flex-col justify-between">
+          <div className="lg:col-span-8 bg-white border border-gray-200 rounded-[14px] shadow-luxury overflow-hidden flex flex-col justify-between">
             <div className="grid grid-cols-1 md:grid-cols-12 h-full min-h-[280px] lg:h-[340px]">
               
               {/* Visual Render Container */}
@@ -236,7 +236,7 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
 
                 <div className="absolute top-2.5 left-2.5">
-                  <span className="inline-block px-2.5 py-0.5 bg-white/95 backdrop-blur-sm text-[#111827] font-mono text-[8.5px] tracking-[0.16em] border border-gray-200 rounded-xs font-semibold">
+                  <span className="inline-block px-2.5 py-0.5 bg-white/95 backdrop-blur-sm text-[#111827] font-mono text-[8.5px] tracking-[0.16em] border border-gray-200 rounded-full font-semibold">
                     {activeProject.tag}
                   </span>
                 </div>
@@ -312,7 +312,7 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
           ].map((item, idx) => (
             <div
               key={idx}
-              className="p-2 sm:p-2.5 bg-[#FAFAF9] border border-gray-200/90 rounded-xs hover:border-[#EA580C]/60 hover:bg-white transition-all shadow-2xs group flex items-center justify-between"
+              className="p-2 sm:p-2.5 bg-[#FAFAF9] border border-gray-200/90 rounded-[14px] hover:border-[#EA580C]/60 hover:bg-white transition-all shadow-2xs group flex items-center justify-between"
             >
               <div>
                 <div className="text-[13px] sm:text-[14px] font-sans font-bold text-[#EA580C] tracking-tight leading-tight">

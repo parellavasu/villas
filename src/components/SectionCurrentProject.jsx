@@ -94,7 +94,7 @@ export default function SectionCurrentProject({ onExploreVillas, onOpenBooking }
             </div>
 
             {/* Main Heading */}
-            <h2 className="font-serif font-bold text-[20px] sm:text-[24px] lg:text-[26px] leading-tight text-[#111827] tracking-tight mb-2.5">
+            <h2 className="font-display font-semibold text-[20px] sm:text-[26px] lg:text-[32px] leading-tight text-[#111827] tracking-display mb-2.5">
               A Community Designed Around Better Living
             </h2>
 
@@ -108,7 +108,7 @@ export default function SectionCurrentProject({ onExploreVillas, onOpenBooking }
               {projectFacts.map((fact, idx) => (
                 <div
                   key={idx}
-                  className="p-3 sm:p-3.5 bg-white border border-gray-200/90 rounded-xs flex flex-col justify-center hover:border-[#EA580C]/60 transition-all shadow-sm hover:shadow-md"
+                  className="p-3 sm:p-3.5 bg-white border border-gray-200/90 rounded-[14px] flex flex-col justify-center hover:border-[#EA580C]/60 transition-all shadow-sm hover:shadow-md"
                 >
                   <div className="font-sans font-bold text-[20px] sm:text-[23px] lg:text-[24px] text-[#EA580C] leading-tight tracking-tight">
                     {fact.num}
@@ -124,7 +124,7 @@ export default function SectionCurrentProject({ onExploreVillas, onOpenBooking }
 
           {/* RIGHT COLUMN: Realistic 3D Architectural Visualization with Interactive Toggle */}
           <div className="lg:col-span-5 relative order-2 mt-4 lg:mt-0">
-            <div className="relative aspect-[16/11] lg:h-[290px] w-full rounded-xs overflow-hidden border border-gray-200 bg-white shadow-sm group">
+            <div className="relative aspect-[16/11] lg:h-[290px] w-full rounded-[14px] overflow-hidden border border-gray-200 bg-white shadow-sm group">
               <img
                 src={currentVisual.image}
                 alt={currentVisual.alt}
@@ -133,10 +133,10 @@ export default function SectionCurrentProject({ onExploreVillas, onOpenBooking }
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
               
               {/* Top View Selector Buttons */}
-              <div className="absolute top-3 right-3 z-10 flex items-center space-x-1.5 bg-white/95 backdrop-blur-md border border-gray-200 p-1 rounded-xs shadow-sm">
+              <div className="absolute top-3 right-3 z-10 flex items-center space-x-1.5 bg-white/95 backdrop-blur-md border border-gray-200 p-1 rounded-full shadow-sm">
                 <button
                   onClick={() => setActiveVisual('villa')}
-                  className={`px-2.5 py-0.5 font-mono text-[9px] tracking-wider rounded-xs transition-colors cursor-pointer ${
+                  className={`px-3 py-0.5 font-mono text-[9px] tracking-wider rounded-full transition-colors cursor-pointer ${
                     activeVisual === 'villa'
                       ? 'bg-[#EA580C] text-white font-bold'
                       : 'text-[#4B5563] hover:text-[#111827] hover:bg-black/5'
@@ -146,7 +146,7 @@ export default function SectionCurrentProject({ onExploreVillas, onOpenBooking }
                 </button>
                 <button
                   onClick={() => setActiveVisual('enclave')}
-                  className={`px-2.5 py-0.5 font-mono text-[9px] tracking-wider rounded-xs transition-colors cursor-pointer ${
+                  className={`px-3 py-0.5 font-mono text-[9px] tracking-wider rounded-full transition-colors cursor-pointer ${
                     activeVisual === 'enclave'
                       ? 'bg-[#EA580C] text-white font-bold'
                       : 'text-[#4B5563] hover:text-[#111827] hover:bg-black/5'
@@ -158,7 +158,7 @@ export default function SectionCurrentProject({ onExploreVillas, onOpenBooking }
 
               {/* Top Left Badge */}
               <div className="absolute top-3 left-3 pointer-events-none">
-                <span className="inline-flex items-center space-x-1.5 px-2.5 py-0.5 bg-white/95 backdrop-blur-md border border-gray-200 text-[#111827] font-mono text-[9px] tracking-[0.1em] rounded-xs shadow-sm font-semibold">
+                <span className="inline-flex items-center space-x-1.5 px-2.5 py-0.5 bg-white/95 backdrop-blur-md border border-gray-200 text-[#111827] font-mono text-[9px] tracking-[0.1em] rounded-full shadow-sm font-semibold">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#EA580C] animate-pulse" />
                   <span>{currentVisual.badge}</span>
                 </span>
@@ -193,10 +193,10 @@ export default function SectionCurrentProject({ onExploreVillas, onOpenBooking }
               return (
                 <div
                   key={idx}
-                  className="p-3 bg-white border border-gray-200/90 rounded-xs hover:border-[#EA580C]/60 transition-all duration-300 group flex flex-col justify-between shadow-sm hover:shadow-md"
+                  className="p-3 bg-white border border-gray-200/90 rounded-[14px] hover:border-[#EA580C]/60 transition-all duration-300 group flex flex-col justify-between shadow-sm hover:shadow-md"
                 >
                   <div className="flex items-center space-x-2 mb-1">
-                    <div className="w-5 h-5 rounded-xs bg-[#FFF7ED] border border-[#FED7AA] flex items-center justify-center text-[#EA580C] shrink-0">
+                    <div className="w-5 h-5 rounded-full bg-[#FFF7ED] border border-[#FED7AA] flex items-center justify-center text-[#EA580C] shrink-0">
                       <Icon className="w-3 h-3" />
                     </div>
                     <h3 className="font-sans text-[11.5px] sm:text-[12px] font-semibold tracking-[0.02em] text-[#111827]">

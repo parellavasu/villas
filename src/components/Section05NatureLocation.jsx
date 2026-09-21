@@ -66,7 +66,7 @@ export default function Section05NatureLocation() {
                 08 / The Location
               </span>
             </div>
-            <h2 className="font-serif font-bold text-[22px] sm:text-[25px] lg:text-[28px] tracking-tight text-[#111827] leading-tight">
+            <h2 className="font-display font-semibold text-[20px] sm:text-[26px] lg:text-[32px] tracking-display text-[#111827] leading-tight">
               Connected To Bengaluru. Close To What Matters.
             </h2>
           </div>
@@ -86,7 +86,7 @@ export default function Section05NatureLocation() {
           ].map((h, i) => (
             <div
               key={i}
-              className="p-2.5 sm:p-3 bg-white border border-gray-200 rounded-sm shadow-xs hover:border-[#EA580C] transition-all duration-300 flex items-center justify-between"
+              className="p-2.5 sm:p-3 bg-white border border-gray-200 rounded-[14px] shadow-xs hover:border-[#EA580C] transition-all duration-300 flex items-center justify-between"
             >
               <div>
                 <div className="flex items-center space-x-1 text-[9px] font-mono tracking-widest text-[#EA580C] font-semibold">
@@ -106,12 +106,12 @@ export default function Section05NatureLocation() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch">
           
           {/* Left Column: Realistic Interactive Map */}
-          <div className="lg:col-span-7 flex flex-col bg-white border border-gray-200 rounded-sm overflow-hidden shadow-luxury">
+          <div className="lg:col-span-7 flex flex-col bg-white border border-gray-200 rounded-[14px] overflow-hidden shadow-luxury">
             <RealisticLocationMap activeTab={activeTab} />
           </div>
 
           {/* Right Column: Interactive Category Filter & List */}
-          <div className="lg:col-span-5 flex flex-col justify-between bg-white border border-gray-200 rounded-sm overflow-hidden shadow-luxury">
+          <div className="lg:col-span-5 flex flex-col justify-between bg-white border border-gray-200 rounded-[14px] overflow-hidden shadow-luxury">
             
             <div>
               {/* 4 Filter Tabs */}
@@ -120,7 +120,7 @@ export default function Section05NatureLocation() {
                   <button
                     key={key}
                     onClick={() => setActiveTab(key)}
-                    className={`py-1.5 px-1 text-center text-[9.5px] sm:text-[10px] font-mono tracking-wider transition-all rounded-xs cursor-pointer ${
+                    className={`py-1.5 px-1 text-center text-[9.5px] sm:text-[10px] font-mono tracking-wider transition-all rounded-full cursor-pointer ${
                       activeTab === key
                         ? 'bg-[#EA580C] text-white font-bold shadow-xs'
                         : 'text-[#6B7280] hover:text-[#111827] hover:bg-white/80'
@@ -149,7 +149,7 @@ export default function Section05NatureLocation() {
                 {activeData.items.map((item, idx) => (
                   <div
                     key={idx}
-                    className="p-2 sm:p-2.5 bg-[#FAFAF9] rounded-xs border border-gray-200 flex items-center justify-between hover:bg-[#FFF7ED]/50 hover:border-[#FED7AA] transition-colors"
+                    className="p-2 sm:p-2.5 bg-[#FAFAF9] rounded-[14px] border border-gray-200 flex items-center justify-between hover:bg-[#FFF7ED]/50 hover:border-[#FED7AA] transition-colors"
                   >
                     <div className="pr-2">
                       <div className="text-[12.5px] font-semibold text-[#111827] leading-tight">

@@ -187,7 +187,7 @@ export default function Navigation({ onOpenBooking, scrollProgress: externalProg
                 setMobileMenuOpen(false);
                 onOpenBooking();
               }}
-              className="mt-6 w-full py-3.5 bg-[#EA580C] hover:bg-[#C2410C] text-white text-[13px] font-bold tracking-[0.06em] rounded-xs shadow-sm cursor-pointer"
+              className="mt-6 w-full py-3.5 bg-[#EA580C] hover:bg-[#C2410C] text-white text-[13px] font-bold tracking-[0.06em] rounded-full shadow-sm cursor-pointer"
             >
               Schedule Private Visit
             </button>
