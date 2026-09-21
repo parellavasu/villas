@@ -6,7 +6,7 @@ import {
 
 export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas }) {
   const [activeFilter, setActiveFilter] = useState('all'); // 'all' | 'krafted' | 'antelia'
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [activeProjectIdx, setActiveProjectIdx] = useState(0);
 
   const projects = [
     {
@@ -14,7 +14,6 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
       category: 'krafted',
       tag: 'KRAFTED HOMES · COMPLETED',
       status: 'SOLD OUT & OCCUPIED',
-      statusColor: 'bg-[#2E5A44] text-white',
       title: 'The Artisan Residences',
       subtitle: 'BOUTIQUE INDIVIDUAL HOMES',
       era: '2019 – 2021',
@@ -33,7 +32,6 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
       category: 'krafted',
       tag: 'KRAFTED HOMES · COMPLETED',
       status: 'SOLD OUT & OCCUPIED',
-      statusColor: 'bg-[#2E5A44] text-white',
       title: 'Urban Row Enclaves',
       subtitle: 'CONTEMPORARY COMPACT CLUSTER',
       era: '2021 – 2023',
@@ -52,7 +50,6 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
       category: 'krafted',
       tag: 'KRAFTED HOMES · COMPLETED',
       status: 'SOLD OUT & OCCUPIED',
-      statusColor: 'bg-[#2E5A44] text-white',
       title: 'Green Courtyard Townhomes',
       subtitle: 'ECO-CENTRIC RESIDENCES',
       era: '2022 – 2024',
@@ -71,7 +68,6 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
       category: 'antelia',
       tag: 'ANTELIA GROVES · CURRENT FLAGSHIP',
       status: 'CURRENTLY IMPLEMENTING',
-      statusColor: 'bg-[#B89047] text-white',
       title: 'Independent Luxury Villas',
       subtitle: 'SPLIT-LEVEL ARCHITECTURAL MASTERPIECES',
       era: '2024 – PRESENT',
@@ -90,7 +86,6 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
       category: 'antelia',
       tag: 'ANTELIA GROVES · CURRENT FLAGSHIP',
       status: 'CENTRAL AMENITY',
-      statusColor: 'bg-[#B89047] text-white',
       title: '15,000 Sq.Ft Resort Clubhouse',
       subtitle: 'SIGNATURE RECREATIONAL HUB',
       era: 'FLAGSHIP CENTERPIECE',
@@ -109,7 +104,6 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
       category: 'antelia',
       tag: 'ANTELIA GROVES · CURRENT FLAGSHIP',
       status: '10-ACRE SANCTUARY',
-      statusColor: 'bg-[#B89047] text-white',
       title: '10-Acre Masterplanned Community',
       subtitle: 'AN ARCHITECTURAL COMMUNITY IN NATURE',
       era: 'GRAND SCALE',
@@ -129,52 +123,50 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
     ? projects
     : projects.filter((p) => p.category === activeFilter);
 
+  // Keep index valid when filter changes
+  const activeProject = filteredProjects[activeProjectIdx] || filteredProjects[0] || projects[0];
+
   return (
     <section
       id="portfolio"
-      className="relative bg-[#FFFFFF] text-[#1D2421] py-14 sm:py-16 lg:py-20 border-t border-[#EBE7DF] scroll-mt-20 overflow-hidden font-sans"
+      className="relative bg-white text-[#111827] py-5 sm:py-6 lg:py-8 border-t border-gray-200 scroll-mt-[74px] overflow-hidden font-sans lg:min-h-[calc(100vh-74px)] flex flex-col justify-center"
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-8">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 w-full">
         
-        {/* =========================================================
-            1. SECTION HEADER: OUR EVOLUTION STORY
-            ========================================================= */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-5 border-b border-[#EBE7DF]">
+        {/* SECTION HEADER: COMPACT HORIZONTAL ROW */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-3 sm:mb-4 pb-2.5 border-b border-gray-200 gap-2">
           <div className="max-w-2xl">
-            
-            <div className="inline-flex items-center space-x-2.5 mb-2.5">
-              <span className="w-5 h-[1.5px] bg-[#C5A880]" />
-              <span className="font-mono text-[11px] font-semibold tracking-[0.25em] text-[#B89047] uppercase">
-                07 / OUR LEGACY & PORTFOLIO
+            <div className="inline-flex items-center space-x-2 mb-1">
+              <span className="w-4 h-[1.5px] bg-[#EA580C]" />
+              <span className="font-mono text-[10px] sm:text-[10.5px] font-semibold tracking-[0.25em] text-[#EA580C] uppercase">
+                07 / OUR LEGACY &amp; PORTFOLIO
               </span>
             </div>
 
-            <h2 className="font-sans font-semibold text-[28px] sm:text-[34px] lg:text-[38px] leading-tight text-[#1D2421] tracking-tight mb-2">
+            <h2 className="font-sans font-semibold text-[20px] sm:text-[23px] lg:text-[26px] leading-tight text-[#111827] tracking-tight">
               FROM KRAFTED HOMES TO ANTELIA GROVES
             </h2>
-
-            <p className="font-sans text-[14px] sm:text-[15px] leading-relaxed text-[#5A6862] max-w-xl font-normal">
-              From building thoughtful boutique homes under Krafted Homes to creating a 10-acre luxury villa sanctuary at Antelia Groves — our evolution is built on trust, quality, and timeless architecture.
-            </p>
-
           </div>
 
-          {/* Quick Filter Tabs */}
-          <div className="mt-5 md:mt-0 flex flex-wrap items-center gap-1.5 p-1 bg-[#FAF9F5] border border-[#EBE7DF] rounded-xs">
+          {/* Filter Tabs */}
+          <div className="flex flex-wrap items-center gap-1 p-0.5 bg-[#FAFAF9] border border-gray-200 rounded-xs">
             {[
               { id: 'all', label: 'ALL WORKS (6)' },
-              { id: 'krafted', label: 'KRAFTED HOMES (LEGACY)' },
-              { id: 'antelia', label: 'ANTELIA GROVES (CURRENT)' },
+              { id: 'krafted', label: 'KRAFTED (LEGACY)' },
+              { id: 'antelia', label: 'ANTELIA (CURRENT)' },
             ].map((tab) => {
               const isActive = activeFilter === tab.id;
               return (
                 <button
                   key={tab.id}
-                  onClick={() => setActiveFilter(tab.id)}
-                  className={`px-3.5 py-1.5 text-[11px] font-mono uppercase tracking-wider rounded-xs transition-all cursor-pointer ${
+                  onClick={() => {
+                    setActiveFilter(tab.id);
+                    setActiveProjectIdx(0);
+                  }}
+                  className={`px-3 py-1 text-[9.5px] sm:text-[10px] font-mono uppercase tracking-wider rounded-xs transition-all cursor-pointer ${
                     isActive
-                      ? 'bg-[#B89047] text-white font-semibold shadow-xs'
-                      : 'bg-transparent text-[#5A6862] hover:text-[#1D2421]'
+                      ? 'bg-[#EA580C] text-white font-bold shadow-xs'
+                      : 'text-[#6B7280] hover:text-[#111827]'
                   }`}
                 >
                   {tab.label}
@@ -184,204 +176,157 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
           </div>
         </div>
 
-        {/* =========================================================
-            2. THE EVOLUTION METRICS STRIP (TRUST & SCALE)
-            ========================================================= */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-10">
-          {[
-            {
-              num: 'KRAFTED HOMES',
-              title: 'Where It Began',
-              detail: 'Boutique artisan homes built with care',
-            },
-            {
-              num: '100% DELIVERED',
-              title: 'Flawless Track Record',
-              detail: 'Sold out & handed over on schedule',
-            },
-            {
-              num: '120+ FAMILIES',
-              title: 'Happy Homeowners',
-              detail: 'Thriving in our past communities',
-            },
-            {
-              num: 'ANTELIA GROVES',
-              title: 'The Flagship Leap',
-              detail: '10 Acres · 189 Luxury Villas Sanctuary',
-            },
-          ].map((item, idx) => (
-            <div
-              key={idx}
-              className="p-4 sm:p-5 bg-[#FAFAF7] border border-[#EBE7DF] rounded-xs shadow-xs"
-            >
-              <div className="text-[17px] sm:text-[20px] lg:text-[22px] font-sans font-bold text-[#B89047] tracking-tight leading-snug">
-                {item.num}
-              </div>
-              <div className="text-[11.5px] font-sans font-semibold text-[#1D2421] uppercase tracking-wide mt-1">
-                {item.title}
-              </div>
-              <div className="text-[11px] font-sans text-[#5A6862] mt-0.5">
-                {item.detail}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* =========================================================
-            3. BRAND EVOLUTION COMPARISON CARD (THE STORY)
-            ========================================================= */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 p-6 sm:p-8 bg-[#FAF9F5] border border-[#EBE7DF] rounded-xs mb-10">
+        {/* MAIN INTERACTIVE SHOWCASE CONTAINER (CALIBRATED TO VIEWPORT) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-4 items-stretch mb-3 sm:mb-4">
           
-          <div className="lg:col-span-6 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-[#EBE7DF] pb-5 lg:pb-0 lg:pr-8">
-            <div>
-              <div className="inline-flex items-center space-x-2 px-2.5 py-1 bg-stone-200/70 text-[#1D2421] text-[10px] font-mono uppercase tracking-widest rounded-xs mb-3">
-                <span>STAGE 1: THE FOUNDATION</span>
-              </div>
-              <h3 className="font-sans text-[20px] sm:text-[22px] font-semibold text-[#1D2421] mb-2">
-                Krafted Homes (Boutique Residences)
-              </h3>
-              <p className="text-[13.5px] sm:text-[14px] leading-relaxed text-[#5A6862]">
-                We began with a clear purpose: building bespoke, compact individual houses with uncompromising structural honesty. Every brick was laid with pride, every doorway carved from real timber, and every project delivered with complete customer transparency. All homes were rapidly sold out, establishing a rock-solid foundation of homeowner trust.
-              </p>
-            </div>
-            <div className="mt-4 flex items-center space-x-4 text-[11.5px] font-mono text-[#8C9E96]">
-              <span>• Boutique Scale</span>
-              <span>• 100% Sold & Occupied</span>
-              <span>• Zero Delivery Delays</span>
-            </div>
+          {/* Left Column: Interactive Project Selector List (4.5 cols) */}
+          <div className="lg:col-span-4 flex flex-col space-y-1.5 justify-between">
+            {filteredProjects.map((p, idx) => {
+              const isSelected = activeProject.id === p.id;
+              return (
+                <button
+                  key={p.id}
+                  onClick={() => setActiveProjectIdx(idx)}
+                  className={`text-left p-2 sm:p-2.5 rounded-xs border transition-all duration-200 cursor-pointer flex items-center justify-between group ${
+                    isSelected
+                      ? 'bg-[#FFF7ED] border-[#EA580C] shadow-xs ring-1 ring-[#EA580C]/20'
+                      : 'bg-white border-gray-200 hover:border-[#EA580C]/40 hover:bg-[#FAFAF9]'
+                  }`}
+                >
+                  <div className="flex items-center space-x-2.5">
+                    <span className={`font-mono text-[9.5px] font-semibold ${isSelected ? 'text-[#EA580C]' : 'text-gray-400'}`}>
+                      0{p.id}
+                    </span>
+                    <div>
+                      <div className={`font-sans text-[12px] sm:text-[12.5px] font-semibold leading-tight line-clamp-1 ${
+                        isSelected ? 'text-[#111827]' : 'text-[#4B5563] group-hover:text-[#111827]'
+                      }`}>
+                        {p.title}
+                      </div>
+                      <div className="font-mono text-[9px] text-[#6B7280]">
+                        {p.era} · {p.scale}
+                      </div>
+                    </div>
+                  </div>
+
+                  <span className={`font-mono text-[8.5px] uppercase tracking-wider px-1.5 py-0.5 rounded-xs shrink-0 ml-1 ${
+                    p.category === 'antelia'
+                      ? 'bg-[#EA580C] text-white font-bold'
+                      : 'bg-gray-100 text-[#4B5563]'
+                  }`}>
+                    {p.category === 'antelia' ? 'FLAGSHIP' : 'DELIVERED'}
+                  </span>
+                </button>
+              );
+            })}
           </div>
 
-          <div className="lg:col-span-6 flex flex-col justify-between pt-2 lg:pt-0 lg:pl-4">
-            <div>
-              <div className="inline-flex items-center space-x-2 px-2.5 py-1 bg-[#B89047]/15 text-[#B89047] text-[10px] font-mono uppercase tracking-widest rounded-xs mb-3 font-semibold">
-                <span>STAGE 2: THE EVOLUTION</span>
+          {/* Right Column: Featured Selected Project Showcase Card (7.5 cols) */}
+          <div className="lg:col-span-8 bg-white border border-gray-200 rounded-sm shadow-luxury overflow-hidden flex flex-col justify-between">
+            <div className="grid grid-cols-1 md:grid-cols-12 h-full min-h-[280px] lg:h-[340px]">
+              
+              {/* Visual Render Container */}
+              <div className="md:col-span-7 relative bg-[#FAFAF9] overflow-hidden group">
+                <img
+                  key={activeProject.image}
+                  src={activeProject.image}
+                  alt={activeProject.title}
+                  className="w-full h-full object-cover object-center transform transition-transform duration-700 ease-out group-hover:scale-104"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+
+                <div className="absolute top-2.5 left-2.5">
+                  <span className="inline-block px-2.5 py-0.5 bg-white/95 backdrop-blur-sm text-[#111827] font-mono text-[8.5px] uppercase tracking-[0.16em] border border-gray-200 rounded-xs font-semibold">
+                    {activeProject.tag}
+                  </span>
+                </div>
+
+                <div className="absolute bottom-2.5 left-3 right-3 text-white pointer-events-none">
+                  <div className="font-mono text-[8px] uppercase tracking-[0.2em] text-[#FED7AA] font-bold">
+                    {activeProject.subtitle}
+                  </div>
+                  <div className="font-sans text-[14px] sm:text-[15px] font-semibold text-white drop-shadow-md">
+                    {activeProject.title}
+                  </div>
+                </div>
               </div>
-              <h3 className="font-sans text-[20px] sm:text-[22px] font-semibold text-[#1D2421] mb-2">
-                Antelia Groves (10-Acre Luxury Villa Sanctuary)
-              </h3>
-              <p className="text-[13.5px] sm:text-[14px] leading-relaxed text-[#5A6862]">
-                Having mastered individual home construction, we evolved our vision into Antelia Groves. We scaled our design philosophy to an expansive 10-acre gated ecosystem: 189 split-level independent villas, 18-foot double-height living foyers, private gardens, and a 15,000 sq.ft resort clubhouse, all nestled within protected forest greenery.
-              </p>
-            </div>
-            <div className="mt-4 flex items-center space-x-4 text-[11.5px] font-mono text-[#B89047] font-semibold">
-              <span>• 10 Contiguous Acres</span>
-              <span>• 189 Independent Villas</span>
-              <span>• Resort Clubhouse & Pool</span>
-            </div>
-          </div>
 
-        </div>
-
-        {/* =========================================================
-            4. 6-CARD PORTFOLIO GALLERY GRID
-            ========================================================= */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {filteredProjects.map((project) => (
-            <div
-              key={project.id}
-              className="bg-white border border-[#EBE7DF] rounded-xs overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
-            >
-              <div>
-                {/* Visual Image */}
-                <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#F2EDE4]">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover object-center transform transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1D2421]/60 via-transparent to-transparent pointer-events-none" />
-
-                  {/* Status Badges */}
-                  <div className="absolute top-3 left-3 flex items-center space-x-2">
-                    <span className={`px-2.5 py-1 text-[9.5px] font-mono uppercase tracking-wider rounded-xs font-semibold shadow-xs ${project.statusColor}`}>
-                      {project.status}
+              {/* Project Blueprint Details */}
+              <div className="md:col-span-5 p-3.5 sm:p-4 flex flex-col justify-between border-t md:border-t-0 md:border-l border-gray-200 bg-white">
+                <div>
+                  <div className="flex items-center justify-between mb-1.5">
+                    <span className="font-mono text-[9px] uppercase tracking-wider text-[#EA580C] font-semibold">
+                      PROJECT SPECIFICATIONS
+                    </span>
+                    <span className="font-mono text-[9px] text-[#6B7280]">
+                      {activeProject.era}
                     </span>
                   </div>
 
-                  <div className="absolute bottom-2.5 left-3.5 right-3.5 text-white pointer-events-none flex items-end justify-between">
-                    <div>
-                      <div className="text-[9.5px] font-mono text-[#E8D8BA] uppercase tracking-wider">
-                        {project.tag}
-                      </div>
-                      <div className="text-[15px] font-sans font-semibold text-white leading-tight">
-                        {project.title}
-                      </div>
-                    </div>
-                    <div className="text-[10px] font-mono text-white/90">
-                      {project.scale}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Card Body */}
-                <div className="p-5">
-                  <div className="text-[11px] font-mono uppercase tracking-widest text-[#B89047] font-semibold mb-1">
-                    {project.subtitle}
-                  </div>
-                  <p className="text-[13px] leading-relaxed text-[#5A6862] mb-4">
-                    {project.description}
+                  <p className="font-sans text-[11.5px] sm:text-[12px] text-[#4B5563] leading-[1.5] mb-2.5 line-clamp-3">
+                    {activeProject.description}
                   </p>
 
-                  <div className="space-y-2 pt-3 border-t border-[#F1EFEA]">
-                    {project.highlights.map((item, i) => (
-                      <div key={i} className="flex items-center space-x-2 text-[12px] text-[#4A5750]">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#B89047] shrink-0" />
-                        <span className="truncate">{item}</span>
+                  <div className="space-y-1 mb-2.5">
+                    <div className="font-mono text-[8.5px] uppercase font-semibold tracking-wider text-[#111827]">
+                      VERIFIED ATTRIBUTES
+                    </div>
+                    {activeProject.highlights.map((h, i) => (
+                      <div key={i} className="flex items-start space-x-1.5">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#EA580C] shrink-0 mt-0.5" />
+                        <span className="font-sans text-[11px] text-[#4B5563] leading-snug line-clamp-1">
+                          {h}
+                        </span>
                       </div>
                     ))}
                   </div>
                 </div>
+
+                <div className="pt-2 border-t border-gray-200 flex items-center justify-between">
+                  <div className="font-mono text-[9px] text-[#6B7280]">
+                    SCALE: <span className="text-[#111827] font-bold">{activeProject.scale}</span>
+                  </div>
+                  <button
+                    onClick={onOpenBooking}
+                    className="inline-flex items-center space-x-1 font-mono text-[10px] font-bold uppercase tracking-wider text-[#EA580C] hover:text-[#C2410C] transition-colors cursor-pointer"
+                  >
+                    <span>Consult Architect</span>
+                    <ArrowUpRight className="w-3 h-3" />
+                  </button>
+                </div>
+
               </div>
 
-              {/* Card Footer */}
-              <div className="px-5 pb-5 pt-2 flex items-center justify-between border-t border-[#F8F7F4]">
-                <span className="text-[10.5px] font-mono text-[#8C9E96] uppercase tracking-wider">
-                  {project.era}
-                </span>
-                {project.category === 'antelia' ? (
-                  <button
-                    onClick={() => {
-                      if (onExploreVillas) onExploreVillas();
-                    }}
-                    className="inline-flex items-center space-x-1 text-[11px] font-mono text-[#B89047] hover:text-[#967433] font-semibold uppercase tracking-wider cursor-pointer"
-                  >
-                    <span>VIEW VILLA SPECS</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
-                  </button>
-                ) : (
-                  <span className="text-[10.5px] font-mono text-[#2E5A44] font-semibold uppercase tracking-wider">
-                    COMPLETED & DELIVERED ✓
-                  </span>
-                )}
+            </div>
+          </div>
+
+        </div>
+
+        {/* 4 EVOLUTION METRICS FOOTER STRIP */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-2.5">
+          {[
+            { num: 'KRAFTED HOMES', title: 'Where It Began', detail: 'Boutique artisan roots' },
+            { num: '100% DELIVERED', title: 'Flawless Record', detail: 'Sold out & handed over' },
+            { num: '120+ FAMILIES', title: 'Happy Owners', detail: 'Thriving past communities' },
+            { num: 'ANTELIA GROVES', title: 'The Flagship Leap', detail: '10 Acres · 189 Villas' },
+          ].map((item, idx) => (
+            <div
+              key={idx}
+              className="p-2 sm:p-2.5 bg-[#FAFAF9] border border-gray-200/90 rounded-xs hover:border-[#EA580C]/60 hover:bg-white transition-all shadow-2xs group flex items-center justify-between"
+            >
+              <div>
+                <div className="text-[13px] sm:text-[14px] font-sans font-bold text-[#EA580C] tracking-tight leading-tight">
+                  {item.num}
+                </div>
+                <div className="text-[10px] font-sans font-semibold text-[#111827] uppercase tracking-wide mt-0.5">
+                  {item.title}
+                </div>
+              </div>
+              <div className="hidden sm:block text-[9.5px] font-mono text-[#6B7280] text-right max-w-[90px] leading-tight">
+                {item.detail}
               </div>
             </div>
           ))}
-        </div>
-
-        {/* =========================================================
-            5. BOTTOM INVITATION BANNER
-            ========================================================= */}
-        <div className="p-6 sm:p-8 bg-[#FAF9F5] border border-[#C5A880]/40 rounded-xs flex flex-col md:flex-row items-center justify-between gap-6 shadow-xs">
-          <div className="max-w-xl text-center md:text-left">
-            <div className="font-mono text-[10.5px] text-[#B89047] uppercase tracking-widest font-semibold mb-1">
-              EXPERIENCE THE EVOLUTION IN PERSON
-            </div>
-            <h3 className="font-sans text-[20px] sm:text-[24px] font-semibold text-[#1D2421]">
-              Ready to Explore Antelia Groves?
-            </h3>
-            <p className="text-[13.5px] text-[#5A6862] mt-1">
-              Book a private on-site architectural tour and explore how our construction quality has evolved into South Bengaluru’s finest villa community.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-3 shrink-0">
-            <button
-              onClick={onOpenBooking}
-              className="px-6 py-3 bg-[#B89047] hover:bg-[#967433] text-white text-[11.5px] font-semibold uppercase tracking-[0.18em] rounded-xs transition-colors shadow-subtle cursor-pointer"
-            >
-              SCHEDULE A VISIT
-            </button>
-          </div>
         </div>
 
       </div>

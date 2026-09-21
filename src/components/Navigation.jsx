@@ -2,36 +2,51 @@ import React, { useState, useEffect } from 'react';
 import Logo from './Logo';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 
-export default function Navigation({ onOpenBooking, scrollProgress = 0 }) {
+export default function Navigation({ onOpenBooking, scrollProgress: externalProgress }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('VISION');
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 20);
 
-      // Determine active section
-      const sections = [
-        { id: 'vision', label: 'VISION' },
-        { id: 'overview', label: 'OVERVIEW' },
-        { id: 'about', label: 'ABOUT' },
-        { id: 'journey', label: 'PROCESS' },
-        { id: 'masterplan', label: 'MASTERPLAN' },
-        { id: 'villas', label: 'VILLAS' },
-        { id: 'portfolio', label: 'PORTFOLIO' },
-        { id: 'location', label: 'LOCATION' },
-      ];
+          const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+          if (totalHeight > 0) {
+            setScrollProgress(Math.min(100, Math.max(0, (window.scrollY / totalHeight) * 100)));
+          }
 
-      const scrollPos = window.scrollY + 200;
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const el = document.getElementById(sections[i].id);
-        if (el && el.offsetTop <= scrollPos) {
-          setActiveSection(sections[i].label);
-          break;
-        }
+          // Determine active section
+          const sections = [
+            { id: 'vision', label: 'VISION' },
+            { id: 'overview', label: 'OVERVIEW' },
+            { id: 'about', label: 'ABOUT' },
+            { id: 'journey', label: 'PROCESS' },
+            { id: 'masterplan', label: 'MASTERPLAN' },
+            { id: 'villas', label: 'VILLAS' },
+            { id: 'portfolio', label: 'PORTFOLIO' },
+            { id: 'location', label: 'LOCATION' },
+          ];
+
+          const scrollPos = window.scrollY + 180;
+          for (let i = sections.length - 1; i >= 0; i--) {
+            const el = document.getElementById(sections[i].id);
+            if (el && el.offsetTop <= scrollPos) {
+              setActiveSection(sections[i].label);
+              break;
+            }
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -68,9 +83,9 @@ export default function Navigation({ onOpenBooking, scrollProgress = 0 }) {
   return (
     <>
       {/* Top Scroll Indicator */}
-      <div className="fixed top-0 left-0 right-0 h-[2px] z-50 bg-[#E7E4DD]/60">
+      <div className="fixed top-0 left-0 right-0 h-[2px] z-50 bg-[#FED7AA]/40">
         <div
-          className="h-full bg-[#B89047] transition-all duration-150 ease-out"
+          className="h-full bg-[#EA580C] transition-all duration-150 ease-out"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
@@ -79,8 +94,8 @@ export default function Navigation({ onOpenBooking, scrollProgress = 0 }) {
       <header
         className={`fixed top-0 left-0 right-0 h-[74px] z-50 transition-all duration-300 ${
           scrolled
-            ? 'bg-white/95 backdrop-blur-md border-b border-[#EBE7DF] shadow-subtle text-[#1D2421]'
-            : 'bg-white/90 backdrop-blur-md border-b border-[#EBE7DF]/60 text-[#1D2421]'
+            ? 'bg-white/95 backdrop-blur-md border-b border-gray-200/80 shadow-sm text-[#111827]'
+            : 'bg-white/90 backdrop-blur-md border-b border-gray-100 text-[#111827]'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 h-full flex items-center justify-between">
@@ -93,7 +108,7 @@ export default function Navigation({ onOpenBooking, scrollProgress = 0 }) {
                 e.preventDefault();
                 handleNavClick('#vision', 'VISION');
               }}
-              className="flex items-center"
+              className="flex items-center cursor-pointer"
             >
               <Logo size="md" light={false} />
             </a>
@@ -111,10 +126,10 @@ export default function Navigation({ onOpenBooking, scrollProgress = 0 }) {
                     e.preventDefault();
                     handleNavClick(item.href, item.label);
                   }}
-                  className={`font-sans text-[12px] uppercase tracking-[0.2em] transition-all relative py-1.5 whitespace-nowrap ${
+                  className={`font-sans text-[12px] uppercase tracking-[0.2em] transition-all relative py-1.5 whitespace-nowrap cursor-pointer ${
                     isActive
-                      ? 'text-[#B89047] font-semibold border-b-[2px] border-[#B89047]'
-                      : 'text-[#555555] hover:text-[#B89047] font-medium'
+                      ? 'text-[#EA580C] font-bold border-b-[2px] border-[#EA580C]'
+                      : 'text-gray-600 hover:text-[#EA580C] font-medium'
                   }`}
                 >
                   {item.label}
@@ -127,10 +142,10 @@ export default function Navigation({ onOpenBooking, scrollProgress = 0 }) {
           <div className="hidden md:flex items-center shrink-0">
             <button
               onClick={onOpenBooking}
-              className="inline-flex items-center space-x-2 px-5 py-2 border border-[#183C2F]/70 text-[#B89047] text-[11.5px] font-medium uppercase tracking-[0.16em] rounded-full hover:bg-[#B89047] hover:text-white transition-all duration-300 shadow-subtle group whitespace-nowrap"
+              className="inline-flex items-center space-x-2 px-5 py-2.5 bg-[#EA580C] hover:bg-[#C2410C] text-white text-[11.5px] font-bold uppercase tracking-[0.16em] rounded-full transition-all duration-300 shadow-sm group whitespace-nowrap cursor-pointer"
             >
               <span>SCHEDULE VISIT</span>
-              <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-white" />
             </button>
           </div>
 
@@ -138,7 +153,7 @@ export default function Navigation({ onOpenBooking, scrollProgress = 0 }) {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-charcoal-800 hover:text-forest-700 transition-colors"
+              className="p-2 text-gray-800 hover:text-[#EA580C] transition-colors cursor-pointer"
               aria-label="Toggle Menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -149,10 +164,10 @@ export default function Navigation({ onOpenBooking, scrollProgress = 0 }) {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-30 bg-[#F7F6F2]/98 backdrop-blur-lg flex flex-col justify-center px-8 md:hidden">
+        <div className="fixed inset-0 z-30 bg-white/98 backdrop-blur-xl flex flex-col justify-center px-8 md:hidden border-b border-gray-100">
           <div className="flex flex-col space-y-5 text-center">
             <div className="flex justify-center mb-4">
-              <Logo size="lg" />
+              <Logo size="lg" light={false} />
             </div>
             {navLinks.map((item) => (
               <a
@@ -160,9 +175,9 @@ export default function Navigation({ onOpenBooking, scrollProgress = 0 }) {
                 href={item.href}
                 onClick={(e) => {
                   e.preventDefault();
-                  handleNavClick(item.href);
+                  handleNavClick(item.href, item.label);
                 }}
-                className="font-sans text-[15px] uppercase tracking-[0.22em] text-charcoal-800 hover:text-forest-700 font-medium py-2 border-b border-stone-200"
+                className="font-sans text-[15px] uppercase tracking-[0.22em] text-gray-800 hover:text-[#EA580C] font-medium py-2 border-b border-gray-100"
               >
                 {item.label}
               </a>
@@ -172,7 +187,7 @@ export default function Navigation({ onOpenBooking, scrollProgress = 0 }) {
                 setMobileMenuOpen(false);
                 onOpenBooking();
               }}
-              className="mt-6 w-full py-3.5 bg-forest-700 text-white text-[13px] font-semibold uppercase tracking-[0.2em] rounded-xs"
+              className="mt-6 w-full py-3.5 bg-[#EA580C] hover:bg-[#C2410C] text-white text-[13px] font-bold uppercase tracking-[0.2em] rounded-xs shadow-sm cursor-pointer"
             >
               SCHEDULE PRIVATE VISIT
             </button>

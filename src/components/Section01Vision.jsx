@@ -63,16 +63,23 @@ export default function Section01Vision({ onExploreJourney, onExploreVillas, onE
     return () => clearInterval(interval);
   }, [heroMediaList.length]);
 
+  const rafRef = useRef(null);
+
   const handleMouseMove = (e) => {
     if (!containerRef.current) return;
     const { clientX, clientY } = e;
     const { innerWidth, innerHeight } = window;
     const x = (clientX / innerWidth - 0.5) * 2;
     const y = (clientY / innerHeight - 0.5) * 2;
-    setParallax({ x, y });
+
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    rafRef.current = requestAnimationFrame(() => {
+      setParallax({ x, y });
+    });
   };
 
   const handleMouseLeave = () => {
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
     setParallax({ x: 0, y: 0 });
   };
 
@@ -106,7 +113,7 @@ export default function Section01Vision({ onExploreJourney, onExploreVillas, onE
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative w-full min-h-[100dvh] h-[100dvh] max-h-[100dvh] flex flex-col justify-between overflow-hidden bg-[#F7F6F2] text-[#1D2421] scroll-mt-20 select-none font-sans"
+      className="relative w-full min-h-[100dvh] h-[100dvh] max-h-[100dvh] flex flex-col justify-between overflow-hidden bg-white text-[#111827] scroll-mt-[74px] select-none font-sans"
     >
       {/* =========================================================
           1. FULL CANVAS SEAMLESSLY BLENDED AUTOMATIC IMAGE ROTATION
@@ -138,15 +145,15 @@ export default function Section01Vision({ onExploreJourney, onExploreVillas, onE
         ))}
 
         {/* 
-          Ultra-Smooth Multi-Stop Horizontal Ivory Gradient
-          Fades from solid #F7F6F2 on the left into 100% transparent on the right.
+          Ultra-Smooth Multi-Stop Horizontal White Gradient
+          Fades from solid #FFFFFF on the left into 100% transparent on the right.
           Zero hard borders. Natural, seamless architectural blending.
         */}
         <div
           className="absolute inset-0 z-10 pointer-events-none hidden sm:block"
           style={{
             background:
-              'linear-gradient(to right, #F7F6F2 0%, #F7F6F2 28%, rgba(247, 246, 242, 0.94) 38%, rgba(247, 246, 242, 0.72) 48%, rgba(247, 246, 242, 0.35) 60%, rgba(247, 246, 242, 0.1) 70%, rgba(247, 246, 242, 0) 80%)',
+              'linear-gradient(to right, #FFFFFF 0%, #FFFFFF 28%, rgba(255, 255, 255, 0.94) 38%, rgba(255, 255, 255, 0.72) 48%, rgba(255, 255, 255, 0.35) 60%, rgba(255, 255, 255, 0.1) 70%, rgba(255, 255, 255, 0) 80%)',
           }}
         />
 
@@ -155,7 +162,7 @@ export default function Section01Vision({ onExploreJourney, onExploreVillas, onE
           className="absolute inset-0 z-10 pointer-events-none sm:hidden"
           style={{
             background:
-              'linear-gradient(to bottom, #F7F6F2 0%, #F7F6F2 42%, rgba(247, 246, 242, 0.85) 55%, rgba(247, 246, 242, 0.3) 70%, transparent 85%)',
+              'linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 42%, rgba(255, 255, 255, 0.85) 55%, rgba(255, 255, 255, 0.3) 70%, transparent 85%)',
           }}
         />
 
@@ -164,7 +171,7 @@ export default function Section01Vision({ onExploreJourney, onExploreVillas, onE
           className="absolute top-0 inset-x-0 h-20 z-10 pointer-events-none"
           style={{
             background:
-              'linear-gradient(to bottom, rgba(247, 246, 242, 0.85) 0%, rgba(247, 246, 242, 0.3) 50%, transparent 100%)',
+              'linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%)',
           }}
         />
 
@@ -173,7 +180,7 @@ export default function Section01Vision({ onExploreJourney, onExploreVillas, onE
           className="absolute bottom-0 inset-x-0 h-20 z-10 pointer-events-none"
           style={{
             background:
-              'linear-gradient(to top, #F7F6F2 0%, rgba(247, 246, 242, 0.85) 45%, transparent 100%)',
+              'linear-gradient(to top, #FFFFFF 0%, rgba(255, 255, 255, 0.85) 45%, transparent 100%)',
           }}
         />
       </div>
@@ -192,17 +199,17 @@ export default function Section01Vision({ onExploreJourney, onExploreVillas, onE
             
             {/* 01 / THE VISION Eyebrow */}
             <div
-              className={`flex items-center space-x-2 text-[10.5px] font-mono tracking-[0.25em] text-[#5A6862] uppercase mb-2 transition-all duration-700 ${
+              className={`flex items-center space-x-2 text-[10.5px] font-mono tracking-[0.25em] text-[#EA580C] uppercase mb-2 transition-all duration-700 ${
                 loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
               }`}
             >
-              <span className="w-4 h-[1.5px] bg-[#C5A880]" />
+              <span className="w-4 h-[1.5px] bg-[#EA580C]" />
               <span>01 / THE VISION</span>
             </div>
 
             {/* Main Wordmark Title: ANTELIA GROVES */}
             <h1
-              className={`font-editorial text-[34px] sm:text-[42px] lg:text-[48px] xl:text-[54px] leading-[1.02] text-[#1D2421] font-normal tracking-[-0.01em] transition-all duration-700 delay-100 ${
+              className={`font-editorial text-[34px] sm:text-[42px] lg:text-[48px] xl:text-[54px] leading-[1.02] text-[#111827] font-normal tracking-[-0.01em] transition-all duration-700 delay-100 ${
                 loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
               }`}
             >
@@ -211,23 +218,23 @@ export default function Section01Vision({ onExploreJourney, onExploreVillas, onE
 
             {/* Supporting Tagline: 10 ACRES. ONE VISION. */}
             <p
-              className={`font-sans font-light text-[16px] sm:text-[19px] lg:text-[21px] tracking-[0.18em] text-[#B89047] uppercase mt-1 leading-tight transition-all duration-700 delay-200 ${
+              className={`font-sans font-light text-[16px] sm:text-[19px] lg:text-[21px] tracking-[0.18em] text-[#EA580C] uppercase mt-1 leading-tight transition-all duration-700 delay-200 ${
                 loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
               }`}
             >
               10 ACRES. ONE VISION.
             </p>
 
-            {/* Warm Sand Accent Line */}
+            {/* Vibrant Orange Accent Line */}
             <div
-              className={`w-12 h-[2px] bg-[#C5A880] rounded-full my-2.5 sm:my-3 transition-all duration-700 delay-300 ${
+              className={`w-12 h-[2.5px] bg-[#EA580C] rounded-full my-2.5 sm:my-3 transition-all duration-700 delay-300 ${
                 loaded ? 'opacity-100 scale-x-100 origin-left' : 'opacity-0 scale-x-0'
               }`}
             />
 
             {/* Description */}
             <p
-              className={`font-sans text-[13px] sm:text-[14.5px] leading-[1.6] text-[#3D4944] max-w-lg font-normal mb-4 sm:mb-5 transition-all duration-700 delay-300 ${
+              className={`font-sans text-[13px] sm:text-[14.5px] leading-[1.6] text-[#4B5563] max-w-lg font-normal mb-4 sm:mb-5 transition-all duration-700 delay-300 ${
                 loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
               }`}
             >
@@ -249,7 +256,7 @@ export default function Section01Vision({ onExploreJourney, onExploreVillas, onE
                     onExploreVillas();
                   }
                 }}
-                className="inline-flex items-center space-x-2 px-6 sm:px-7 py-3 bg-gradient-to-r from-[#C5A880] to-[#B89047] text-white text-[11.5px] font-semibold uppercase tracking-[0.18em] rounded-xs hover:bg-[#122E23] transition-all duration-300 shadow-subtle hover:shadow group cursor-pointer"
+                className="inline-flex items-center space-x-2 px-6 sm:px-7 py-3 bg-[#EA580C] hover:bg-[#C2410C] text-white text-[11.5px] font-bold uppercase tracking-[0.18em] rounded-full transition-all duration-300 shadow-sm hover:shadow group cursor-pointer"
               >
                 <span>EXPLORE THE VILLAS</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -264,7 +271,7 @@ export default function Section01Vision({ onExploreJourney, onExploreVillas, onE
                     onExploreJourney();
                   }
                 }}
-                className="inline-flex items-center space-x-2 text-[11.5px] font-semibold uppercase tracking-[0.18em] text-[#B89047] border-b border-[#B89047] pb-0.5 hover:text-[#967433] hover:border-[#967433] transition-all group cursor-pointer"
+                className="inline-flex items-center space-x-2 text-[11.5px] font-semibold uppercase tracking-[0.18em] text-[#EA580C] border-b border-[#EA580C] pb-0.5 hover:text-[#C2410C] hover:border-[#C2410C] transition-all group cursor-pointer"
               >
                 <span>THE DEVELOPMENT JOURNEY</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -284,9 +291,9 @@ export default function Section01Vision({ onExploreJourney, onExploreVillas, onE
           Pinned cleanly right at the bottom edge of the 100vh screen.
           All 4 facts are 100% visible with zero scrollbar needed.
           ========================================================= */}
-      <div className="relative z-20 border-t border-[#E7E4DD] bg-[#F7F6F2]/95 backdrop-blur-md shrink-0 py-3 sm:py-3.5 lg:py-4">
+      <div className="relative z-20 border-t border-gray-100 bg-white/95 backdrop-blur-md shrink-0 py-3 sm:py-3.5 lg:py-4">
         <div className="max-w-7xl mx-auto px-6 sm:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 divide-y lg:divide-y-0 lg:divide-x divide-[#E7E4DD]">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 divide-y lg:divide-y-0 lg:divide-x divide-gray-100">
             {projectFacts.map((fact, index) => (
               <div
                 key={index}
@@ -294,13 +301,13 @@ export default function Section01Vision({ onExploreJourney, onExploreVillas, onE
                   index !== 0 ? 'pt-2.5 lg:pt-0 lg:pl-8' : ''
                 }`}
               >
-                <div className="text-[19px] sm:text-[22px] lg:text-[25px] font-sans font-bold text-[#B89047] tracking-tight leading-none mb-1">
+                <div className="text-[19px] sm:text-[22px] lg:text-[25px] font-sans font-bold text-[#EA580C] tracking-tight leading-none mb-1">
                   {fact.num}
                 </div>
-                <div className="text-[11.5px] sm:text-[12px] font-sans font-semibold text-[#1D2421] tracking-wide uppercase">
+                <div className="text-[11.5px] sm:text-[12px] font-sans font-semibold text-[#111827] tracking-wide uppercase">
                   {fact.title}
                 </div>
-                <div className="text-[10.5px] sm:text-[11px] font-sans text-[#5A6862] mt-0.5">
+                <div className="text-[10.5px] sm:text-[11px] font-sans text-[#6B7280] mt-0.5">
                   {fact.detail}
                 </div>
               </div>

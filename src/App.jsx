@@ -13,21 +13,6 @@ import BookingModal from './components/BookingModal';
 
 export default function App() {
   const [bookingOpen, setBookingOpen] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
-
-  // Native smooth scroll progress tracking
-  useEffect(() => {
-    const handleScroll = () => {
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-      if (totalHeight > 0) {
-        const progress = (window.scrollY / totalHeight) * 100;
-        setScrollProgress(Math.min(100, Math.max(0, progress)));
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const scrollTo = (id) => {
     const el = document.querySelector(id);
@@ -43,12 +28,11 @@ export default function App() {
   };
 
   return (
-    <div className="relative bg-[#F7F6F2] text-[#1D2421] min-h-screen selection:bg-[#183C2F] selection:text-white font-sans overflow-x-hidden">
+    <div className="relative bg-white text-[#111827] min-h-screen selection:bg-[#EA580C]/20 selection:text-[#9A3412] font-sans overflow-x-hidden">
       
       {/* Floating Architectural Header */}
       <Navigation
         onOpenBooking={() => setBookingOpen(true)}
-        scrollProgress={scrollProgress}
       />
 
       {/* CURATED ARCHITECTURAL CHAPTERS */}
@@ -56,6 +40,7 @@ export default function App() {
         {/* Chapter 01: Hero Vision & 4 Quick Facts */}
         <Section01Vision
           onExploreJourney={() => scrollTo('#journey')}
+          onExploreVillas={() => scrollTo('#villas')}
         />
 
         {/* Chapter 02: Current Project Overview & Living Philosophy */}

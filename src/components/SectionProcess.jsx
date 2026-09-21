@@ -117,25 +117,15 @@ export default function SectionProcess() {
   useEffect(() => {
     if (!isPlaying) return;
 
-    const interval = 50;
-    const stepIncrement = (interval / STEP_DURATION_MS) * 100;
-
     timerRef.current = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          setActiveStep((curr) => (curr + 1) % processSteps.length);
-          return 0;
-        }
-        return prev + stepIncrement;
-      });
-    }, interval);
+      setActiveStep((curr) => (curr + 1) % processSteps.length);
+    }, STEP_DURATION_MS);
 
     return () => clearInterval(timerRef.current);
-  }, [isPlaying, activeStep, processSteps.length]);
+  }, [isPlaying, processSteps.length]);
 
   const handleSelectStep = (idx) => {
     setActiveStep(idx);
-    setProgress(0);
   };
 
   const togglePlay = () => {
@@ -145,93 +135,90 @@ export default function SectionProcess() {
   return (
     <section
       id="journey"
-      className="relative bg-[#FAFAF7] text-[#1D2421] py-14 sm:py-18 lg:py-20 border-t border-[#EBE7DF] scroll-mt-20 overflow-hidden font-sans"
+      className="relative bg-[#FAFAF9] text-[#111827] py-5 sm:py-6 lg:py-8 border-t border-gray-200 scroll-mt-[74px] overflow-hidden font-sans lg:min-h-[calc(100vh-74px)] flex flex-col justify-center"
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10 w-full">
         
-        {/* SECTION INTRO */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-6 border-b border-[#EBE7DF]">
+        {/* COMPACT HORIZONTAL SECTION INTRO */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-4 sm:mb-5 pb-3.5 border-b border-gray-200 gap-3">
           <div className="max-w-2xl">
-            
-            <div className="inline-flex items-center space-x-2.5 mb-2.5">
-              <span className="w-5 h-[1.5px] bg-[#C5A880]" />
-              <span className="font-mono text-[11px] sm:text-[11.5px] font-semibold tracking-[0.22em] text-[#B89047] uppercase">
+            <div className="inline-flex items-center space-x-2.5 mb-1.5">
+              <span className="w-5 h-[1.5px] bg-[#EA580C]" />
+              <span className="font-mono text-[10.5px] sm:text-[11px] font-semibold tracking-[0.22em] text-[#EA580C] uppercase">
                 THE PROCESS
               </span>
             </div>
 
-            <h2 className="font-sans font-semibold text-[26px] sm:text-[32px] lg:text-[38px] leading-[1.18] text-[#1D2421] tracking-[-0.015em] mb-2.5">
+            <h2 className="font-sans font-semibold text-[20px] sm:text-[24px] lg:text-[28px] leading-tight text-[#111827] tracking-tight">
               FROM VIRGIN LAND TO A LIVING COMMUNITY
             </h2>
-
-            <p className="font-sans text-[14px] sm:text-[15px] leading-relaxed text-[#5A6862] max-w-xl font-normal">
-              A cinematic 3D architectural journey showing how 10 acres of natural terrain are surveyed, engineered, constructed, and transformed into Antelia Groves.
-            </p>
-
           </div>
 
           {/* Autoplay Status & Play/Pause Controller */}
-          <div className="mt-5 md:mt-0 flex items-center space-x-3.5">
+          <div className="flex items-center space-x-3">
             <div className="text-right">
-              <div className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#8C9E96]">
+              <div className="font-mono text-[9.5px] uppercase tracking-[0.16em] text-[#6B7280]">
                 STATUS
               </div>
-              <div className="font-mono text-[11px] text-[#B89047] font-medium tracking-wider">
-                {isPlaying ? 'PLAYING THROUGH THE PROCESS' : 'PAUSED — EXPLORE A STEP'}
+              <div className="font-mono text-[10.5px] text-[#EA580C] font-semibold tracking-wider">
+                {isPlaying ? 'PLAYING STEP-BY-STEP' : 'PAUSED — SELECT STEP'}
               </div>
             </div>
 
             <button
               onClick={togglePlay}
-              className="w-10 h-10 rounded-xs bg-white border border-[#EBE7DF] text-[#B89047] hover:border-[#C5A880] hover:bg-[#FDFBF7] flex items-center justify-center transition-colors shadow-subtle shrink-0 cursor-pointer"
+              className="w-8 h-8 rounded-xs bg-white border border-gray-200 text-[#111827] hover:border-[#EA580C] hover:text-[#EA580C] hover:bg-[#FFF7ED] flex items-center justify-center transition-colors shadow-sm shrink-0 cursor-pointer"
               title={isPlaying ? 'Pause auto progression' : 'Resume auto progression'}
+              aria-label={isPlaying ? 'Pause auto progression' : 'Resume auto progression'}
             >
-              {isPlaying ? <Pause className="w-4 h-4 text-[#B89047]" /> : <Play className="w-4 h-4 text-[#B89047] ml-0.5" />}
+              {isPlaying ? <Pause className="w-3.5 h-3.5 text-[#EA580C]" /> : <Play className="w-3.5 h-3.5 text-[#EA580C] ml-0.5" />}
             </button>
           </div>
         </div>
 
-        {/* 6 STEP TIMELINE CARDS */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-3 mb-8 sm:mb-10">
+        {/* 6 STEP COMPACT TIMELINE BUTTONS */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-2.5 mb-4 sm:mb-5">
           {processSteps.map((step, idx) => {
             const isActive = activeStep === idx;
             return (
               <button
                 key={idx}
                 onClick={() => handleSelectStep(idx)}
-                className={`relative text-left p-3 sm:p-3.5 rounded-xs border transition-all duration-300 flex flex-col justify-between group cursor-pointer ${
+                className={`relative text-left p-2.5 rounded-sm border transition-all duration-300 flex flex-col justify-between group cursor-pointer ${
                   isActive
-                    ? 'bg-[#FDFBF7] border-[#C5A880] shadow-md shadow-[#C5A880]/15'
-                    : 'bg-white border-[#EBE7DF] hover:border-[#C5A880]/60 hover:bg-[#FAF9F5]'
+                    ? 'bg-white border-[#EA580C] shadow-md ring-1 ring-[#EA580C]/30'
+                    : 'bg-white border-gray-200 hover:border-[#EA580C]/60 hover:bg-[#FFF7ED]/40 shadow-xs'
                 }`}
               >
                 <div>
-                  <div className="flex items-center justify-between mb-1.5">
+                  <div className="flex items-center justify-between mb-1">
                     <span
-                      className={`font-mono text-[10px] tracking-wider font-semibold ${
-                        isActive ? 'text-[#B89047]' : 'text-[#8C9E96]'
+                      className={`font-mono text-[9px] tracking-wider font-semibold ${
+                        isActive ? 'text-[#EA580C]' : 'text-gray-400'
                       }`}
                     >
                       {step.stepNum}
                     </span>
                     {isActive && (
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#B89047] animate-pulse" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#EA580C] animate-pulse" />
                     )}
                   </div>
                   <div
-                    className={`font-sans text-[12px] sm:text-[13px] font-semibold tracking-tight leading-snug line-clamp-1 ${
-                      isActive ? 'text-[#1D2421]' : 'text-[#5A6862] group-hover:text-[#1D2421]'
+                    className={`font-sans text-[11.5px] sm:text-[12px] font-semibold tracking-tight leading-snug line-clamp-1 ${
+                      isActive ? 'text-[#111827]' : 'text-[#6B7280] group-hover:text-[#111827]'
                     }`}
                   >
                     {step.title}
                   </div>
                 </div>
 
-                <div className="w-full bg-[#EBE7DF] h-[2px] rounded-full overflow-hidden mt-2.5">
+                <div className="w-full bg-[#FFF7ED] h-[2px] rounded-full overflow-hidden mt-2">
                   <div
-                    className="h-full bg-[#B89047] transition-all duration-75 ease-linear"
+                    key={`${idx}-${activeStep === idx ? 'active' : 'inactive'}-${isPlaying ? 'play' : 'pause'}`}
+                    className="h-full bg-[#EA580C]"
                     style={{
-                      width: isActive ? `${progress}%` : idx < activeStep ? '100%' : '0%',
+                      width: idx < activeStep ? '100%' : idx === activeStep ? (isPlaying ? undefined : '50%') : '0%',
+                      animation: isActive && isPlaying ? 'processStepTimer 5s linear infinite' : 'none',
                     }}
                   />
                 </div>
@@ -241,35 +228,35 @@ export default function SectionProcess() {
         </div>
 
         {/* MAIN VISUAL & INFORMATION CONTAINER */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-white border border-[#EBE7DF] rounded-xs p-5 sm:p-7 lg:p-9 shadow-xl">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-7 items-center bg-white border border-gray-200 rounded-sm p-4 sm:p-5 lg:p-6 shadow-luxury">
           
           {/* LEFT: Realistic 3D Architectural Visual */}
           <div className="lg:col-span-7 relative">
-            <div className="relative aspect-[16/9] w-full rounded-xs overflow-hidden border border-[#EBE7DF] bg-[#F2EDE4] shadow-subtle group">
+            <div className="relative aspect-[16/10] lg:h-[310px] w-full rounded-xs overflow-hidden border border-gray-200 bg-[#FAFAF9] shadow-md group">
               <img
                 key={currentStepData.image}
                 src={currentStepData.image}
                 alt={`Antelia Groves — ${currentStepData.title}`}
-                className="w-full h-full object-cover object-center transform transition-all duration-1000 ease-out animate-cinematic-push"
+                className="w-full h-full object-cover object-center transform transition-all duration-1000 ease-out"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1D2421]/60 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#111827]/75 via-transparent to-transparent pointer-events-none" />
 
-              <div className="absolute top-3.5 left-4 flex items-center space-x-2 pointer-events-none">
-                <span className="inline-block px-2.5 py-1 bg-[#B89047]/90 backdrop-blur-sm text-white font-mono text-[9.5px] uppercase tracking-[0.2em] border border-white/20 rounded-xs shadow-sm">
+              <div className="absolute top-3 left-3 flex items-center space-x-2 pointer-events-none">
+                <span className="inline-block px-2.5 py-0.5 bg-white/95 backdrop-blur-sm text-[#EA580C] font-mono text-[9px] uppercase tracking-[0.2em] border border-gray-200 rounded-xs shadow-sm font-semibold">
                   {currentStepData.badge}
                 </span>
               </div>
 
-              <div className="absolute bottom-3.5 left-4 right-4 text-white pointer-events-none flex items-end justify-between">
+              <div className="absolute bottom-3 left-3.5 right-3.5 text-white pointer-events-none flex items-end justify-between">
                 <div>
-                  <div className="font-mono text-[10px] text-[#E8D8BA] uppercase tracking-widest mb-0.5 font-medium">
+                  <div className="font-mono text-[9px] text-[#FED7AA] uppercase tracking-widest mb-0.5 font-medium">
                     {currentStepData.subheading}
                   </div>
-                  <div className="font-sans text-[14px] sm:text-[16px] font-semibold text-white tracking-wide">
+                  <div className="font-sans text-[13px] sm:text-[14.5px] font-semibold text-white tracking-wide">
                     {currentStepData.title} · Antelia Groves
                   </div>
                 </div>
-                <div className="hidden sm:block font-mono text-[10.5px] text-[#E8D8BA] font-semibold tracking-wider">
+                <div className="hidden sm:block font-mono text-[9.5px] text-[#FED7AA] font-semibold tracking-wider">
                   STAGE {currentStepData.stepNum} / 06
                 </div>
               </div>
@@ -279,72 +266,72 @@ export default function SectionProcess() {
           {/* RIGHT: Step Architectural Details */}
           <div className="lg:col-span-5 flex flex-col justify-center">
             
-            <div className="inline-flex items-center space-x-2.5 mb-2">
-              <span className="w-4 h-[1.5px] bg-[#C5A880]" />
-              <span className="font-mono text-[11px] font-semibold tracking-[0.2em] text-[#B89047] uppercase">
+            <div className="inline-flex items-center space-x-2 mb-1.5">
+              <span className="w-3.5 h-[1.5px] bg-[#EA580C]" />
+              <span className="font-mono text-[10px] font-semibold tracking-[0.2em] text-[#EA580C] uppercase">
                 {currentStepData.eyebrow}
               </span>
             </div>
 
-            <h3 className="font-sans font-semibold text-[26px] sm:text-[30px] lg:text-[32px] leading-tight text-[#1D2421] tracking-tight mb-2">
+            <h3 className="font-sans font-semibold text-[20px] sm:text-[23px] leading-tight text-[#111827] tracking-tight mb-1">
               {currentStepData.title}
             </h3>
 
-            <div className="font-mono text-[11.5px] text-[#967433] uppercase tracking-wider mb-4 font-medium">
+            <div className="font-mono text-[10.5px] text-[#EA580C] uppercase tracking-wider mb-2.5 font-medium">
               {currentStepData.subheading}
             </div>
 
-            <p className="font-sans text-[14px] sm:text-[14.5px] leading-relaxed text-[#4A5750] font-normal mb-6">
+            <p className="font-sans text-[12.5px] sm:text-[13px] leading-relaxed text-[#4B5563] font-normal mb-3 line-clamp-2 sm:line-clamp-3">
               {currentStepData.description}
             </p>
 
-            <div className="space-y-2.5 mb-6 pt-4 border-t border-[#EBE7DF]">
-              {currentStepData.highlights.map((item, hIdx) => (
-                <div key={hIdx} className="flex items-start space-x-2.5 text-[12.5px] sm:text-[13px] text-[#5A6862]">
-                  <Check className="w-3.5 h-3.5 text-[#B89047] mt-0.5 shrink-0" />
-                  <span>{item}</span>
+            <div className="space-y-1.5 mb-3 pt-2.5 border-t border-gray-200">
+              {currentStepData.highlights.slice(0, 3).map((item, hIdx) => (
+                <div key={hIdx} className="flex items-start space-x-2 text-[11.5px] sm:text-[12px] text-[#4B5563]">
+                  <Check className="w-3 h-3 text-[#EA580C] mt-0.5 shrink-0" />
+                  <span className="line-clamp-1">{item}</span>
                 </div>
               ))}
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-3.5 bg-[#FAF9F5] border border-[#EBE7DF] rounded-xs mb-6">
+            <div className="grid grid-cols-2 gap-2 p-2 bg-[#FAFAF9] border border-gray-200 rounded-xs mb-3">
               <div>
-                <div className="font-mono text-[9.5px] uppercase tracking-widest text-[#8C9E96] mb-0.5">
+                <div className="font-mono text-[8.5px] uppercase tracking-widest text-[#6B7280] mb-0.5">
                   PROJECT SCALE
                 </div>
-                <div className="font-sans text-[12.5px] font-semibold text-[#1D2421]">
+                <div className="font-sans text-[11.5px] font-semibold text-[#111827] line-clamp-1">
                   {currentStepData.scale}
                 </div>
               </div>
               <div>
-                <div className="font-mono text-[9.5px] uppercase tracking-widest text-[#8C9E96] mb-0.5">
+                <div className="font-mono text-[8.5px] uppercase tracking-widest text-[#6B7280] mb-0.5">
                   VISION
                 </div>
-                <div className="font-sans text-[12px] text-[#5A6862] line-clamp-2">
+                <div className="font-sans text-[11px] text-[#4B5563] line-clamp-1">
                   {currentStepData.vision}
                 </div>
               </div>
             </div>
 
-            <div className="flex items-center justify-between pt-4 border-t border-[#EBE7DF]">
+            <div className="flex items-center justify-between pt-2.5 border-t border-gray-200">
               <button
                 onClick={() => handleSelectStep((activeStep - 1 + processSteps.length) % processSteps.length)}
-                className="inline-flex items-center space-x-1 text-[11.5px] font-mono uppercase tracking-wider text-[#5A6862] hover:text-[#B89047] transition-colors cursor-pointer"
+                className="inline-flex items-center space-x-1 text-[10.5px] font-mono uppercase tracking-wider text-[#6B7280] hover:text-[#EA580C] transition-colors cursor-pointer"
               >
-                <ChevronLeft className="w-3.5 h-3.5" />
+                <ChevronLeft className="w-3 h-3" />
                 <span>PREVIOUS</span>
               </button>
 
-              <div className="font-mono text-[11px] text-[#8C9E96] font-medium">
+              <div className="font-mono text-[10px] text-[#6B7280] font-medium">
                 {activeStep + 1} / {processSteps.length}
               </div>
 
               <button
                 onClick={() => handleSelectStep((activeStep + 1) % processSteps.length)}
-                className="inline-flex items-center space-x-1 text-[11.5px] font-mono uppercase tracking-wider text-[#B89047] hover:text-[#967433] transition-colors font-semibold cursor-pointer"
+                className="inline-flex items-center space-x-1 text-[10.5px] font-mono uppercase tracking-wider text-[#EA580C] hover:text-[#C2410C] transition-colors font-semibold cursor-pointer"
               >
                 <span>NEXT STEP</span>
-                <ChevronRight className="w-3.5 h-3.5" />
+                <ChevronRight className="w-3 h-3" />
               </button>
             </div>
 
@@ -352,13 +339,14 @@ export default function SectionProcess() {
 
         </div>
 
-        <div className="mt-8 text-center">
-          <p className="font-mono text-[11px] text-[#8C9E96] tracking-wide">
-            * 3D Architectural CGI simulation of the development journey from land acquisition to completed community.
-          </p>
-        </div>
-
       </div>
+
+      <style>{`
+        @keyframes processStepTimer {
+          from { width: 0%; }
+          to { width: 100%; }
+        }
+      `}</style>
     </section>
   );
 }

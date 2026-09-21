@@ -30,63 +30,59 @@ export default function Section03Villas({ onSelectVilla }) {
   return (
     <section
       id="villas"
-      className="relative bg-[#FFFFFF] text-[#141917] py-14 sm:py-16 border-t border-[#EBE7DF] scroll-mt-20"
+      className="relative bg-[#FAFAF9] text-[#111827] py-5 sm:py-6 lg:py-8 border-t border-gray-200 scroll-mt-[74px] font-sans lg:min-h-[calc(100vh-74px)] flex flex-col justify-center"
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-8">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 w-full">
         
-        {/* =========================================================
-            SECTION HEADER
-            ========================================================= */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-5 border-b border-[#EBE7DF]">
+        {/* COMPACT SECTION HEADER */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-3 sm:mb-4 pb-3 border-b border-gray-200 gap-2">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center space-x-2.5 mb-2">
-              <span className="w-5 h-[1.5px] bg-[#B89047]" />
-              <span className="font-mono text-[11px] font-semibold tracking-[0.25em] text-[#B89047] uppercase">
+            <div className="inline-flex items-center space-x-2 mb-1">
+              <span className="w-4 h-[1.5px] bg-[#EA580C]" />
+              <span className="font-mono text-[10.5px] font-semibold tracking-[0.25em] text-[#EA580C] uppercase">
                 04 / THE VILLAS
               </span>
             </div>
-            <h2 className="font-sans font-semibold text-[30px] sm:text-[36px] lg:text-[38px] tracking-tight text-[#141917] leading-tight">
+            <h2 className="font-sans font-semibold text-[20px] sm:text-[24px] lg:text-[28px] tracking-tight text-[#111827] leading-tight">
               INDEPENDENT VILLAS. THOUGHTFULLY DESIGNED.
             </h2>
           </div>
 
-          <p className="text-[14px] sm:text-[15px] leading-relaxed text-[#5A6862] max-w-md mt-3 md:mt-0 font-normal">
-            Split-level independent residences engineered with double-height foyers, private landscaped gardens, executive home workspaces, and open-air rooftop lounges.
+          <p className="text-[12.5px] sm:text-[13px] leading-relaxed text-[#4B5563] max-w-md md:text-right font-normal">
+            Split-level independent residences engineered with double-height foyers, private gardens, and open-air rooftop lounges.
           </p>
         </div>
 
-        {/* =========================================================
-            INTERACTIVE 3D ARCHITECTURAL MODEL & SPECIFICATIONS
-            ========================================================= */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        {/* INTERACTIVE 3D ARCHITECTURAL MODEL & SPECIFICATIONS */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-start">
           
           {/* Left Column: 3D Model Explorer (~65%) */}
           <div className="lg:col-span-8 flex flex-col">
             
             {/* Top Controls: Typology + Floor Level Switchers */}
-            <div className="flex flex-wrap items-center justify-between gap-3 p-3.5 bg-white border border-[#EBE7DF] rounded-xs mb-4 shadow-subtle">
+            <div className="flex flex-wrap items-center justify-between gap-2 p-2.5 bg-white border border-gray-200 rounded-sm mb-2.5 shadow-xs">
               
               {/* Typology Switcher */}
-              <div className="flex items-center space-x-2">
-                <span className="text-[10.5px] font-mono uppercase tracking-wider text-[#5A6862]">
+              <div className="flex items-center space-x-1.5">
+                <span className="text-[10px] font-mono uppercase tracking-wider text-[#6B7280]">
                   TYPOLOGY:
                 </span>
                 <button
                   onClick={() => setVillaType('east')}
-                  className={`px-3 py-1.5 text-[11px] font-mono uppercase tracking-wider rounded-xs transition-all ${
+                  className={`px-3 py-1 text-[10.5px] font-mono uppercase tracking-wider rounded-xs transition-all cursor-pointer ${
                     villaType === 'east'
-                      ? 'bg-[#B89047] text-white font-semibold'
-                      : 'bg-[#F1EFEA] text-[#1D2421] hover:bg-[#E7E4DD]'
+                      ? 'bg-[#EA580C] text-white font-bold shadow-xs'
+                      : 'bg-white text-[#6B7280] border border-gray-200 hover:bg-[#FFF7ED]'
                   }`}
                 >
                   TYPE A — EAST
                 </button>
                 <button
                   onClick={() => setVillaType('west')}
-                  className={`px-3 py-1.5 text-[11px] font-mono uppercase tracking-wider rounded-xs transition-all ${
+                  className={`px-3 py-1 text-[10.5px] font-mono uppercase tracking-wider rounded-xs transition-all cursor-pointer ${
                     villaType === 'west'
-                      ? 'bg-[#B89047] text-white font-semibold'
-                      : 'bg-[#F1EFEA] text-[#1D2421] hover:bg-[#E7E4DD]'
+                      ? 'bg-[#EA580C] text-white font-bold shadow-xs'
+                      : 'bg-white text-[#6B7280] border border-gray-200 hover:bg-[#FFF7ED]'
                   }`}
                 >
                   TYPE A — WEST
@@ -94,8 +90,8 @@ export default function Section03Villas({ onSelectVilla }) {
               </div>
 
               {/* Level Inspector */}
-              <div className="flex items-center space-x-1.5">
-                <span className="text-[10.5px] font-mono uppercase tracking-wider text-[#5A6862]">
+              <div className="flex items-center space-x-1">
+                <span className="text-[10px] font-mono uppercase tracking-wider text-[#6B7280]">
                   LEVEL:
                 </span>
                 {[
@@ -107,10 +103,10 @@ export default function Section03Villas({ onSelectVilla }) {
                   <button
                     key={lvl.id}
                     onClick={() => setActiveFloor(lvl.id)}
-                    className={`px-2.5 py-1 text-[10.5px] font-mono uppercase tracking-wider rounded-xs transition-all ${
+                    className={`px-2 py-0.5 text-[10px] font-mono uppercase tracking-wider rounded-xs transition-all cursor-pointer ${
                       activeFloor === lvl.id
-                        ? 'bg-[#1D2421] text-white font-semibold'
-                        : 'bg-[#F1EFEA] text-[#5A6862] hover:text-[#1D2421]'
+                        ? 'bg-[#EA580C] text-white font-semibold shadow-xs'
+                        : 'bg-white border border-gray-200 text-[#6B7280] hover:text-[#111827]'
                     }`}
                   >
                     {lvl.label}
@@ -120,13 +116,13 @@ export default function Section03Villas({ onSelectVilla }) {
 
             </div>
 
-            {/* 3D Cutaway Viewport */}
-            <div className="h-[440px] sm:h-[500px] lg:h-[540px] rounded-xs overflow-hidden border border-[#EBE7DF] bg-[#E7E4DD]/50 shadow-luxury relative">
+            {/* 3D Cutaway Viewport (Height Calibrated for Viewport) */}
+            <div className="h-[310px] sm:h-[350px] lg:h-[380px] rounded-sm overflow-hidden border border-gray-200 bg-white shadow-luxury relative">
               <VillaCutaway3D activeFloor={activeFloor} villaType={villaType} />
 
-              <div className="absolute bottom-4 left-4 pointer-events-none bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-xs border border-[#C5A880]/30 text-[10.5px] font-mono text-[#5A6862] flex items-center space-x-2 shadow-xs">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#B89047] animate-pulse" />
-                <span>AUTO-ROTATING 360° · DRAG TO EXPLORE</span>
+              <div className="absolute bottom-3 left-3 pointer-events-none bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-xs border border-gray-200 text-[9.5px] font-mono text-[#6B7280] flex items-center space-x-1.5 shadow-xs">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#EA580C] animate-pulse" />
+                <span>360° INTERACTIVE · DRAG TO ROTATE</span>
               </div>
             </div>
 
@@ -134,29 +130,29 @@ export default function Section03Villas({ onSelectVilla }) {
 
           {/* Right Column: Key Specifications Card (~35%) */}
           <div className="lg:col-span-4 flex flex-col">
-            <div className="p-6 bg-white border border-[#EBE7DF] rounded-xs shadow-subtle">
-              <div className="text-[11px] font-mono uppercase tracking-widest text-[#B8A58A] mb-1">
+            <div className="p-4 sm:p-5 bg-white border border-gray-200 rounded-sm shadow-luxury">
+              <div className="text-[10px] font-mono uppercase tracking-widest text-[#EA580C] mb-0.5 font-semibold">
                 ARCHITECTURAL SPECIFICATIONS
               </div>
-              <h3 className="text-[20px] font-semibold text-[#1D2421] mb-5">
+              <h3 className="text-[17px] font-semibold text-[#111827] mb-3">
                 Villa Type A ({villaType.toUpperCase()})
               </h3>
 
-              <div className="space-y-4">
+              <div className="space-y-2">
                 {currentSpecs.map((spec, i) => (
-                  <div key={i} className="flex flex-col pb-3 border-b border-[#F1EFEA] last:border-b-0">
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-[#8C9A93]">{spec.label}</span>
-                    <span className="text-[14px] font-sans font-semibold text-[#1D2421] mt-0.5">{spec.val}</span>
+                  <div key={i} className="flex items-center justify-between pb-1.5 border-b border-gray-100 last:border-b-0">
+                    <span className="text-[9.5px] font-mono uppercase tracking-wider text-[#6B7280]">{spec.label}</span>
+                    <span className="text-[12.5px] font-sans font-semibold text-[#111827]">{spec.val}</span>
                   </div>
                 ))}
               </div>
 
               <button
                 onClick={onSelectVilla}
-                className="w-full mt-6 py-3 bg-[#B89047] text-white text-[11.5px] font-semibold uppercase tracking-[0.2em] rounded-xs hover:bg-[#967433] transition-colors flex items-center justify-center space-x-2"
+                className="w-full mt-4 py-2.5 bg-[#EA580C] hover:bg-[#C2410C] text-white text-[11px] font-bold uppercase tracking-[0.16em] rounded-xs shadow-md transition-all flex items-center justify-center space-x-1.5 cursor-pointer"
               >
                 <span>REQUEST FLOORPLAN PDF</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
+                <ArrowUpRight className="w-3.5 h-3.5 text-white" />
               </button>
             </div>
           </div>

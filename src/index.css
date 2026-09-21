@@ -9,26 +9,26 @@
   }
 
   body {
-    background-color: #F7F6F2;
-    color: #1D2421;
+    background-color: #FFFFFF;
+    color: #111827;
     overflow-x: hidden;
     font-family: 'Manrope', sans-serif;
   }
 
-  /* Quiet-Luxury Minimal Architectural Scrollbar */
+  /* Sunlit White & Architectural Orange Scrollbar */
   ::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
+    width: 6px;
+    height: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #EFECE6;
+    background: #FAFAF9;
   }
   ::-webkit-scrollbar-thumb {
-    background: #C7C2B6;
-    border-radius: 2px;
+    background: #FED7AA;
+    border-radius: 3px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #31483D;
+    background: #EA580C;
   }
 }
 
@@ -55,7 +55,7 @@ html.lenis, html.lenis body {
 
 /* Clean Warm Ivory Canvas (Zero Grid Lines) */
 .bg-architectural-grid {
-  background-color: #F7F6F2;
+  background-color: #FDFCF7;
 }
 
 /* Dark blueprint drafting grid */
@@ -68,7 +68,7 @@ html.lenis, html.lenis body {
 
 /* Subtle paper texture overlay */
 .bg-paper-texture {
-  background-color: #F7F6F2;
+  background-color: #FDFCF7;
   background-image: radial-gradient(rgba(49, 72, 61, 0.04) 0.75px, transparent 0.75px);
   background-size: 20px 20px;
 }
@@ -81,12 +81,28 @@ html.lenis, html.lenis body {
   border: 1px solid rgba(49, 72, 61, 0.1);
 }
 
-/* Dark charcoal glass */
-.glass-charcoal {
-  background: rgba(23, 32, 28, 0.85);
+/* Sunlit Alabaster Glass */
+.glass-alabaster {
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(231, 228, 221, 0.1);
+  border: 1px solid rgba(228, 223, 211, 0.9);
+}
+
+.glass-alabaster-card {
+  background: #FFFFFF;
+  border: 1px solid #E4DFD3;
+  box-shadow: 0 10px 30px -10px rgba(27, 43, 34, 0.06);
+}
+
+.text-gold-gradient, .text-orange-gradient {
+  background: linear-gradient(135deg, #EA580C 0%, #F97316 50%, #C2410C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.border-gold-subtle, .border-orange-subtle {
+  border-color: rgba(234, 88, 12, 0.25);
 }
 
 /* Architectural smooth transition */

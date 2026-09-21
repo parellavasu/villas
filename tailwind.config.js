@@ -9,6 +9,52 @@ export default {
     extend: {
       colors: {
         // Specified Quiet-Luxury Architectural Palette
+        noir: {
+          950: '#050A07', // Deepest Obsidian
+          900: '#070E0B', // Base Canvas Velvet
+          850: '#0B1511', // Dark Surface Plinth
+          800: '#0E1D16', // Smoked Glass Card Base
+          750: '#12241C', // Hover Card Plinth
+          700: '#172C22', // Subtle Elevated Border
+          600: '#1E382C', // Muted Deep Emerald
+        },
+        gold: {
+          50: '#FAF6EA',
+          100: '#F5ECDA',
+          200: '#EBD8B1',
+          300: '#E1C488',
+          400: '#D4AF37', // 24K Royal Gold
+          500: '#B89047', // Warm Architectural Gold
+          600: '#9E782F', // Burnished Antique Gold
+          700: '#7E5F22',
+        },
+        orange: {
+          50: '#FFF7ED',
+          100: '#FFEDD5',
+          200: '#FED7AA',
+          300: '#FDBA74',
+          400: '#FB923C',
+          500: '#F97316',
+          600: '#EA580C',
+          700: '#C2410C',
+          800: '#9A3412',
+          900: '#7C2D12',
+          950: '#431407',
+        },
+        champagne: '#F3E5AB',
+        alabaster: {
+          50: '#FFFFFF',
+          100: '#FAF9F5', // Luminous White Text
+          200: '#EFECE6', // Soft Off-White
+          300: '#D8D4CA', // Muted Off-White
+        },
+        sage: {
+          100: '#E2EBE6',
+          200: '#C5D6CD',
+          300: '#98AEA2', // Subtle Muted Sage
+          400: '#738C80',
+          500: '#5A7065',
+        },
         ivory: {
           50: '#FAF9F6',
           100: '#F7F6F2', // Warm Ivory Base
@@ -67,10 +113,13 @@ export default {
         ultra: '.32em',
       },
       boxShadow: {
-        'subtle': '0 2px 10px rgba(29, 36, 33, 0.04)',
-        'luxury': '0 10px 30px -10px rgba(23, 32, 28, 0.08), 0 4px 12px -4px rgba(23, 32, 28, 0.03)',
-        'luxury-hover': '0 20px 40px -15px rgba(23, 32, 28, 0.12), 0 8px 20px -6px rgba(49, 72, 61, 0.06)',
-        'dark-card': '0 16px 36px -12px rgba(0, 0, 0, 0.4)',
+        'subtle': '0 2px 10px rgba(0, 0, 0, 0.25)',
+        'luxury': '0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(212, 175, 55, 0.15)',
+        'luxury-hover': '0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(212, 175, 55, 0.35)',
+        'gold-glow': '0 0 25px rgba(212, 175, 55, 0.25)',
+        'gold-glow-lg': '0 0 45px rgba(212, 175, 55, 0.35)',
+        'card-noir': '0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(212, 175, 55, 0.15)',
+        'dark-card': '0 16px 36px -12px rgba(0, 0, 0, 0.6)',
       },
     },
   },

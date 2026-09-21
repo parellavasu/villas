@@ -12,7 +12,7 @@ export default function Logo({ size = "md", light = false, className = "" }) {
 
   return (
     <div className={`flex items-center ${currentSize.gap} group cursor-pointer select-none ${className}`}>
-      {/* Minimal Architectural Vector Tree Symbol (Matches Reference Mockup) */}
+      {/* Minimal Architectural Vector Tree Symbol */}
       <div
         className="relative shrink-0 flex items-center justify-center transition-transform duration-300 group-hover:scale-105"
         style={{ width: currentSize.icon, height: currentSize.icon }}
@@ -26,13 +26,13 @@ export default function Logo({ size = "md", light = false, className = "" }) {
           {/* Architectural Triangular Canopy Outline */}
           <path
             d="M24 8L11 38H17L24 22L31 38H37L24 8Z"
-            fill={light ? "#FFFFFF" : "#B89047"}
+            fill={light ? "#FFFFFF" : "#EA580C"}
             className="transition-colors duration-300"
           />
           {/* Inner Vertical Spire / Trunk */}
           <path
             d="M23 23H25V38H23V23Z"
-            fill={light ? "#F7F2E7" : "#D4AF37"}
+            fill={light ? "#FED7AA" : "#F97316"}
           />
           {/* Ground Base Line */}
           <line
@@ -40,7 +40,7 @@ export default function Logo({ size = "md", light = false, className = "" }) {
             y1="41"
             x2="40"
             y2="41"
-            stroke={light ? "rgba(255,255,255,0.4)" : "#C5A880"}
+            stroke={light ? "rgba(255,255,255,0.4)" : "#FED7AA"}
             strokeWidth="1.5"
             strokeLinecap="round"
           />
@@ -51,14 +51,14 @@ export default function Logo({ size = "md", light = false, className = "" }) {
       <div className="flex flex-col justify-center">
         <span
           className={`font-sans font-semibold uppercase ${currentSize.tracking} ${currentSize.text} leading-tight ${
-            light ? "text-white" : "text-[#17201C]"
-          } transition-colors group-hover:text-[#B89047]`}
+            light ? "text-white" : "text-[#111827]"
+          } transition-colors group-hover:text-[#EA580C]`}
         >
           ANTELIA
         </span>
         <span
           className={`font-sans font-medium uppercase tracking-[0.38em] ${currentSize.sub} ${
-            light ? "text-[#D8C8B5]" : "text-[#4A5D52]"
+            light ? "text-[#FED7AA]" : "text-[#6B7280]"
           } mt-0.5 leading-none`}
         >
           GROVES
