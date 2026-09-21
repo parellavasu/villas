@@ -43,7 +43,7 @@ export default function Section03Villas({ onSelectVilla }) {
                 06 / The Villas
               </span>
             </div>
-            <h2 className="font-sans font-semibold text-[20px] sm:text-[24px] lg:text-[28px] tracking-tight text-[#111827] leading-tight">
+            <h2 className="font-serif font-bold text-[22px] sm:text-[25px] lg:text-[28px] tracking-tight text-[#111827] leading-tight">
               Independent Villas. Thoughtfully Designed.
             </h2>
           </div>

@@ -167,7 +167,7 @@ export default function SectionAboutUs() {
               </span>
             </div>
 
-            <h2 className="font-sans font-semibold text-[20px] sm:text-[23px] lg:text-[26px] leading-tight text-[#111827] tracking-tight">
+            <h2 className="font-serif font-bold text-[22px] sm:text-[25px] lg:text-[28px] leading-tight text-[#111827] tracking-tight">
               Designed For Space.{' '}
               <span className="text-[#EA580C]">Scaled From Master Craftsmanship.</span>
             </h2>

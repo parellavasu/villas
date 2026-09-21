@@ -66,7 +66,7 @@ export default function Section05NatureLocation() {
                 08 / The Location
               </span>
             </div>
-            <h2 className="font-sans font-semibold text-[20px] sm:text-[24px] lg:text-[28px] tracking-tight text-[#111827] leading-tight">
+            <h2 className="font-serif font-bold text-[22px] sm:text-[25px] lg:text-[28px] tracking-tight text-[#111827] leading-tight">
               Connected To Bengaluru. Close To What Matters.
             </h2>
           </div>

@@ -37,7 +37,7 @@ export default function BookingModal({ isOpen, onClose }) {
             <div className="w-12 h-12 mx-auto rounded-full bg-[#FFF7ED] text-[#EA580C] border border-[#FED7AA] flex items-center justify-center shadow-sm">
               <CheckCircle2 className="w-6 h-6" />
             </div>
-            <h3 className="text-[22px] font-sans font-semibold text-[#111827]">
+            <h3 className="text-[22px] font-serif font-bold text-[#111827]">
               Appointment Registered
             </h3>
             <p className="text-[13.5px] text-[#4B5563] max-w-sm mx-auto leading-relaxed">
@@ -61,7 +61,7 @@ export default function BookingModal({ isOpen, onClose }) {
               <div className="text-[10px] font-mono tracking-[0.25em] text-[#EA580C] font-semibold">
                 Private Architectural Advisory
               </div>
-              <h3 className="text-[22px] font-sans font-semibold text-[#111827] mt-1">
+              <h3 className="text-[22px] font-serif font-bold text-[#111827] mt-1">
                 Schedule A Consultation
               </h3>
               <p className="text-[13px] text-[#4B5563] mt-1 font-normal">

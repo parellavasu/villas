@@ -94,7 +94,7 @@ export default function SectionCurrentProject({ onExploreVillas, onOpenBooking }
             </div>
 
             {/* Main Heading */}
-            <h2 className="font-sans font-bold text-[18px] sm:text-[22px] lg:text-[24px] leading-tight text-[#111827] tracking-tight mb-2.5">
+            <h2 className="font-serif font-bold text-[20px] sm:text-[24px] lg:text-[26px] leading-tight text-[#111827] tracking-tight mb-2.5">
               A Community Designed Around Better Living
             </h2>
 

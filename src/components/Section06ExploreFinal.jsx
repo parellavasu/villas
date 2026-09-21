@@ -21,7 +21,7 @@ export default function Section06ExploreFinal({ onExploreVillas, onOpenBooking }
             </span>
             <span className="w-4 h-[1.5px] bg-[#EA580C]" />
           </div>
-          <h2 className="font-sans font-semibold text-[20px] sm:text-[24px] lg:text-[28px] tracking-tight text-[#111827] leading-tight mb-1">
+          <h2 className="font-serif font-bold text-[24px] sm:text-[28px] lg:text-[32px] tracking-tight text-[#111827] leading-tight mb-1">
             Discover Antelia Groves
           </h2>
           <p className="text-[12px] sm:text-[13px] text-[#4B5563] font-normal leading-relaxed">
@@ -57,7 +57,7 @@ export default function Section06ExploreFinal({ onExploreVillas, onOpenBooking }
           <div className="text-[9.5px] font-mono tracking-widest text-[#EA580C] font-semibold mb-0.5">
             Private Consultations &amp; Site Viewings
           </div>
-          <h3 className="text-[18px] sm:text-[21px] font-semibold text-[#111827] mb-1 leading-tight">
+          <h3 className="font-serif text-[19px] sm:text-[22px] font-bold text-[#111827] mb-1 leading-tight">
             Schedule Your Private Estate Experience
           </h3>
           <p className="text-[12px] sm:text-[12.5px] text-[#4B5563] mb-3 max-w-lg mx-auto leading-relaxed">

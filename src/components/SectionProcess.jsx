@@ -149,7 +149,7 @@ export default function SectionProcess() {
               </span>
             </div>
 
-            <h2 className="font-sans font-semibold text-[20px] sm:text-[24px] lg:text-[28px] leading-tight text-[#111827] tracking-tight">
+            <h2 className="font-serif font-bold text-[22px] sm:text-[25px] lg:text-[28px] leading-tight text-[#111827] tracking-tight">
               From Virgin Land To A Living Community
             </h2>
           </div>

@@ -101,10 +101,12 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['"Manrope"', 'sans-serif'],
-        serif: ['"Cormorant Garamond"', '"DM Serif Display"', 'serif'],
-        editorial: ['"Cormorant Garamond"', '"DM Serif Display"', 'serif'],
-        cormorant: ['"Cormorant Garamond"', 'serif'],
+        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+        serif: ['"Playfair Display"', 'serif'],
+        editorial: ['"Playfair Display"', 'serif'],
+        cinzel: ['"Cinzel"', 'serif'],
+        playfair: ['"Playfair Display"', 'serif'],
+        cormorant: ['"Playfair Display"', 'serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
       },
       letterSpacing: {
