@@ -16,13 +16,13 @@ export default function Section06ExploreFinal({ onExploreVillas, onOpenBooking }
         <div className="text-center max-w-2xl mx-auto mb-3 sm:mb-3.5">
           <div className="inline-flex items-center space-x-2 mb-1">
             <span className="w-4 h-[1.5px] bg-[#EA580C]" />
-            <span className="font-mono text-[10px] sm:text-[10.5px] font-semibold tracking-[0.25em] text-[#EA580C] uppercase">
-              08 / DISCOVER &amp; INQUIRE
+            <span className="font-mono text-[10px] sm:text-[10.5px] font-semibold tracking-[0.25em] text-[#EA580C]">
+              09 / Discover &amp; Inquire
             </span>
             <span className="w-4 h-[1.5px] bg-[#EA580C]" />
           </div>
           <h2 className="font-sans font-semibold text-[20px] sm:text-[24px] lg:text-[28px] tracking-tight text-[#111827] leading-tight mb-1">
-            DISCOVER ANTELIA GROVES
+            Discover Antelia Groves
           </h2>
           <p className="text-[12px] sm:text-[13px] text-[#4B5563] font-normal leading-relaxed">
             189 bespoke split-level residences set amidst 10 contiguous acres of preserved nature in South Bengaluru.
@@ -41,11 +41,11 @@ export default function Section06ExploreFinal({ onExploreVillas, onOpenBooking }
           <div className="absolute inset-0 bg-gradient-to-t from-[#111827]/80 via-transparent to-transparent pointer-events-none" />
           
           <div className="absolute bottom-2 left-3 right-3 flex items-center justify-between text-white pointer-events-none">
-            <div className="font-mono text-[9px] sm:text-[9.5px] tracking-widest text-[#FED7AA] uppercase font-semibold">
-              10 ACRES · 189 INDEPENDENT RESIDENCES · A LIVING SANCTUARY
+            <div className="font-mono text-[9px] sm:text-[9.5px] tracking-widest text-[#FED7AA] font-semibold">
+              10 Acres · 189 Independent Residences · A Living Sanctuary
             </div>
-            <div className="hidden sm:block font-mono text-[9px] text-white/90 uppercase tracking-wider">
-              SOUTH BENGALURU CORRIDOR
+            <div className="hidden sm:block font-mono text-[9px] text-white/90 tracking-wider">
+              South Bengaluru Corridor
             </div>
           </div>
         </div>
@@ -54,8 +54,8 @@ export default function Section06ExploreFinal({ onExploreVillas, onOpenBooking }
             3. CENTRAL VIP CALL-TO-ACTION ESTATE CARD
             ========================================================= */}
         <div className="max-w-2xl mx-auto text-center p-4 sm:p-5 bg-gradient-to-b from-white to-[#FFF7ED]/50 border border-[#FED7AA] rounded-sm mb-4 sm:mb-5 shadow-luxury w-full">
-          <div className="text-[9.5px] font-mono tracking-widest text-[#EA580C] uppercase font-semibold mb-0.5">
-            PRIVATE CONSULTATIONS &amp; SITE VIEWINGS
+          <div className="text-[9.5px] font-mono tracking-widest text-[#EA580C] font-semibold mb-0.5">
+            Private Consultations &amp; Site Viewings
           </div>
           <h3 className="text-[18px] sm:text-[21px] font-semibold text-[#111827] mb-1 leading-tight">
             Schedule Your Private Estate Experience
@@ -67,19 +67,19 @@ export default function Section06ExploreFinal({ onExploreVillas, onOpenBooking }
           <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
             <button
               onClick={onOpenBooking}
-              className="inline-flex items-center space-x-1.5 px-5 py-2 bg-[#EA580C] hover:bg-[#C2410C] text-white text-[10.5px] font-bold uppercase tracking-[0.16em] rounded-xs transition-all duration-300 shadow-sm group cursor-pointer"
+              className="inline-flex items-center space-x-1.5 px-5 py-2 bg-[#EA580C] hover:bg-[#C2410C] text-white text-[10.5px] font-bold tracking-[0.16em] rounded-xs transition-all duration-300 shadow-sm group cursor-pointer"
             >
               <Calendar className="w-3.5 h-3.5 text-white" />
-              <span>SCHEDULE A VISIT</span>
+              <span>Schedule A Visit</span>
               <ArrowUpRight className="w-3.5 h-3.5 text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </button>
 
             <button
               onClick={onOpenBooking}
-              className="inline-flex items-center space-x-1.5 px-5 py-2 bg-white border-2 border-[#EA580C] text-[#EA580C] hover:bg-[#FFF7ED] text-[10.5px] font-semibold uppercase tracking-[0.16em] rounded-xs transition-all duration-300 cursor-pointer"
+              className="inline-flex items-center space-x-1.5 px-5 py-2 bg-white border-2 border-[#EA580C] text-[#EA580C] hover:bg-[#FFF7ED] text-[10.5px] font-semibold tracking-[0.16em] rounded-xs transition-all duration-300 cursor-pointer"
             >
               <PhoneCall className="w-3.5 h-3.5 text-[#EA580C]" />
-              <span>ENQUIRE NOW</span>
+              <span>Enquire Now</span>
             </button>
           </div>
 
@@ -117,8 +117,8 @@ export default function Section06ExploreFinal({ onExploreVillas, onOpenBooking }
 
           {/* Col 2: Navigation Chapters */}
           <div className="md:col-span-4 flex flex-col space-y-1">
-            <div className="text-[9.5px] font-mono tracking-widest text-[#EA580C] uppercase mb-0.5 font-semibold">
-              PROJECT CHAPTERS
+            <div className="text-[9.5px] font-mono tracking-widest text-[#EA580C] mb-0.5 font-semibold">
+              Project Chapters
             </div>
             <div className="grid grid-cols-2 gap-1 text-[11px]">
               <a href="#vision" className="text-[#6B7280] hover:text-[#EA580C] font-medium transition-colors">01 / The Vision</a>
@@ -134,8 +134,8 @@ export default function Section06ExploreFinal({ onExploreVillas, onOpenBooking }
 
           {/* Col 3: RERA & Statutory Compliance */}
           <div className="md:col-span-4 flex flex-col space-y-1 text-[11px]">
-            <div className="text-[9.5px] font-mono tracking-widest text-[#EA580C] uppercase mb-0.5 font-semibold">
-              STATUTORY COMPLIANCE
+            <div className="text-[9.5px] font-mono tracking-widest text-[#EA580C] mb-0.5 font-semibold">
+              Statutory Compliance
             </div>
             <div className="flex items-start space-x-1.5 text-[#111827] font-semibold bg-[#FAFAF9] p-2 rounded-xs border border-gray-200">
               <ShieldCheck className="w-3.5 h-3.5 text-[#EA580C] shrink-0 mt-0.5" />

@@ -7,7 +7,7 @@ export default function Section05NatureLocation() {
 
   const categories = {
     work: {
-      label: 'WORK HUBS',
+      label: 'Work Hubs',
       icon: Building,
       items: [
         { name: 'Electronic City Phase 1 & 2', dist: '10–12 Mins', km: '6.5 km', note: 'Wipro HQ, Infosys Campus, TCS, Continental, Tech Mahindra' },
@@ -17,7 +17,7 @@ export default function Section05NatureLocation() {
       ],
     },
     transit: {
-      label: 'TRANSIT & HIGHWAYS',
+      label: 'Transit & Highways',
       icon: Train,
       items: [
         { name: 'Hosur Road (NH 44 Expressway)', dist: '6 Mins', km: '3.2 km', note: 'Direct elevated 10-lane expressway into Koramangala & Central Bengaluru' },
@@ -27,7 +27,7 @@ export default function Section05NatureLocation() {
       ],
     },
     health: {
-      label: 'HEALTHCARE',
+      label: 'Healthcare',
       icon: HeartPulse,
       items: [
         { name: 'Narayana Health City', dist: '10 Mins', km: '5.2 km', note: 'World-renowned 5,000+ bed multispecialty hospital campus & cardiac center' },
@@ -37,7 +37,7 @@ export default function Section05NatureLocation() {
       ],
     },
     education: {
-      label: 'ACADEMIC CAMPUSES',
+      label: 'Academic Campuses',
       icon: GraduationCap,
       items: [
         { name: 'Alliance University Campus', dist: '12 Mins', km: '7.0 km', note: 'Premier engineering, business, and liberal arts residential campus' },
@@ -62,12 +62,12 @@ export default function Section05NatureLocation() {
           <div className="max-w-2xl">
             <div className="inline-flex items-center space-x-2 mb-1">
               <span className="w-4 h-[1.5px] bg-[#EA580C]" />
-              <span className="font-mono text-[10.5px] font-semibold tracking-[0.25em] text-[#EA580C] uppercase">
-                08 / THE LOCATION
+              <span className="font-mono text-[10.5px] font-semibold tracking-[0.25em] text-[#EA580C]">
+                08 / The Location
               </span>
             </div>
             <h2 className="font-sans font-semibold text-[20px] sm:text-[24px] lg:text-[28px] tracking-tight text-[#111827] leading-tight">
-              CONNECTED TO BENGALURU. CLOSE TO WHAT MATTERS.
+              Connected To Bengaluru. Close To What Matters.
             </h2>
           </div>
 
@@ -79,17 +79,17 @@ export default function Section05NatureLocation() {
         {/* 4 QUICK TRAVEL TIME BANNERS */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3 mb-3.5 sm:mb-4">
           {[
-            { dest: 'HOSUR RD (NH 44)', time: '6 MINS', sub: 'Signal-free flyover' },
-            { dest: 'NICE EXPRESSWAY', time: '9 MINS', sub: 'Peripheral ring road' },
-            { dest: 'ELECTRONIC CITY', time: '10–12 MINS', sub: 'Major IT tech hubs' },
-            { dest: 'SARJAPUR ROAD', time: '20 MINS', sub: 'Wipro HQ & tech corridor' },
+            { dest: 'Hosur Rd (NH 44)', time: '6 Mins', sub: 'Signal-free flyover' },
+            { dest: 'NICE Expressway', time: '9 Mins', sub: 'Peripheral ring road' },
+            { dest: 'Electronic City', time: '10–12 Mins', sub: 'Major IT tech hubs' },
+            { dest: 'Sarjapur Road', time: '20 Mins', sub: 'Wipro HQ & tech corridor' },
           ].map((h, i) => (
             <div
               key={i}
               className="p-2.5 sm:p-3 bg-white border border-gray-200 rounded-sm shadow-xs hover:border-[#EA580C] transition-all duration-300 flex items-center justify-between"
             >
               <div>
-                <div className="flex items-center space-x-1 text-[9px] font-mono tracking-widest text-[#EA580C] uppercase font-semibold">
+                <div className="flex items-center space-x-1 text-[9px] font-mono tracking-widest text-[#EA580C] font-semibold">
                   <Clock className="w-2.5 h-2.5 text-[#EA580C]" />
                   <span>{h.dest}</span>
                 </div>
@@ -120,7 +120,7 @@ export default function Section05NatureLocation() {
                   <button
                     key={key}
                     onClick={() => setActiveTab(key)}
-                    className={`py-1.5 px-1 text-center text-[9.5px] sm:text-[10px] font-mono tracking-wider uppercase transition-all rounded-xs cursor-pointer ${
+                    className={`py-1.5 px-1 text-center text-[9.5px] sm:text-[10px] font-mono tracking-wider transition-all rounded-xs cursor-pointer ${
                       activeTab === key
                         ? 'bg-[#EA580C] text-white font-bold shadow-xs'
                         : 'text-[#6B7280] hover:text-[#111827] hover:bg-white/80'
@@ -135,12 +135,12 @@ export default function Section05NatureLocation() {
               <div className="py-2.5 px-3.5 bg-white border-b border-gray-200 flex items-center justify-between">
                 <div className="flex items-center space-x-1.5">
                   <activeData.icon className="w-3.5 h-3.5 text-[#EA580C]" />
-                  <span className="text-[11px] font-mono font-semibold tracking-wider text-[#111827] uppercase">
+                  <span className="text-[11px] font-mono font-semibold tracking-wider text-[#111827]">
                     {activeData.label}
                   </span>
                 </div>
                 <span className="text-[10px] font-mono text-[#EA580C] font-semibold">
-                  {activeData.items.length} DESTINATIONS
+                  {activeData.items.length} Destinations
                 </span>
               </div>
 

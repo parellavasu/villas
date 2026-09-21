@@ -50,18 +50,18 @@ export default function Logo({ size = "md", light = false, className = "" }) {
       {/* Brand Wordmark */}
       <div className="flex flex-col justify-center">
         <span
-          className={`font-sans font-semibold uppercase ${currentSize.tracking} ${currentSize.text} leading-tight ${
+          className={`font-sans font-semibold ${currentSize.tracking} ${currentSize.text} leading-tight ${
             light ? "text-white" : "text-[#111827]"
           } transition-colors group-hover:text-[#EA580C]`}
         >
-          ANTELIA
+          Antelia
         </span>
         <span
-          className={`font-sans font-medium uppercase tracking-[0.38em] ${currentSize.sub} ${
+          className={`font-sans font-medium tracking-[0.38em] ${currentSize.sub} ${
             light ? "text-[#FED7AA]" : "text-[#6B7280]"
           } mt-0.5 leading-none`}
         >
-          GROVES
+          Groves
         </span>
       </div>
     </div>

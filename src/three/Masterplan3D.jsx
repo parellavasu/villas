@@ -180,21 +180,21 @@ export default function Masterplan3D({ activeSector = 'all' }) {
       <div className="absolute top-3 left-3 pointer-events-none flex flex-col space-y-0.5 bg-white/95 backdrop-blur-md px-3 py-1.5 border border-gray-200 text-[#111827] text-[10.5px] font-mono shadow-xs rounded-xs">
         <div className="flex items-center space-x-1.5">
           <span className="w-1.5 h-1.5 rounded-full bg-[#EA580C] animate-pulse" />
-          <span className="text-[#EA580C] font-semibold tracking-wider uppercase">10-ACRE 3D MODEL</span>
+          <span className="text-[#EA580C] font-semibold tracking-wider">10-Acre 3D Model</span>
         </div>
-        <div className="text-[#6B7280] text-[9.5px]">360° TURNTABLE · DRAG TO EXPLORE</div>
+        <div className="text-[#6B7280] text-[9.5px]">360° Turntable · Drag To Explore</div>
       </div>
 
       {/* Auto-Rotate Toggle Button */}
       <button
         type="button"
         onClick={() => setAutoRotate(!autoRotate)}
-        className="absolute top-3 right-3 z-10 bg-white/95 hover:bg-[#FFF7ED] active:scale-95 transition-all backdrop-blur-md px-2.5 py-1 border border-gray-200 text-[10px] font-mono tracking-wider text-[#111827] uppercase flex items-center space-x-1.5 shadow-xs cursor-pointer rounded-xs"
+        className="absolute top-3 right-3 z-10 bg-white/95 hover:bg-[#FFF7ED] active:scale-95 transition-all backdrop-blur-md px-2.5 py-1 border border-gray-200 text-[10px] font-mono tracking-wider text-[#111827] flex items-center space-x-1.5 shadow-xs cursor-pointer rounded-xs"
         title="Toggle 360° Auto-Rotation"
         aria-label="Toggle 360° Auto-Rotation"
       >
         <span className={`w-1.5 h-1.5 rounded-full transition-colors ${autoRotate ? 'bg-[#EA580C] animate-pulse' : 'bg-gray-400'}`} />
-        <span className="font-semibold text-[#111827]">{autoRotate ? 'ROTATING' : 'PAUSED'}</span>
+        <span className="font-semibold text-[#111827]">{autoRotate ? 'Rotating' : 'Paused'}</span>
       </button>
     </div>
   );

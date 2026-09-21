@@ -14,54 +14,54 @@ export default function Section02Masterplan() {
     aerial: {
       id: 'aerial',
       title: '10-Acre Masterplan Aerial (Overall Layout)',
-      subtitle: '189 LOW-DENSITY SPLIT-LEVEL VILLAS',
+      subtitle: '189 Low-Density Split-Level Villas',
       image: '/images/masterplan/01_masterplan_aerial_10acres.jpg',
-      badge: '10-ACRE MASTERPLAN OVERVIEW',
+      badge: '10-Acre Masterplan Overview',
       desc: 'An aerial architectural masterplan showing the low-density community layout, wide tree-lined boulevards, central recreational pavilion, and perimeter green buffer.',
       hotspots: [
-        { top: '42%', left: '52%', label: 'CENTRAL CLUBHOUSE & 25M POOL', sub: '15,000 Sq.Ft Pavilion' },
-        { top: '26%', left: '38%', label: 'NORTH GROVE (EAST VILLAS)', sub: '68 East-Facing Homes' },
-        { top: '56%', left: '68%', label: 'SOUTH GROVE (GARDEN VILLAS)', sub: '74 West-Facing Homes' },
-        { top: '78%', left: '26%', label: '40FT BOULEVARD MAIN ENTRY', sub: 'Gated Security Roundabout' },
+        { top: '42%', left: '52%', label: 'Central Clubhouse & 25m Pool', sub: '15,000 Sq.Ft Pavilion' },
+        { top: '26%', left: '38%', label: 'North Grove (East Villas)', sub: '68 East-Facing Homes' },
+        { top: '56%', left: '68%', label: 'South Grove (Garden Villas)', sub: '74 West-Facing Homes' },
+        { top: '78%', left: '26%', label: '40ft Boulevard Main Entry', sub: 'Gated Security Roundabout' },
       ],
     },
     clubhouse: {
       id: 'clubhouse',
       title: 'Central Pavilion & Resort Clubhouse',
-      subtitle: '15,000 SQ.FT RECREATIONAL HEART',
+      subtitle: '15,000 Sq.Ft Recreational Heart',
       image: '/images/masterplan/02_masterplan_central_clubhouse.jpg',
-      badge: 'CENTRAL RECREATIONAL HUB',
+      badge: 'Central Recreational Hub',
       desc: 'The social and leisure anchor of Antelia Groves featuring a 25m heated lap pool, outdoor amphitheater lawn, children’s play park, and professional tennis court.',
       hotspots: [
-        { top: '48%', left: '42%', label: '25-METER HEATED LAP POOL', sub: 'Azure Water Court' },
-        { top: '65%', left: '55%', label: 'GRASS AMPHITHEATER', sub: 'Community Gathering Lawn' },
-        { top: '70%', left: '80%', label: 'CHAMPIONSHIP TENNIS COURT', sub: 'All-Weather Surface' },
+        { top: '48%', left: '42%', label: '25-Meter Heated Lap Pool', sub: 'Azure Water Court' },
+        { top: '65%', left: '55%', label: 'Grass Amphitheater', sub: 'Community Gathering Lawn' },
+        { top: '70%', left: '80%', label: 'Championship Tennis Court', sub: 'All-Weather Surface' },
       ],
     },
     north: {
       id: 'north',
       title: 'North Grove Residential Enclave',
-      subtitle: 'EAST-FACING VASTU HOMES',
+      subtitle: 'East-Facing Vastu Homes',
       image: '/images/masterplan/03_masterplan_north_grove.jpg',
-      badge: 'NORTH GROVE SECTOR',
+      badge: 'North Grove Sector',
       desc: 'A peaceful residential sector of 3 and 4 BHK villas designed with east-facing Vastu entrances, open rooftop terraces, and quiet 30-foot avenues.',
       hotspots: [
-        { top: '35%', left: '46%', label: 'EAST-FACING VILLAS', sub: 'Morning Sunlight Living' },
-        { top: '60%', left: '55%', label: '30FT QUIET RESIDENTIAL STREETS', sub: 'Granite Kerbs & Landscaping' },
-        { top: '28%', left: '74%', label: 'CORNER POCKET PARK', sub: 'Children Play & Gazebo' },
+        { top: '35%', left: '46%', label: 'East-Facing Villas', sub: 'Morning Sunlight Living' },
+        { top: '60%', left: '55%', label: '30ft Quiet Residential Streets', sub: 'Granite Kerbs & Landscaping' },
+        { top: '28%', left: '74%', label: 'Corner Pocket Park', sub: 'Children Play & Gazebo' },
       ],
     },
     south: {
       id: 'south',
       title: 'South Grove & Sunset Garden Enclave',
-      subtitle: 'LINEAR CENTRAL PARK & REFLEXOLOGY TRAILS',
+      subtitle: 'Linear Central Park & Reflexology Trails',
       image: '/images/masterplan/04_masterplan_south_grove.jpg',
-      badge: 'SOUTH GROVE SECTOR',
+      badge: 'South Grove Sector',
       desc: 'An enclave of split-level villas framed by a continuous lush central linear park, wooden pergolas, reflexology walking trails, and flowering trees.',
       hotspots: [
-        { top: '50%', left: '48%', label: 'CENTRAL LINEAR GREEN PARK', sub: 'Pergolas & Water Feature' },
-        { top: '38%', left: '28%', label: 'WEST-FACING SUNSET VILLAS', sub: 'Private Rooftop Terraces' },
-        { top: '68%', left: '78%', label: 'REFLEXOLOGY WALKING PATH', sub: 'Stone Paved Nature Trail' },
+        { top: '50%', left: '48%', label: 'Central Linear Green Park', sub: 'Pergolas & Water Feature' },
+        { top: '38%', left: '28%', label: 'West-Facing Sunset Villas', sub: 'Private Rooftop Terraces' },
+        { top: '68%', left: '78%', label: 'Reflexology Walking Path', sub: 'Stone Paved Nature Trail' },
       ],
     },
   };
@@ -101,12 +101,12 @@ export default function Section02Masterplan() {
           <div className="max-w-2xl">
             <div className="inline-flex items-center space-x-2 mb-1">
               <span className="w-4 h-[1.5px] bg-[#EA580C]" />
-              <span className="font-mono text-[10.5px] font-semibold tracking-[0.25em] text-[#EA580C] uppercase">
-                03 / THE MASTERPLAN
+              <span className="font-mono text-[10.5px] font-semibold tracking-[0.25em] text-[#EA580C]">
+                05 / The Masterplan
               </span>
             </div>
             <h2 className="font-sans font-semibold text-[20px] sm:text-[24px] lg:text-[28px] tracking-tight text-[#111827] leading-tight">
-              A COMMUNITY PLANNED AROUND LIVING
+              A Community Planned Around Living
             </h2>
           </div>
 
@@ -118,17 +118,17 @@ export default function Section02Masterplan() {
         {/* 4 COMPACT KEY METRICS BAR */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3 mb-3.5 sm:mb-4">
           {[
-            { tag: 'TOTAL SCALE', val: '10 ACRES', sub: 'Gated Sanctuary' },
-            { tag: 'DENSITY', val: '189 HOMES', sub: 'Low Density Layout' },
-            { tag: 'CLUBHOUSE', val: '15,000 SQ.FT', sub: '25m Pool & Sports' },
-            { tag: 'AVENUES', val: '40 & 30 FT', sub: 'Tree-Shaded Spines' },
+            { tag: 'Total Scale', val: '10 Acres', sub: 'Gated Sanctuary' },
+            { tag: 'Density', val: '189 Homes', sub: 'Low Density Layout' },
+            { tag: 'Clubhouse', val: '15,000 Sq.Ft', sub: '25m Pool & Sports' },
+            { tag: 'Avenues', val: '40 & 30 Ft', sub: 'Tree-Shaded Spines' },
           ].map((item, idx) => (
             <div
               key={idx}
               className="p-2.5 sm:p-3 bg-white border border-gray-200 rounded-sm shadow-xs hover:border-[#EA580C] transition-all duration-300 flex items-center justify-between"
             >
               <div>
-                <div className="text-[9px] font-mono tracking-widest text-[#EA580C] uppercase font-semibold">{item.tag}</div>
+                <div className="text-[9px] font-mono tracking-widest text-[#EA580C] font-semibold">{item.tag}</div>
                 <div className="text-[17px] sm:text-[20px] font-bold text-[#111827] mt-0.5 leading-tight">{item.val}</div>
               </div>
               <div className="text-[10px] text-[#6B7280] text-right font-mono hidden sm:block">{item.sub}</div>
@@ -145,17 +145,17 @@ export default function Section02Masterplan() {
             {/* View Tabs */}
             <div className="flex flex-wrap items-center gap-1.5">
               {[
-                { id: 'aerial', label: '10-ACRE AERIAL' },
-                { id: 'clubhouse', label: 'CENTRAL CLUBHOUSE' },
-                { id: 'north', label: 'NORTH GROVE' },
-                { id: 'south', label: 'SOUTH GROVE' },
+                { id: 'aerial', label: '10-Acre Aerial' },
+                { id: 'clubhouse', label: 'Central Clubhouse' },
+                { id: 'north', label: 'North Grove' },
+                { id: 'south', label: 'South Grove' },
               ].map((tab) => {
                 const isActive = activeTab === tab.id;
                 return (
                   <button
                     key={tab.id}
                     onClick={() => handleTabClick(tab.id)}
-                    className={`px-3 py-1 text-[10px] sm:text-[10.5px] font-mono uppercase tracking-wider rounded-xs transition-all cursor-pointer relative ${
+                    className={`px-3 py-1 text-[10px] sm:text-[10.5px] font-mono tracking-wider rounded-xs transition-all cursor-pointer relative ${
                       isActive
                         ? 'bg-[#EA580C] text-white font-bold shadow-sm'
                         : 'bg-white border border-gray-200 text-[#6B7280] hover:text-[#111827] hover:border-[#EA580C]/50'
@@ -172,7 +172,7 @@ export default function Section02Masterplan() {
               {/* Distinct 3D CAD MODEL Tab */}
               <button
                 onClick={() => handleTabClick('3d')}
-                className={`px-3 py-1 text-[10px] sm:text-[10.5px] font-mono uppercase tracking-wider rounded-xs transition-all cursor-pointer flex items-center space-x-1 ml-0.5 ${
+                className={`px-3 py-1 text-[10px] sm:text-[10.5px] font-mono tracking-wider rounded-xs transition-all cursor-pointer flex items-center space-x-1 ml-0.5 ${
                   activeTab === '3d'
                     ? 'bg-[#EA580C] text-white font-semibold shadow-sm border border-[#EA580C]'
                     : 'bg-white border-2 border-[#EA580C] text-[#EA580C] hover:bg-[#FFF7ED] font-semibold'
@@ -180,10 +180,10 @@ export default function Section02Masterplan() {
                 title="Click to explore the interactive 3D model"
               >
                 <Box className="w-3 h-3" />
-                <span>3D CAD MODEL</span>
+                <span>3D CAD Model</span>
                 {activeTab !== '3d' && (
                   <span className="text-[8.5px] font-mono bg-[#FFF7ED] text-[#EA580C] px-1 py-0.2 rounded-xs ml-0.5 border border-[#FED7AA]">
-                    CLICK
+                    Click
                   </span>
                 )}
               </button>
@@ -194,19 +194,19 @@ export default function Section02Masterplan() {
               {activeTab === '3d' ? (
                 /* Sector Filter when on 3D Mode */
                 <div className="flex items-center space-x-1">
-                  <span className="text-[9.5px] font-mono text-[#6B7280] uppercase tracking-wider hidden sm:inline">
-                    SECTOR:
+                  <span className="text-[9.5px] font-mono text-[#6B7280] tracking-wider hidden sm:inline">
+                    Sector:
                   </span>
                   {[
-                    { id: 'all', label: 'ALL' },
-                    { id: 'north', label: 'NORTH' },
-                    { id: 'central', label: 'CLUBHOUSE' },
-                    { id: 'south', label: 'SOUTH' },
+                    { id: 'all', label: 'All' },
+                    { id: 'north', label: 'North' },
+                    { id: 'central', label: 'Clubhouse' },
+                    { id: 'south', label: 'South' },
                   ].map((sec) => (
                     <button
                       key={sec.id}
                       onClick={() => setActiveSector(sec.id)}
-                      className={`px-2 py-0.5 text-[9.5px] font-mono uppercase tracking-wider rounded-xs transition-colors cursor-pointer ${
+                      className={`px-2 py-0.5 text-[9.5px] font-mono tracking-wider rounded-xs transition-colors cursor-pointer ${
                         activeSector === sec.id
                           ? 'bg-[#EA580C] text-white font-bold'
                           : 'bg-white border border-gray-200 text-[#6B7280] hover:text-[#111827]'
@@ -220,8 +220,8 @@ export default function Section02Masterplan() {
                 /* Auto-Cycling Indicator & Pause/Play Control for Image Views */
                 <div className="flex items-center space-x-1.5 bg-white px-2 py-0.5 border border-gray-200 rounded-xs shadow-xs">
                   <span className={`w-1.5 h-1.5 rounded-full ${isAutoPlaying ? 'bg-[#EA580C] animate-pulse' : 'bg-gray-400'}`} />
-                  <span className="font-mono text-[9px] text-[#EA580C] font-semibold uppercase tracking-wider hidden sm:inline">
-                    {isAutoPlaying ? 'AUTO-CHANGING' : 'PAUSED'}
+                  <span className="font-mono text-[9px] text-[#EA580C] font-semibold tracking-wider hidden sm:inline">
+                    {isAutoPlaying ? 'Auto-Changing' : 'Paused'}
                   </span>
                   <button
                     onClick={() => setIsAutoPlaying(!isAutoPlaying)}
@@ -255,12 +255,12 @@ export default function Section02Masterplan() {
 
                 {/* Top Badge */}
                 <div className="absolute top-3 left-3 pointer-events-none flex items-center space-x-2">
-                  <span className="inline-block px-2.5 py-0.5 bg-white/95 backdrop-blur-md text-[#111827] font-mono text-[9px] uppercase tracking-[0.2em] border border-gray-200 rounded-xs shadow-sm font-semibold">
+                  <span className="inline-block px-2.5 py-0.5 bg-white/95 backdrop-blur-md text-[#111827] font-mono text-[9px] tracking-[0.2em] border border-gray-200 rounded-xs shadow-sm font-semibold">
                     {currentView.badge}
                   </span>
                   {isAutoPlaying && (
-                    <span className="inline-block px-2 py-0.5 bg-[#EA580C] backdrop-blur-md text-white font-mono text-[8.5px] uppercase tracking-wider rounded-xs shadow-xs font-semibold">
-                      AUTO-ROTATING
+                    <span className="inline-block px-2 py-0.5 bg-[#EA580C] backdrop-blur-md text-white font-mono text-[8.5px] tracking-wider rounded-xs shadow-xs font-semibold">
+                      Auto-Rotating
                     </span>
                   )}
                 </div>
@@ -291,7 +291,7 @@ export default function Section02Masterplan() {
                 {/* Bottom View Title Overlay */}
                 <div className="absolute bottom-3 left-3 right-3 text-white pointer-events-none flex items-end justify-between">
                   <div className="max-w-xl">
-                    <div className="font-mono text-[9.5px] text-[#FED7AA] uppercase tracking-widest mb-0.5 font-medium">
+                    <div className="font-mono text-[9.5px] text-[#FED7AA] tracking-widest mb-0.5 font-medium">
                       {currentView.subtitle}
                     </div>
                     <div className="font-sans text-[14px] sm:text-[16px] font-semibold text-white tracking-wide">
@@ -301,7 +301,7 @@ export default function Section02Masterplan() {
 
                   {/* Visual Step Indicator */}
                   <div className="hidden sm:flex items-center space-x-1 font-mono text-[10px] text-[#EA580C] bg-white/95 backdrop-blur-sm px-2 py-0.5 rounded-xs border border-gray-200 font-semibold">
-                    <span>VIEW 0{imageTabs.indexOf(activeTab) + 1} / 04</span>
+                    <span>View 0{imageTabs.indexOf(activeTab) + 1} / 04</span>
                   </div>
                 </div>
               </div>

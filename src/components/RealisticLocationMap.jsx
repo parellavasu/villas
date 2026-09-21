@@ -26,8 +26,8 @@ export default function RealisticLocationMap({ activeTab = 'work' }) {
             <Compass className="w-3.5 h-3.5" />
           </div>
           <div>
-            <div className="font-mono text-[10px] uppercase tracking-widest text-[#111827] font-bold leading-tight">
-              LOCATION &amp; CONNECTIVITY MAP
+            <div className="font-mono text-[10px] tracking-widest text-[#111827] font-bold leading-tight">
+              Location &amp; Connectivity Map
             </div>
             <div className="font-mono text-[9px] text-[#6B7280]">
               12°47'28"N 77°41'12"E · Chandapura Corridor
@@ -39,33 +39,33 @@ export default function RealisticLocationMap({ activeTab = 'work' }) {
         <div className="flex items-center space-x-1 bg-white border border-gray-200 p-0.5 rounded-xs shadow-xs">
           <button
             onClick={() => setMapMode('google')}
-            className={`px-2.5 py-0.5 font-mono text-[9.5px] uppercase tracking-wider rounded-xs transition-all cursor-pointer ${
+            className={`px-2.5 py-0.5 font-mono text-[9.5px] tracking-wider rounded-xs transition-all cursor-pointer ${
               mapMode === 'google'
                 ? 'bg-[#EA580C] text-white font-bold shadow-xs'
                 : 'text-[#6B7280] hover:text-[#111827]'
             }`}
           >
-            STREET MAP
+            Street Map
           </button>
           <button
             onClick={() => setMapMode('satellite')}
-            className={`px-2.5 py-0.5 font-mono text-[9.5px] uppercase tracking-wider rounded-xs transition-all cursor-pointer ${
+            className={`px-2.5 py-0.5 font-mono text-[9.5px] tracking-wider rounded-xs transition-all cursor-pointer ${
               mapMode === 'satellite'
                 ? 'bg-[#EA580C] text-white font-bold shadow-xs'
                 : 'text-[#6B7280] hover:text-[#111827]'
             }`}
           >
-            SATELLITE
+            Satellite
           </button>
           <button
             onClick={() => setMapMode('aerial')}
-            className={`px-2.5 py-0.5 font-mono text-[9.5px] uppercase tracking-wider rounded-xs transition-all cursor-pointer ${
+            className={`px-2.5 py-0.5 font-mono text-[9.5px] tracking-wider rounded-xs transition-all cursor-pointer ${
               mapMode === 'aerial'
                 ? 'bg-[#EA580C] text-white font-bold shadow-xs'
                 : 'text-[#6B7280] hover:text-[#111827]'
             }`}
           >
-            3D ENCLAVE
+            3D Enclave
           </button>
         </div>
 
@@ -110,15 +110,15 @@ export default function RealisticLocationMap({ activeTab = 'work' }) {
             
             {/* Architectural Callout Overlay */}
             <div className="absolute top-3 left-3">
-              <span className="inline-flex items-center space-x-1.5 px-2.5 py-0.5 bg-white/95 backdrop-blur-md border border-gray-200 text-[#111827] font-mono text-[9px] uppercase tracking-[0.16em] rounded-xs shadow-md font-semibold">
+              <span className="inline-flex items-center space-x-1.5 px-2.5 py-0.5 bg-white/95 backdrop-blur-md border border-gray-200 text-[#111827] font-mono text-[9px] tracking-[0.16em] rounded-xs shadow-md font-semibold">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#EA580C] animate-pulse" />
-                <span>10-ACRE BOTANICAL SANCTUARY</span>
+                <span>10-Acre Botanical Sanctuary</span>
               </span>
             </div>
 
             <div className="absolute bottom-3 left-3 right-3 text-white">
-              <div className="font-mono text-[8.5px] uppercase tracking-[0.2em] text-[#FED7AA] mb-0.5">
-                AERIAL ARCHITECTURAL PERSPECTIVE
+              <div className="font-mono text-[8.5px] tracking-[0.2em] text-[#FED7AA] mb-0.5">
+                Aerial Architectural Perspective
               </div>
               <div className="font-sans text-[13px] font-bold text-white drop-shadow-md">
                 Antelia Groves Master Enclave &amp; Green Buffer
@@ -131,19 +131,19 @@ export default function RealisticLocationMap({ activeTab = 'work' }) {
         <div className="absolute bottom-2.5 left-2.5 z-20 bg-white/95 backdrop-blur-md border border-[#EA580C] p-2.5 rounded-xs shadow-luxury max-w-[220px] pointer-events-none">
           <div className="flex items-center space-x-1 mb-0.5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#EA580C] animate-ping" />
-            <span className="font-mono text-[8.5px] font-bold text-[#EA580C] uppercase tracking-wider">
-              PRIME EPICENTER
+            <span className="font-mono text-[8.5px] font-bold text-[#EA580C] tracking-wider">
+              Prime Epicenter
             </span>
           </div>
           <div className="font-sans text-[12px] font-extrabold text-[#111827] leading-tight">
-            ANTELIA GROVES
+            Antelia Groves
           </div>
           <div className="font-sans text-[10.5px] text-[#6B7280] leading-tight mt-0.5">
             10-Acre Gated Villa Sanctuary
           </div>
           <div className="font-mono text-[8.5px] text-[#6B7280] mt-1 pt-1 border-t border-gray-200 flex items-center justify-between">
-            <span>NH 44 FLYOVER</span>
-            <span className="text-[#EA580C] font-bold">6 MINS</span>
+            <span>NH 44 Flyover</span>
+            <span className="text-[#EA580C] font-bold">6 Mins</span>
           </div>
         </div>
 

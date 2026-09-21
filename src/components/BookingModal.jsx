@@ -49,20 +49,20 @@ export default function BookingModal({ isOpen, onClose }) {
                   setSubmitted(false);
                   onClose();
                 }}
-                className="px-6 py-2.5 bg-[#EA580C] hover:bg-[#C2410C] text-white text-[11.5px] font-bold uppercase tracking-[0.18em] rounded-xs shadow-md transition-colors cursor-pointer"
+                className="px-6 py-2.5 bg-[#EA580C] hover:bg-[#C2410C] text-white text-[11.5px] font-bold tracking-[0.18em] rounded-xs shadow-md transition-colors cursor-pointer"
               >
-                RETURN TO PRESENTATION
+                Return To Presentation
               </button>
             </div>
           </div>
         ) : (
           <div>
             <div className="mb-6">
-              <div className="text-[10px] font-mono tracking-[0.25em] text-[#EA580C] uppercase font-semibold">
-                PRIVATE ARCHITECTURAL ADVISORY
+              <div className="text-[10px] font-mono tracking-[0.25em] text-[#EA580C] font-semibold">
+                Private Architectural Advisory
               </div>
               <h3 className="text-[22px] font-sans font-semibold text-[#111827] mt-1">
-                Schedule a Consultation
+                Schedule A Consultation
               </h3>
               <p className="text-[13px] text-[#4B5563] mt-1 font-normal">
                 Receive confidential project blueprints, pricing, and personalized plot reservation details.
@@ -71,8 +71,8 @@ export default function BookingModal({ isOpen, onClose }) {
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="text-[10.5px] font-mono tracking-widest text-[#6B7280] uppercase block mb-1 font-medium">
-                  FULL NAME
+                <label className="text-[10.5px] font-mono tracking-widest text-[#6B7280] block mb-1 font-medium">
+                  Full Name
                 </label>
                 <input
                   type="text"
@@ -86,8 +86,8 @@ export default function BookingModal({ isOpen, onClose }) {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-[10.5px] font-mono tracking-widest text-[#6B7280] uppercase block mb-1 font-medium">
-                    MOBILE NUMBER
+                  <label className="text-[10.5px] font-mono tracking-widest text-[#6B7280] block mb-1 font-medium">
+                    Mobile Number
                   </label>
                   <input
                     type="tel"
@@ -99,8 +99,8 @@ export default function BookingModal({ isOpen, onClose }) {
                   />
                 </div>
                 <div>
-                  <label className="text-[10.5px] font-mono tracking-widest text-[#6B7280] uppercase block mb-1 font-medium">
-                    EMAIL ADDRESS
+                  <label className="text-[10.5px] font-mono tracking-widest text-[#6B7280] block mb-1 font-medium">
+                    Email Address
                   </label>
                   <input
                     type="email"
@@ -115,8 +115,8 @@ export default function BookingModal({ isOpen, onClose }) {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-[10.5px] font-mono tracking-widest text-[#6B7280] uppercase block mb-1 font-medium">
-                    PREFERRED TYPOLOGY
+                  <label className="text-[10.5px] font-mono tracking-widest text-[#6B7280] block mb-1 font-medium">
+                    Preferred Typology
                   </label>
                   <select
                     value={formData.typology}
@@ -129,8 +129,8 @@ export default function BookingModal({ isOpen, onClose }) {
                   </select>
                 </div>
                 <div>
-                  <label className="text-[10.5px] font-mono tracking-widest text-[#6B7280] uppercase block mb-1 font-medium">
-                    PREFERRED DATE
+                  <label className="text-[10.5px] font-mono tracking-widest text-[#6B7280] block mb-1 font-medium">
+                    Preferred Date
                   </label>
                   <input
                     type="date"
@@ -142,8 +142,8 @@ export default function BookingModal({ isOpen, onClose }) {
               </div>
 
               <div>
-                <label className="text-[10.5px] font-mono tracking-widest text-[#6B7280] uppercase block mb-1 font-medium">
-                  SPECIAL REQUIREMENTS / NOTES
+                <label className="text-[10.5px] font-mono tracking-widest text-[#6B7280] block mb-1 font-medium">
+                  Special Requirements / Notes
                 </label>
                 <textarea
                   rows={2}
@@ -157,9 +157,9 @@ export default function BookingModal({ isOpen, onClose }) {
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full py-3.5 bg-[#EA580C] hover:bg-[#C2410C] text-white text-[12px] font-bold uppercase tracking-[0.2em] rounded-xs shadow-md transition-colors flex items-center justify-center space-x-2 cursor-pointer"
+                  className="w-full py-3.5 bg-[#EA580C] hover:bg-[#C2410C] text-white text-[12px] font-bold tracking-[0.2em] rounded-xs shadow-md transition-colors flex items-center justify-center space-x-2 cursor-pointer"
                 >
-                  <span>REQUEST CONFIDENTIAL APPOINTMENT</span>
+                  <span>Request Confidential Appointment</span>
                   <ArrowRight className="w-4 h-4 text-white" />
                 </button>
               </div>

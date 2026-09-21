@@ -8,21 +8,21 @@ export default function Section03Villas({ onSelectVilla }) {
 
   // Documented Villa Specifications
   const specsEast = [
-    { label: 'CONFIGURATION', val: '3 & 4 BHK Split-Level' },
-    { label: 'BUILT-UP AREA', val: '2,262 – 3,000 Sq.Ft' },
-    { label: 'ORIENTATION', val: 'East-Facing Vastu Entrance' },
-    { label: 'PRIVATE GARDEN', val: '180+ Sq.Ft Rear Courtyard' },
-    { label: 'PARKING', val: '2 Covered Car Parks' },
-    { label: 'STRUCTURE', val: 'Earthquake-Resistant RCC' },
+    { label: 'Configuration', val: '3 & 4 BHK Split-Level' },
+    { label: 'Built-Up Area', val: '2,262 – 3,000 Sq.Ft' },
+    { label: 'Orientation', val: 'East-Facing Vastu Entrance' },
+    { label: 'Private Garden', val: '180+ Sq.Ft Rear Courtyard' },
+    { label: 'Parking', val: '2 Covered Car Parks' },
+    { label: 'Structure', val: 'Earthquake-Resistant RCC' },
   ];
 
   const specsWest = [
-    { label: 'CONFIGURATION', val: '3 & 4 BHK Split-Level' },
-    { label: 'BUILT-UP AREA', val: '2,262 – 3,000 Sq.Ft' },
-    { label: 'ORIENTATION', val: 'West-Facing Vastu Entrance' },
-    { label: 'PRIVATE GARDEN', val: '180+ Sq.Ft Rear Courtyard' },
-    { label: 'PARKING', val: '2 Covered Car Parks' },
-    { label: 'STRUCTURE', val: 'Earthquake-Resistant RCC' },
+    { label: 'Configuration', val: '3 & 4 BHK Split-Level' },
+    { label: 'Built-Up Area', val: '2,262 – 3,000 Sq.Ft' },
+    { label: 'Orientation', val: 'West-Facing Vastu Entrance' },
+    { label: 'Private Garden', val: '180+ Sq.Ft Rear Courtyard' },
+    { label: 'Parking', val: '2 Covered Car Parks' },
+    { label: 'Structure', val: 'Earthquake-Resistant RCC' },
   ];
 
   const currentSpecs = villaType === 'east' ? specsEast : specsWest;
@@ -39,12 +39,12 @@ export default function Section03Villas({ onSelectVilla }) {
           <div className="max-w-2xl">
             <div className="inline-flex items-center space-x-2 mb-1">
               <span className="w-4 h-[1.5px] bg-[#EA580C]" />
-              <span className="font-mono text-[10.5px] font-semibold tracking-[0.25em] text-[#EA580C] uppercase">
-                04 / THE VILLAS
+              <span className="font-mono text-[10.5px] font-semibold tracking-[0.25em] text-[#EA580C]">
+                06 / The Villas
               </span>
             </div>
             <h2 className="font-sans font-semibold text-[20px] sm:text-[24px] lg:text-[28px] tracking-tight text-[#111827] leading-tight">
-              INDEPENDENT VILLAS. THOUGHTFULLY DESIGNED.
+              Independent Villas. Thoughtfully Designed.
             </h2>
           </div>
 
@@ -64,46 +64,46 @@ export default function Section03Villas({ onSelectVilla }) {
               
               {/* Typology Switcher */}
               <div className="flex items-center space-x-1.5">
-                <span className="text-[10px] font-mono uppercase tracking-wider text-[#6B7280]">
-                  TYPOLOGY:
+                <span className="text-[10px] font-mono tracking-wider text-[#6B7280]">
+                  Typology:
                 </span>
                 <button
                   onClick={() => setVillaType('east')}
-                  className={`px-3 py-1 text-[10.5px] font-mono uppercase tracking-wider rounded-xs transition-all cursor-pointer ${
+                  className={`px-3 py-1 text-[10.5px] font-mono tracking-wider rounded-xs transition-all cursor-pointer ${
                     villaType === 'east'
                       ? 'bg-[#EA580C] text-white font-bold shadow-xs'
                       : 'bg-white text-[#6B7280] border border-gray-200 hover:bg-[#FFF7ED]'
                   }`}
                 >
-                  TYPE A — EAST
+                  Type A — East
                 </button>
                 <button
                   onClick={() => setVillaType('west')}
-                  className={`px-3 py-1 text-[10.5px] font-mono uppercase tracking-wider rounded-xs transition-all cursor-pointer ${
+                  className={`px-3 py-1 text-[10.5px] font-mono tracking-wider rounded-xs transition-all cursor-pointer ${
                     villaType === 'west'
                       ? 'bg-[#EA580C] text-white font-bold shadow-xs'
                       : 'bg-white text-[#6B7280] border border-gray-200 hover:bg-[#FFF7ED]'
                   }`}
                 >
-                  TYPE A — WEST
+                  Type A — West
                 </button>
               </div>
 
               {/* Level Inspector */}
               <div className="flex items-center space-x-1">
-                <span className="text-[10px] font-mono uppercase tracking-wider text-[#6B7280]">
-                  LEVEL:
+                <span className="text-[10px] font-mono tracking-wider text-[#6B7280]">
+                  Level:
                 </span>
                 {[
-                  { id: 'all', label: 'ALL' },
-                  { id: 'ground', label: 'GROUND' },
-                  { id: 'first', label: 'UPPER' },
-                  { id: 'terrace', label: 'TERRACE' },
+                  { id: 'all', label: 'All' },
+                  { id: 'ground', label: 'Ground' },
+                  { id: 'first', label: 'Upper' },
+                  { id: 'terrace', label: 'Terrace' },
                 ].map((lvl) => (
                   <button
                     key={lvl.id}
                     onClick={() => setActiveFloor(lvl.id)}
-                    className={`px-2 py-0.5 text-[10px] font-mono uppercase tracking-wider rounded-xs transition-all cursor-pointer ${
+                    className={`px-2 py-0.5 text-[10px] font-mono tracking-wider rounded-xs transition-all cursor-pointer ${
                       activeFloor === lvl.id
                         ? 'bg-[#EA580C] text-white font-semibold shadow-xs'
                         : 'bg-white border border-gray-200 text-[#6B7280] hover:text-[#111827]'
@@ -122,7 +122,7 @@ export default function Section03Villas({ onSelectVilla }) {
 
               <div className="absolute bottom-3 left-3 pointer-events-none bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-xs border border-gray-200 text-[9.5px] font-mono text-[#6B7280] flex items-center space-x-1.5 shadow-xs">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#EA580C] animate-pulse" />
-                <span>360° INTERACTIVE · DRAG TO ROTATE</span>
+                <span>360° Interactive · Drag To Rotate</span>
               </div>
             </div>
 
@@ -131,17 +131,17 @@ export default function Section03Villas({ onSelectVilla }) {
           {/* Right Column: Key Specifications Card (~35%) */}
           <div className="lg:col-span-4 flex flex-col">
             <div className="p-4 sm:p-5 bg-white border border-gray-200 rounded-sm shadow-luxury">
-              <div className="text-[10px] font-mono uppercase tracking-widest text-[#EA580C] mb-0.5 font-semibold">
-                ARCHITECTURAL SPECIFICATIONS
+              <div className="text-[10px] font-mono tracking-widest text-[#EA580C] mb-0.5 font-semibold">
+                Architectural Specifications
               </div>
               <h3 className="text-[17px] font-semibold text-[#111827] mb-3">
-                Villa Type A ({villaType.toUpperCase()})
+                Villa Type A ({villaType === 'east' ? 'East' : 'West'})
               </h3>
 
               <div className="space-y-2">
                 {currentSpecs.map((spec, i) => (
                   <div key={i} className="flex items-center justify-between pb-1.5 border-b border-gray-100 last:border-b-0">
-                    <span className="text-[9.5px] font-mono uppercase tracking-wider text-[#6B7280]">{spec.label}</span>
+                    <span className="text-[9.5px] font-mono tracking-wider text-[#6B7280]">{spec.label}</span>
                     <span className="text-[12.5px] font-sans font-semibold text-[#111827]">{spec.val}</span>
                   </div>
                 ))}
@@ -149,9 +149,9 @@ export default function Section03Villas({ onSelectVilla }) {
 
               <button
                 onClick={onSelectVilla}
-                className="w-full mt-4 py-2.5 bg-[#EA580C] hover:bg-[#C2410C] text-white text-[11px] font-bold uppercase tracking-[0.16em] rounded-xs shadow-md transition-all flex items-center justify-center space-x-1.5 cursor-pointer"
+                className="w-full mt-4 py-2.5 bg-[#EA580C] hover:bg-[#C2410C] text-white text-[11px] font-bold tracking-[0.16em] rounded-xs shadow-md transition-all flex items-center justify-center space-x-1.5 cursor-pointer"
               >
-                <span>REQUEST FLOORPLAN PDF</span>
+                <span>Request Floorplan PDF</span>
                 <ArrowUpRight className="w-3.5 h-3.5 text-white" />
               </button>
             </div>

@@ -7,42 +7,42 @@ export default function SectionCurrentProject({ onExploreVillas, onOpenBooking }
   // 4 Verified Project Facts (Compact 2x2 Grid)
   const projectFacts = [
     {
-      num: '10 ~ ACRES',
-      title: 'Secure gated community',
+      num: '10~ Acres',
+      title: 'Secure Gated Community',
     },
     {
-      num: '3/4 BHK',
-      title: 'Independent villas',
+      num: '3 & 4 BHK',
+      title: 'Independent Villas',
     },
     {
-      num: '2262–3000 SQ.FT.',
-      title: 'Built-up area',
+      num: '2,262–3,000 Sq.Ft',
+      title: 'Built-Up Area',
     },
     {
-      num: '15K+ SQ.FT.',
-      title: 'Premium clubhouse',
+      num: '15,000+ Sq.Ft',
+      title: 'Premium Clubhouse',
     },
   ];
 
   // 4 Verified Architectural Features
   const architectureFeatures = [
     {
-      title: 'SPLIT-LEVEL DESIGN',
+      title: 'Split-Level Design',
       desc: 'Spacious layouts with improved privacy and connection.',
       icon: Layers,
     },
     {
-      title: 'PRIVATE GARDENS',
+      title: 'Private Gardens',
       desc: 'Lush garden sit-outs connected to the home.',
       icon: Trees,
     },
     {
-      title: 'HOME OFFICE',
+      title: 'Home Office',
       desc: 'Dedicated spaces for work and creativity.',
       icon: Briefcase,
     },
     {
-      title: 'TERRACE LOUNGE',
+      title: 'Terrace Lounge',
       desc: 'Large outdoor areas for relaxed living.',
       icon: SunMedium,
     },
@@ -53,15 +53,15 @@ export default function SectionCurrentProject({ onExploreVillas, onOpenBooking }
       image: '/images/overview/01_overview_flagship_villa.jpg',
       alt: 'Antelia Groves Ultra-Luxury Contemporary Triplex Villa Render',
       title: 'Contemporary Split-Level Villa & Private Garden',
-      tag: 'TRIPLEX ARCHITECTURE',
-      badge: 'REALISTIC 3D RENDER',
+      tag: 'Triplex Architecture',
+      badge: 'Realistic 3D Render',
     },
     enclave: {
       image: '/images/overview/02_overview_sunset_enclave.jpg',
       alt: 'Antelia Groves 10-Acre Master Sanctuary Aerial Render',
       title: '10-Acre Botanical Sanctuary & Sunset Canopy',
-      tag: 'MASTER ENCLAVE',
-      badge: 'AERIAL VIEW',
+      tag: 'Master Enclave',
+      badge: 'Aerial View',
     },
   };
 
@@ -88,14 +88,14 @@ export default function SectionCurrentProject({ onExploreVillas, onOpenBooking }
             {/* Section Eyebrow */}
             <div className="inline-flex items-center space-x-2.5 mb-2">
               <span className="w-4 h-[1.5px] bg-[#EA580C]" />
-              <span className="font-mono text-[10.5px] sm:text-[11px] font-bold tracking-[0.2em] text-[#EA580C] uppercase">
-                CURRENT PROJECT
+              <span className="font-mono text-[10.5px] sm:text-[11px] font-bold tracking-[0.14em] text-[#EA580C]">
+                02 / Current Project
               </span>
             </div>
 
             {/* Main Heading */}
             <h2 className="font-sans font-bold text-[18px] sm:text-[22px] lg:text-[24px] leading-tight text-[#111827] tracking-tight mb-2.5">
-              A COMMUNITY DESIGNED AROUND BETTER LIVING
+              A Community Designed Around Better Living
             </h2>
 
             {/* Short Description */}
@@ -136,29 +136,29 @@ export default function SectionCurrentProject({ onExploreVillas, onOpenBooking }
               <div className="absolute top-3 right-3 z-10 flex items-center space-x-1.5 bg-white/95 backdrop-blur-md border border-gray-200 p-1 rounded-xs shadow-sm">
                 <button
                   onClick={() => setActiveVisual('villa')}
-                  className={`px-2.5 py-0.5 font-mono text-[9px] uppercase tracking-wider rounded-xs transition-colors cursor-pointer ${
+                  className={`px-2.5 py-0.5 font-mono text-[9px] tracking-wider rounded-xs transition-colors cursor-pointer ${
                     activeVisual === 'villa'
                       ? 'bg-[#EA580C] text-white font-bold'
                       : 'text-[#4B5563] hover:text-[#111827] hover:bg-black/5'
                   }`}
                 >
-                  VILLA
+                  Villa
                 </button>
                 <button
                   onClick={() => setActiveVisual('enclave')}
-                  className={`px-2.5 py-0.5 font-mono text-[9px] uppercase tracking-wider rounded-xs transition-colors cursor-pointer ${
+                  className={`px-2.5 py-0.5 font-mono text-[9px] tracking-wider rounded-xs transition-colors cursor-pointer ${
                     activeVisual === 'enclave'
                       ? 'bg-[#EA580C] text-white font-bold'
                       : 'text-[#4B5563] hover:text-[#111827] hover:bg-black/5'
                   }`}
                 >
-                  ENCLAVE
+                  Enclave
                 </button>
               </div>
 
               {/* Top Left Badge */}
               <div className="absolute top-3 left-3 pointer-events-none">
-                <span className="inline-flex items-center space-x-1.5 px-2.5 py-0.5 bg-white/95 backdrop-blur-md border border-gray-200 text-[#111827] font-mono text-[9px] uppercase tracking-[0.16em] rounded-xs shadow-sm font-semibold">
+                <span className="inline-flex items-center space-x-1.5 px-2.5 py-0.5 bg-white/95 backdrop-blur-md border border-gray-200 text-[#111827] font-mono text-[9px] tracking-[0.1em] rounded-xs shadow-sm font-semibold">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#EA580C] animate-pulse" />
                   <span>{currentVisual.badge}</span>
                 </span>
@@ -167,15 +167,15 @@ export default function SectionCurrentProject({ onExploreVillas, onOpenBooking }
               {/* Refined subtle photo caption */}
               <div className="absolute bottom-3 left-3.5 right-3.5 text-white pointer-events-none flex items-end justify-between">
                 <div>
-                  <div className="font-mono text-[8.5px] uppercase tracking-[0.2em] text-[#EA580C] mb-0.5 font-bold">
+                  <div className="font-mono text-[8.5px] tracking-[0.14em] text-[#EA580C] mb-0.5 font-bold">
                     {currentVisual.tag}
                   </div>
                   <div className="font-sans text-[12.5px] sm:text-[13px] font-semibold text-white drop-shadow-sm line-clamp-1">
                     {currentVisual.title}
                   </div>
                 </div>
-                <span className="hidden sm:inline-block font-mono text-[9px] text-gray-200 uppercase tracking-wider shrink-0 ml-2">
-                  10 ACRES
+                <span className="hidden sm:inline-block font-mono text-[9px] text-gray-200 tracking-wider shrink-0 ml-2">
+                  10 Acres
                 </span>
               </div>
             </div>
@@ -199,7 +199,7 @@ export default function SectionCurrentProject({ onExploreVillas, onOpenBooking }
                     <div className="w-5 h-5 rounded-xs bg-[#FFF7ED] border border-[#FED7AA] flex items-center justify-center text-[#EA580C] shrink-0">
                       <Icon className="w-3 h-3" />
                     </div>
-                    <h3 className="font-sans text-[11.5px] sm:text-[12px] font-semibold uppercase tracking-[0.04em] text-[#111827]">
+                    <h3 className="font-sans text-[11.5px] sm:text-[12px] font-semibold tracking-[0.02em] text-[#111827]">
                       {item.title}
                     </h3>
                   </div>

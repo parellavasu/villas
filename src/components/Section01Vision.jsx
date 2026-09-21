@@ -86,24 +86,24 @@ export default function Section01Vision({ onExploreJourney, onExploreVillas, onE
   // 4 Project Facts
   const projectFacts = [
     {
-      num: '10+ ACRES',
+      num: '10+ Acres',
       title: 'Gated Community',
-      detail: 'Low-density planned enclave',
+      detail: 'Low-Density Planned Enclave',
     },
     {
       num: '3 & 4 BHK',
       title: 'Independent Villas',
-      detail: 'Split-level private residences',
+      detail: 'Split-Level Private Residences',
     },
     {
-      num: '2262–3000 SQ.FT.',
-      title: 'BUA Range',
-      detail: 'Articulated spatial layouts',
+      num: '2,262–3,000 Sq.Ft',
+      title: 'Built-Up Area Range',
+      detail: 'Articulated Spatial Layouts',
     },
     {
-      num: '15,000+ SQ.FT.',
+      num: '15,000+ Sq.Ft',
       title: 'Signature Clubhouse',
-      detail: '25m heated pool & wellness',
+      detail: '25m Heated Pool & Wellness',
     },
   ];
 
@@ -197,32 +197,32 @@ export default function Section01Vision({ onExploreJourney, onExploreVillas, onE
           {/* LEFT CONTENT COLUMN (~60% width on large screens) */}
           <div className="lg:col-span-8 xl:col-span-7 flex flex-col justify-center">
             
-            {/* 01 / THE VISION Eyebrow */}
+            {/* 01 / The Vision Eyebrow */}
             <div
-              className={`flex items-center space-x-2 text-[10.5px] font-mono tracking-[0.25em] text-[#EA580C] uppercase mb-2 transition-all duration-700 ${
+              className={`flex items-center space-x-2 text-[10.5px] font-mono tracking-[0.16em] text-[#EA580C] font-semibold mb-2 transition-all duration-700 ${
                 loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
               }`}
             >
               <span className="w-4 h-[1.5px] bg-[#EA580C]" />
-              <span>01 / THE VISION</span>
+              <span>01 / The Vision</span>
             </div>
 
-            {/* Main Wordmark Title: ANTELIA GROVES */}
+            {/* Main Wordmark Title: Antelia Groves */}
             <h1
               className={`font-editorial text-[34px] sm:text-[42px] lg:text-[48px] xl:text-[54px] leading-[1.02] text-[#111827] font-normal tracking-[-0.01em] transition-all duration-700 delay-100 ${
                 loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
               }`}
             >
-              ANTELIA GROVES
+              Antelia Groves
             </h1>
 
-            {/* Supporting Tagline: 10 ACRES. ONE VISION. */}
+            {/* Supporting Tagline: 10 Acres. One Vision. */}
             <p
-              className={`font-sans font-light text-[16px] sm:text-[19px] lg:text-[21px] tracking-[0.18em] text-[#EA580C] uppercase mt-1 leading-tight transition-all duration-700 delay-200 ${
+              className={`font-sans font-medium text-[16px] sm:text-[19px] lg:text-[21px] tracking-[0.1em] text-[#EA580C] mt-1 leading-tight transition-all duration-700 delay-200 ${
                 loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
               }`}
             >
-              10 ACRES. ONE VISION.
+              10 Acres. One Vision.
             </p>
 
             {/* Vibrant Orange Accent Line */}
@@ -256,9 +256,9 @@ export default function Section01Vision({ onExploreJourney, onExploreVillas, onE
                     onExploreVillas();
                   }
                 }}
-                className="inline-flex items-center space-x-2 px-6 sm:px-7 py-3 bg-[#EA580C] hover:bg-[#C2410C] text-white text-[11.5px] font-bold uppercase tracking-[0.18em] rounded-full transition-all duration-300 shadow-sm hover:shadow group cursor-pointer"
+                className="inline-flex items-center space-x-2 px-6 sm:px-7 py-3 bg-[#EA580C] hover:bg-[#C2410C] text-white text-[11.5px] font-bold tracking-[0.04em] rounded-full transition-all duration-300 shadow-sm hover:shadow group cursor-pointer"
               >
-                <span>EXPLORE THE VILLAS</span>
+                <span>Explore The Villas</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
               </a>
 
@@ -271,9 +271,9 @@ export default function Section01Vision({ onExploreJourney, onExploreVillas, onE
                     onExploreJourney();
                   }
                 }}
-                className="inline-flex items-center space-x-2 text-[11.5px] font-semibold uppercase tracking-[0.18em] text-[#EA580C] border-b border-[#EA580C] pb-0.5 hover:text-[#C2410C] hover:border-[#C2410C] transition-all group cursor-pointer"
+                className="inline-flex items-center space-x-2 text-[11.5px] font-semibold tracking-[0.04em] text-[#EA580C] border-b border-[#EA580C] pb-0.5 hover:text-[#C2410C] hover:border-[#C2410C] transition-all group cursor-pointer"
               >
-                <span>THE DEVELOPMENT JOURNEY</span>
+                <span>The Development Journey</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
               </a>
             </div>
@@ -304,7 +304,7 @@ export default function Section01Vision({ onExploreJourney, onExploreVillas, onE
                 <div className="text-[19px] sm:text-[22px] lg:text-[25px] font-sans font-bold text-[#EA580C] tracking-tight leading-none mb-1">
                   {fact.num}
                 </div>
-                <div className="text-[11.5px] sm:text-[12px] font-sans font-semibold text-[#111827] tracking-wide uppercase">
+                <div className="text-[11.5px] sm:text-[12px] font-sans font-semibold text-[#111827] tracking-wide">
                   {fact.title}
                 </div>
                 <div className="text-[10.5px] sm:text-[11px] font-sans text-[#6B7280] mt-0.5">

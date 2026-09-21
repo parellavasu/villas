@@ -25,11 +25,11 @@ export default function SectionAboutUs() {
   const showcaseViews = [
     {
       id: 'villa-architecture',
-      tabLabel: '01 / ARCHITECTURE',
+      tabLabel: '01 / Architecture',
       shortTitle: 'Triplex Villa Form',
       title: 'Bespoke Triplex Split-Level Architecture',
       subtitle: 'Sculpted with floor-to-ceiling thermal glazing, floating stone porticos, and double-height living volumes.',
-      tag: 'MASTER ARCHITECTURE',
+      tag: 'Master Architecture',
       image: '/images/about/01_about_architectural_villa.jpg',
       specs: [
         { label: 'Ceiling Height', value: '12.5 Ft' },
@@ -44,11 +44,11 @@ export default function SectionAboutUs() {
     },
     {
       id: 'biophilic-courtyard',
-      tabLabel: '02 / COURTYARDS',
+      tabLabel: '02 / Courtyards',
       shortTitle: 'Internal Zen Garden',
       title: 'Biophilic Courtyards & Daylight Lightwells',
       subtitle: 'Private open-to-sky courtyards integrated into the core of every villa, flooding living spaces with daylight.',
-      tag: 'BIOPHILIC LIVING',
+      tag: 'Biophilic Living',
       image: '/images/about/02_about_living_courtyard.jpg',
       specs: [
         { label: 'Natural Light', value: 'All 3 Levels' },
@@ -63,11 +63,11 @@ export default function SectionAboutUs() {
     },
     {
       id: 'dining-pavilion',
-      tabLabel: '03 / SANCTUARY',
+      tabLabel: '03 / Sanctuary',
       shortTitle: 'Dining & Gardens',
       title: 'Intimate Entertaining & Private Lawn',
       subtitle: 'Sunlit dining pavilions opening onto tranquil private landscaped lawns and warm acoustic timber finishes.',
-      tag: 'INDOOR-OUTDOOR',
+      tag: 'Indoor-Outdoor',
       image: '/images/about/03_about_dining_zen.jpg',
       specs: [
         { label: 'Private Lawn', value: 'Up to 1,200 Sft' },
@@ -82,11 +82,11 @@ export default function SectionAboutUs() {
     },
     {
       id: 'clubhouse-sanctuary',
-      tabLabel: '04 / CLUBHOUSE',
+      tabLabel: '04 / Clubhouse',
       shortTitle: '20,000 Sft Club',
       title: 'Resort-Grade Clubhouse & Infinity Pool',
       subtitle: 'A majestic 20,000 sq.ft. community sanctuary offering Olympic-length swimming, rooftop lounges, and wellness spas.',
-      tag: 'COMMUNITY & WELLNESS',
+      tag: 'Community & Wellness',
       image: '/images/about/04_about_resort_clubhouse.jpg',
       specs: [
         { label: 'Clubhouse Area', value: '20,000 Sft' },
@@ -104,28 +104,28 @@ export default function SectionAboutUs() {
   // 4 Core Principles: WHAT DEFINES THE PROJECT
   const principles = [
     {
-      title: 'SPACE',
+      title: 'Space',
       desc: 'Triplex layouts with 12.5-ft ceilings, generous family lounges, and private executive work suites.',
       icon: Home,
       metric: 'Bespoke Triplex',
       image: '/images/about/06_about_craftsmanship_facade.jpg',
     },
     {
-      title: 'PRIVACY',
+      title: 'Privacy',
       desc: 'Multi-level staggered planning with zero overlooking windows and private perimeter green buffers.',
       icon: ShieldCheck,
       metric: 'Zero Overlook',
       image: '/images/about/01_about_architectural_villa.jpg',
     },
     {
-      title: 'NATURE',
+      title: 'Nature',
       desc: 'Private courtyards, plunge gardens, shaded walking groves, and 65% preserved botanical cover.',
       icon: Trees,
       metric: '65% Green Cover',
       image: '/images/about/07_about_biophilic_trail.jpg',
     },
     {
-      title: 'COMMUNITY',
+      title: 'Community',
       desc: 'An intimate 76-family gated sanctuary anchored by a 20,000 sq.ft. clubhouse, pool, and sports lawns.',
       icon: Users,
       metric: '76 Elite Families',
@@ -162,14 +162,14 @@ export default function SectionAboutUs() {
           <div className="max-w-2xl">
             <div className="inline-flex items-center space-x-2 mb-1">
               <span className="w-4 h-[1.5px] bg-[#EA580C]" />
-              <span className="font-mono text-[10px] sm:text-[10.5px] font-semibold tracking-[0.2em] text-[#EA580C] uppercase">
-                03 / ABOUT THE DEVELOPER &amp; ARCHITECTURAL VISION
+              <span className="font-mono text-[10px] sm:text-[10.5px] font-semibold tracking-[0.14em] text-[#EA580C]">
+                03 / About The Developer &amp; Architectural Vision
               </span>
             </div>
 
             <h2 className="font-sans font-semibold text-[20px] sm:text-[23px] lg:text-[26px] leading-tight text-[#111827] tracking-tight">
-              DESIGNED FOR SPACE.{' '}
-              <span className="text-[#EA580C]">SCALED FROM MASTER CRAFTSMANSHIP.</span>
+              Designed For Space.{' '}
+              <span className="text-[#EA580C]">Scaled From Master Craftsmanship.</span>
             </h2>
           </div>
 
@@ -177,23 +177,23 @@ export default function SectionAboutUs() {
           <div className="flex items-center space-x-1.5 p-1 bg-[#FAFAF9] border border-gray-200 rounded-xs self-start lg:self-end">
             <button
               onClick={() => setViewMode('perspectives')}
-              className={`px-3 py-1 font-mono text-[9.5px] uppercase tracking-wider rounded-xs transition-colors cursor-pointer ${
+              className={`px-3 py-1 font-mono text-[9.5px] tracking-wider rounded-xs transition-colors cursor-pointer ${
                 viewMode === 'perspectives'
                   ? 'bg-[#EA580C] text-white font-bold shadow-xs'
                   : 'text-[#6B7280] hover:text-[#111827]'
               }`}
             >
-              SPATIAL SHOWCASE
+              Spatial Showcase
             </button>
             <button
               onClick={() => setViewMode('pillars')}
-              className={`px-3 py-1 font-mono text-[9.5px] uppercase tracking-wider rounded-xs transition-colors cursor-pointer ${
+              className={`px-3 py-1 font-mono text-[9.5px] tracking-wider rounded-xs transition-colors cursor-pointer ${
                 viewMode === 'pillars'
                   ? 'bg-[#EA580C] text-white font-bold shadow-xs'
                   : 'text-[#6B7280] hover:text-[#111827]'
               }`}
             >
-              THE 4 PILLARS
+              The 4 Pillars
             </button>
           </div>
         </div>
@@ -227,7 +227,7 @@ export default function SectionAboutUs() {
                       }`}
                     />
 
-                    <div className="font-mono text-[8.5px] sm:text-[9px] tracking-[0.16em] uppercase font-semibold text-[#EA580C] mb-0.5">
+                    <div className="font-mono text-[8.5px] sm:text-[9px] tracking-[0.12em] font-semibold text-[#EA580C] mb-0.5">
                       {view.tabLabel}
                     </div>
                     <div className={`font-sans text-[11.5px] sm:text-[12.5px] font-semibold leading-tight line-clamp-1 ${
@@ -278,7 +278,7 @@ export default function SectionAboutUs() {
 
                 {/* Floating Architectural Badge */}
                 <div className="absolute top-2.5 left-2.5 z-20">
-                  <span className="inline-flex items-center space-x-1.5 px-2 py-0.5 bg-white/95 backdrop-blur-md border border-gray-200 text-[#111827] font-mono text-[8.5px] uppercase tracking-[0.16em] rounded-xs shadow-xs font-semibold">
+                  <span className="inline-flex items-center space-x-1.5 px-2 py-0.5 bg-white/95 backdrop-blur-md border border-gray-200 text-[#111827] font-mono text-[8.5px] tracking-[0.1em] rounded-xs shadow-xs font-semibold">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#EA580C] animate-pulse" />
                     <span>{currentView.tag}</span>
                   </span>
@@ -323,8 +323,8 @@ export default function SectionAboutUs() {
 
                 {/* Bottom Visual Caption */}
                 <div className="absolute bottom-2.5 left-3 right-24 z-20 text-white pointer-events-none">
-                  <div className="font-mono text-[8px] uppercase tracking-[0.2em] text-[#FED7AA] mb-0.5 font-semibold">
-                    REALISTIC 3D PERSPECTIVE
+                  <div className="font-mono text-[8px] tracking-[0.14em] text-[#FED7AA] mb-0.5 font-semibold">
+                    Realistic 3D Perspective
                   </div>
                   <div className="font-sans text-[12.5px] sm:text-[13.5px] font-semibold text-white drop-shadow-md line-clamp-1">
                     {currentView.title}
@@ -337,8 +337,8 @@ export default function SectionAboutUs() {
                 <div>
                   <div className="inline-flex items-center space-x-1.5 mb-1">
                     <span className="w-3 h-[1.5px] bg-[#EA580C]" />
-                    <span className="font-mono text-[9.5px] font-semibold text-[#EA580C] tracking-[0.16em] uppercase">
-                      ARCHITECTURAL BLUEPRINT
+                    <span className="font-mono text-[9.5px] font-semibold text-[#EA580C] tracking-[0.12em]">
+                      Architectural Blueprint
                     </span>
                   </div>
 
@@ -354,7 +354,7 @@ export default function SectionAboutUs() {
                   <div className="grid grid-cols-3 gap-1.5 p-2 bg-[#FAFAF9] border border-gray-200 rounded-xs mb-2">
                     {currentView.specs.map((s, idx) => (
                       <div key={idx} className="text-center">
-                        <div className="font-mono text-[8.5px] uppercase text-[#6B7280] tracking-wider mb-0.5">
+                        <div className="font-mono text-[8.5px] text-[#6B7280] tracking-wider mb-0.5">
                           {s.label}
                         </div>
                         <div className="font-sans text-[11.5px] sm:text-[12px] font-bold text-[#111827]">
@@ -366,8 +366,8 @@ export default function SectionAboutUs() {
 
                   {/* Key Architectural Highlights */}
                   <div className="space-y-1 mb-2">
-                    <div className="font-mono text-[9px] uppercase font-semibold tracking-wider text-[#EA580C]">
-                      KEY DESIGN ATTRIBUTES
+                    <div className="font-mono text-[9px] font-semibold tracking-wider text-[#EA580C]">
+                      Key Design Attributes
                     </div>
                     {currentView.highlights.slice(0, 3).map((h, idx) => (
                       <div key={idx} className="flex items-start space-x-1.5">
@@ -383,11 +383,11 @@ export default function SectionAboutUs() {
                 {/* Bottom Quick Action */}
                 <div className="pt-2 border-t border-gray-200 flex items-center justify-between">
                   <span className="font-mono text-[9.5px] text-[#6B7280]">
-                    PERSPECTIVE {activeSlide + 1} OF {showcaseViews.length}
+                    Perspective {activeSlide + 1} Of {showcaseViews.length}
                   </span>
                   <a
                     href="#masterplan"
-                    className="inline-flex items-center space-x-1 font-mono text-[10px] font-semibold uppercase tracking-wider text-[#EA580C] hover:text-[#C2410C] transition-colors cursor-pointer"
+                    className="inline-flex items-center space-x-1 font-mono text-[10px] font-semibold tracking-wider text-[#EA580C] hover:text-[#C2410C] transition-colors cursor-pointer"
                   >
                     <span>Explore Master Plan</span>
                     <ArrowUpRight className="w-3 h-3" />
@@ -416,8 +416,8 @@ export default function SectionAboutUs() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                     <div className="absolute bottom-2 left-2 right-2 flex items-center justify-between text-white">
-                      <span className="font-mono text-[9px] uppercase tracking-wider text-[#FED7AA] font-bold">
-                        PILLAR 0{idx + 1}
+                      <span className="font-mono text-[9px] tracking-wider text-[#FED7AA] font-bold">
+                        Pillar 0{idx + 1}
                       </span>
                       <span className="font-mono text-[9px] bg-[#EA580C] px-1.5 py-0.2 rounded-xs font-semibold">
                         {item.metric}
@@ -430,7 +430,7 @@ export default function SectionAboutUs() {
                       <div className="w-6 h-6 rounded-xs bg-[#FFF7ED] border border-[#FED7AA] flex items-center justify-center text-[#EA580C] shrink-0">
                         <Icon className="w-3 h-3" />
                       </div>
-                      <h4 className="font-sans text-[13px] font-bold uppercase tracking-[0.04em] text-[#111827]">
+                      <h4 className="font-sans text-[13px] font-bold tracking-[0.02em] text-[#111827]">
                         {item.title}
                       </h4>
                     </div>
@@ -449,10 +449,10 @@ export default function SectionAboutUs() {
             ========================================================= */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-2.5">
           {[
-            { metric: '10+', unit: 'ACRES', title: 'Gated Botanical Sanctuary', desc: 'Secure perimeter & central grove' },
-            { metric: '76', unit: 'VILLAS', title: 'Limited Edition Triplexes', desc: 'Low density for ultimate privacy' },
-            { metric: '65%', unit: 'OPEN', title: 'Landscape & Green Canopy', desc: 'Native trees, parks & walkways' },
-            { metric: '100%', unit: 'VASTU', title: 'Conscious Orientation', desc: 'Optimal daylighting & airflow' },
+            { metric: '10+', unit: 'Acres', title: 'Gated Botanical Sanctuary', desc: 'Secure perimeter & central grove' },
+            { metric: '76', unit: 'Villas', title: 'Limited Edition Triplexes', desc: 'Low density for ultimate privacy' },
+            { metric: '65%', unit: 'Open', title: 'Landscape & Green Canopy', desc: 'Native trees, parks & walkways' },
+            { metric: '100%', unit: 'Vastu', title: 'Conscious Orientation', desc: 'Optimal daylighting & airflow' },
           ].map((stat, idx) => (
             <div
               key={idx}
@@ -463,7 +463,7 @@ export default function SectionAboutUs() {
                   <span className="font-sans text-[17px] sm:text-[19px] font-bold text-[#111827] tracking-tight group-hover:text-[#EA580C] transition-colors">
                     {stat.metric}
                   </span>
-                  <span className="font-mono text-[9px] font-semibold text-[#EA580C] tracking-wider uppercase">
+                  <span className="font-mono text-[9px] font-semibold text-[#EA580C] tracking-wider">
                     {stat.unit}
                   </span>
                 </div>

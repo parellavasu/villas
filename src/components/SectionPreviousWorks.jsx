@@ -12,10 +12,10 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
     {
       id: 1,
       category: 'krafted',
-      tag: 'KRAFTED HOMES · COMPLETED',
-      status: 'SOLD OUT & OCCUPIED',
+      tag: 'Krafted Homes · Completed',
+      status: 'Sold Out & Occupied',
       title: 'The Artisan Residences',
-      subtitle: 'BOUTIQUE INDIVIDUAL HOMES',
+      subtitle: 'Boutique Individual Homes',
       era: '2019 – 2021',
       scale: '1,400 – 1,800 Sq.Ft',
       units: 'Boutique Cluster',
@@ -30,10 +30,10 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
     {
       id: 2,
       category: 'krafted',
-      tag: 'KRAFTED HOMES · COMPLETED',
-      status: 'SOLD OUT & OCCUPIED',
+      tag: 'Krafted Homes · Completed',
+      status: 'Sold Out & Occupied',
       title: 'Urban Row Enclaves',
-      subtitle: 'CONTEMPORARY COMPACT CLUSTER',
+      subtitle: 'Contemporary Compact Cluster',
       era: '2021 – 2023',
       scale: '1,650 – 2,100 Sq.Ft',
       units: 'Gated Enclave',
@@ -48,10 +48,10 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
     {
       id: 3,
       category: 'krafted',
-      tag: 'KRAFTED HOMES · COMPLETED',
-      status: 'SOLD OUT & OCCUPIED',
+      tag: 'Krafted Homes · Completed',
+      status: 'Sold Out & Occupied',
       title: 'Green Courtyard Townhomes',
-      subtitle: 'ECO-CENTRIC RESIDENCES',
+      subtitle: 'Eco-Centric Residences',
       era: '2022 – 2024',
       scale: '1,800 – 2,250 Sq.Ft',
       units: 'Artisan Gated Community',
@@ -66,11 +66,11 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
     {
       id: 4,
       category: 'antelia',
-      tag: 'ANTELIA GROVES · CURRENT FLAGSHIP',
-      status: 'CURRENTLY IMPLEMENTING',
+      tag: 'Antelia Groves · Current Flagship',
+      status: 'Currently Implementing',
       title: 'Independent Luxury Villas',
-      subtitle: 'SPLIT-LEVEL ARCHITECTURAL MASTERPIECES',
-      era: '2024 – PRESENT',
+      subtitle: 'Split-Level Architectural Masterpieces',
+      era: '2024 – Present',
       scale: '2,262 – 3,000 Sq.Ft',
       units: '189 Bespoke Villas',
       description: 'The monumental evolution: 3 & 4 BHK independent residences featuring 18-foot soaring double-height living foyers, private 180+ sq.ft rear gardens, executive study, and open-air rooftop lounges.',
@@ -84,11 +84,11 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
     {
       id: 5,
       category: 'antelia',
-      tag: 'ANTELIA GROVES · CURRENT FLAGSHIP',
-      status: 'CENTRAL AMENITY',
+      tag: 'Antelia Groves · Current Flagship',
+      status: 'Central Amenity',
       title: '15,000 Sq.Ft Resort Clubhouse',
-      subtitle: 'SIGNATURE RECREATIONAL HUB',
-      era: 'FLAGSHIP CENTERPIECE',
+      subtitle: 'Signature Recreational Hub',
+      era: 'Flagship Centerpiece',
       scale: '15,000+ Sq.Ft Footprint',
       units: 'Comprehensive Lifestyle',
       description: 'A multi-tier resort sanctuary anchored by a 25-meter heated turquoise lap pool, grass amphitheater lawn, championship tennis court, wellness gym, and banquet hall.',
@@ -102,11 +102,11 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
     {
       id: 6,
       category: 'antelia',
-      tag: 'ANTELIA GROVES · CURRENT FLAGSHIP',
-      status: '10-ACRE SANCTUARY',
+      tag: 'Antelia Groves · Current Flagship',
+      status: '10-Acre Sanctuary',
       title: '10-Acre Masterplanned Community',
-      subtitle: 'AN ARCHITECTURAL COMMUNITY IN NATURE',
-      era: 'GRAND SCALE',
+      subtitle: 'An Architectural Community In Nature',
+      era: 'Grand Scale',
       scale: '10 Contiguous Acres',
       units: '189 Plotted Residences',
       description: 'The crowning achievement of our evolution: a low-density sanctuary with 40-foot tree-lined boulevards, 100% underground cables, and over 45% preserved green open space.',
@@ -138,22 +138,22 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
           <div className="max-w-2xl">
             <div className="inline-flex items-center space-x-2 mb-1">
               <span className="w-4 h-[1.5px] bg-[#EA580C]" />
-              <span className="font-mono text-[10px] sm:text-[10.5px] font-semibold tracking-[0.25em] text-[#EA580C] uppercase">
-                07 / OUR LEGACY &amp; PORTFOLIO
+              <span className="font-mono text-[10px] sm:text-[10.5px] font-semibold tracking-[0.25em] text-[#EA580C]">
+                07 / Our Legacy &amp; Portfolio
               </span>
             </div>
 
             <h2 className="font-sans font-semibold text-[20px] sm:text-[23px] lg:text-[26px] leading-tight text-[#111827] tracking-tight">
-              FROM KRAFTED HOMES TO ANTELIA GROVES
+              From Krafted Homes To Antelia Groves
             </h2>
           </div>
 
           {/* Filter Tabs */}
           <div className="flex flex-wrap items-center gap-1 p-0.5 bg-[#FAFAF9] border border-gray-200 rounded-xs">
             {[
-              { id: 'all', label: 'ALL WORKS (6)' },
-              { id: 'krafted', label: 'KRAFTED (LEGACY)' },
-              { id: 'antelia', label: 'ANTELIA (CURRENT)' },
+              { id: 'all', label: 'All Works (6)' },
+              { id: 'krafted', label: 'Krafted (Legacy)' },
+              { id: 'antelia', label: 'Antelia (Current)' },
             ].map((tab) => {
               const isActive = activeFilter === tab.id;
               return (
@@ -163,7 +163,7 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
                     setActiveFilter(tab.id);
                     setActiveProjectIdx(0);
                   }}
-                  className={`px-3 py-1 text-[9.5px] sm:text-[10px] font-mono uppercase tracking-wider rounded-xs transition-all cursor-pointer ${
+                  className={`px-3 py-1 text-[9.5px] sm:text-[10px] font-mono tracking-wider rounded-xs transition-all cursor-pointer ${
                     isActive
                       ? 'bg-[#EA580C] text-white font-bold shadow-xs'
                       : 'text-[#6B7280] hover:text-[#111827]'
@@ -209,12 +209,12 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
                     </div>
                   </div>
 
-                  <span className={`font-mono text-[8.5px] uppercase tracking-wider px-1.5 py-0.5 rounded-xs shrink-0 ml-1 ${
+                  <span className={`font-mono text-[8.5px] tracking-wider px-1.5 py-0.5 rounded-xs shrink-0 ml-1 ${
                     p.category === 'antelia'
                       ? 'bg-[#EA580C] text-white font-bold'
                       : 'bg-gray-100 text-[#4B5563]'
                   }`}>
-                    {p.category === 'antelia' ? 'FLAGSHIP' : 'DELIVERED'}
+                    {p.category === 'antelia' ? 'Flagship' : 'Delivered'}
                   </span>
                 </button>
               );
@@ -236,13 +236,13 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
 
                 <div className="absolute top-2.5 left-2.5">
-                  <span className="inline-block px-2.5 py-0.5 bg-white/95 backdrop-blur-sm text-[#111827] font-mono text-[8.5px] uppercase tracking-[0.16em] border border-gray-200 rounded-xs font-semibold">
+                  <span className="inline-block px-2.5 py-0.5 bg-white/95 backdrop-blur-sm text-[#111827] font-mono text-[8.5px] tracking-[0.16em] border border-gray-200 rounded-xs font-semibold">
                     {activeProject.tag}
                   </span>
                 </div>
 
                 <div className="absolute bottom-2.5 left-3 right-3 text-white pointer-events-none">
-                  <div className="font-mono text-[8px] uppercase tracking-[0.2em] text-[#FED7AA] font-bold">
+                  <div className="font-mono text-[8px] tracking-[0.2em] text-[#FED7AA] font-bold">
                     {activeProject.subtitle}
                   </div>
                   <div className="font-sans text-[14px] sm:text-[15px] font-semibold text-white drop-shadow-md">
@@ -255,8 +255,8 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
               <div className="md:col-span-5 p-3.5 sm:p-4 flex flex-col justify-between border-t md:border-t-0 md:border-l border-gray-200 bg-white">
                 <div>
                   <div className="flex items-center justify-between mb-1.5">
-                    <span className="font-mono text-[9px] uppercase tracking-wider text-[#EA580C] font-semibold">
-                      PROJECT SPECIFICATIONS
+                    <span className="font-mono text-[9px] tracking-wider text-[#EA580C] font-semibold">
+                      Project Specifications
                     </span>
                     <span className="font-mono text-[9px] text-[#6B7280]">
                       {activeProject.era}
@@ -268,8 +268,8 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
                   </p>
 
                   <div className="space-y-1 mb-2.5">
-                    <div className="font-mono text-[8.5px] uppercase font-semibold tracking-wider text-[#111827]">
-                      VERIFIED ATTRIBUTES
+                    <div className="font-mono text-[8.5px] font-semibold tracking-wider text-[#111827]">
+                      Verified Attributes
                     </div>
                     {activeProject.highlights.map((h, i) => (
                       <div key={i} className="flex items-start space-x-1.5">
@@ -284,11 +284,11 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
 
                 <div className="pt-2 border-t border-gray-200 flex items-center justify-between">
                   <div className="font-mono text-[9px] text-[#6B7280]">
-                    SCALE: <span className="text-[#111827] font-bold">{activeProject.scale}</span>
+                    Scale: <span className="text-[#111827] font-bold">{activeProject.scale}</span>
                   </div>
                   <button
                     onClick={onOpenBooking}
-                    className="inline-flex items-center space-x-1 font-mono text-[10px] font-bold uppercase tracking-wider text-[#EA580C] hover:text-[#C2410C] transition-colors cursor-pointer"
+                    className="inline-flex items-center space-x-1 font-mono text-[10px] font-bold tracking-wider text-[#EA580C] hover:text-[#C2410C] transition-colors cursor-pointer"
                   >
                     <span>Consult Architect</span>
                     <ArrowUpRight className="w-3 h-3" />
@@ -305,10 +305,10 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
         {/* 4 EVOLUTION METRICS FOOTER STRIP */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-2.5">
           {[
-            { num: 'KRAFTED HOMES', title: 'Where It Began', detail: 'Boutique artisan roots' },
-            { num: '100% DELIVERED', title: 'Flawless Record', detail: 'Sold out & handed over' },
-            { num: '120+ FAMILIES', title: 'Happy Owners', detail: 'Thriving past communities' },
-            { num: 'ANTELIA GROVES', title: 'The Flagship Leap', detail: '10 Acres · 189 Villas' },
+            { num: 'Krafted Homes', title: 'Where It Began', detail: 'Boutique artisan roots' },
+            { num: '100% Delivered', title: 'Flawless Record', detail: 'Sold out & handed over' },
+            { num: '120+ Families', title: 'Happy Owners', detail: 'Thriving past communities' },
+            { num: 'Antelia Groves', title: 'The Flagship Leap', detail: '10 Acres · 189 Villas' },
           ].map((item, idx) => (
             <div
               key={idx}
@@ -318,7 +318,7 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
                 <div className="text-[13px] sm:text-[14px] font-sans font-bold text-[#EA580C] tracking-tight leading-tight">
                   {item.num}
                 </div>
-                <div className="text-[10px] font-sans font-semibold text-[#111827] uppercase tracking-wide mt-0.5">
+                <div className="text-[10px] font-sans font-semibold text-[#111827] tracking-wide mt-0.5">
                   {item.title}
                 </div>
               </div>

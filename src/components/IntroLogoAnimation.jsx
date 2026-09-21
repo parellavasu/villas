@@ -109,44 +109,44 @@ export default function IntroLogoAnimation({ onComplete }) {
           ></div>
         </div>
 
-        {/* Step 3: "ANTELIA" appears with refined letter spacing */}
+        {/* Step 3: "Antelia" appears with refined letter spacing */}
         <div className="overflow-hidden text-center">
           <h1
-            className={`font-sans text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-[0.28em] text-navy-900 transition-all duration-800 ease-out ${
+            className={`font-sans text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-[0.28em] text-navy-900 transition-all duration-800 ease-out ${
               step >= 3 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            ANTELIA
+            Antelia
           </h1>
         </div>
 
-        {/* Step 4: "GROVES" appears underneath with elegant spacing */}
+        {/* Step 4: "Groves" appears underneath with elegant spacing */}
         <div className="overflow-hidden text-center mt-2">
           <p
-            className={`font-sans text-sm sm:text-base font-bold uppercase tracking-[0.52em] text-cobalt-600 transition-all duration-800 ease-out ${
+            className={`font-sans text-sm sm:text-base font-bold tracking-[0.52em] text-cobalt-600 transition-all duration-800 ease-out ${
               step >= 4 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            GROVES
+            Groves
           </p>
         </div>
 
         {/* Subtle Architectural Descriptor */}
         <div
-          className={`mt-6 text-[10px] font-mono tracking-widest text-slate-400 uppercase transition-opacity duration-700 ${
+          className={`mt-6 text-[10px] font-mono tracking-widest text-slate-400 transition-opacity duration-700 ${
             step >= 5 ? "opacity-100" : "opacity-0"
           }`}
         >
-          10 ACRES // ONE VISION // A LIVING LANDSCAPE
+          10 Acres // One Vision // A Living Landscape
         </div>
       </div>
 
       {/* Skip button in bottom-right for instant access */}
       <button
         onClick={handleSkip}
-        className="absolute bottom-8 right-8 text-xs font-mono tracking-widest text-slate-400 hover:text-navy-900 uppercase transition-colors px-3 py-1.5 rounded-full border border-slate-200 hover:border-slate-300"
+        className="absolute bottom-8 right-8 text-xs font-mono tracking-widest text-slate-400 hover:text-navy-900 transition-colors px-3 py-1.5 rounded-full border border-slate-200 hover:border-slate-300"
       >
-        SKIP INTRO →
+        Skip Intro →
       </button>
     </div>
   );
