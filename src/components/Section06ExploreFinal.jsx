@@ -137,7 +137,7 @@ export default function Section06ExploreFinal({ onExploreVillas, onOpenBooking }
             <div className="text-[9.5px] font-mono tracking-widest text-[#EA580C] mb-0.5 font-semibold">
               Statutory Compliance
             </div>
-            <div className="flex items-start space-x-1.5 text-[#111827] font-semibold bg-[#FAFAF9] p-2 rounded-xs border border-gray-200">
+            <div className="flex items-start space-x-1.5 text-[#111827] font-semibold bg-[#FAFAF9] p-2 rounded-[14px] border border-gray-200">
               <ShieldCheck className="w-3.5 h-3.5 text-[#EA580C] shrink-0 mt-0.5" />
               <span>Karnataka RERA Approved:<br /><span className="text-[#EA580C] font-mono text-[10px]">PRM/KA/RERA/1251/308/PR/210219/003920</span></span>
             </div>

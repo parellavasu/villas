@@ -22,7 +22,7 @@ export default function RealisticLocationMap({ activeTab = 'work' }) {
         
         {/* Title & Coordinates */}
         <div className="flex items-center space-x-2">
-          <div className="w-6 h-6 rounded-xs bg-[#FFF7ED] border border-[#FED7AA] flex items-center justify-center text-[#EA580C]">
+          <div className="w-6 h-6 rounded-full bg-[#FFF7ED] border border-[#FED7AA] flex items-center justify-center text-[#EA580C]">
             <Compass className="w-3.5 h-3.5" />
           </div>
           <div>
@@ -36,10 +36,10 @@ export default function RealisticLocationMap({ activeTab = 'work' }) {
         </div>
 
         {/* 3 Clean Map Mode Switcher Tabs */}
-        <div className="flex items-center space-x-1 bg-white border border-gray-200 p-0.5 rounded-xs shadow-xs">
+        <div className="flex items-center space-x-1 bg-white border border-gray-200 p-0.5 rounded-full shadow-xs">
           <button
             onClick={() => setMapMode('google')}
-            className={`px-2.5 py-0.5 font-mono text-[9.5px] tracking-wider rounded-xs transition-all cursor-pointer ${
+            className={`px-2.5 py-0.5 font-mono text-[9.5px] tracking-wider rounded-full transition-all cursor-pointer ${
               mapMode === 'google'
                 ? 'bg-[#EA580C] text-white font-bold shadow-xs'
                 : 'text-[#6B7280] hover:text-[#111827]'
@@ -49,7 +49,7 @@ export default function RealisticLocationMap({ activeTab = 'work' }) {
           </button>
           <button
             onClick={() => setMapMode('satellite')}
-            className={`px-2.5 py-0.5 font-mono text-[9.5px] tracking-wider rounded-xs transition-all cursor-pointer ${
+            className={`px-2.5 py-0.5 font-mono text-[9.5px] tracking-wider rounded-full transition-all cursor-pointer ${
               mapMode === 'satellite'
                 ? 'bg-[#EA580C] text-white font-bold shadow-xs'
                 : 'text-[#6B7280] hover:text-[#111827]'
@@ -59,7 +59,7 @@ export default function RealisticLocationMap({ activeTab = 'work' }) {
           </button>
           <button
             onClick={() => setMapMode('aerial')}
-            className={`px-2.5 py-0.5 font-mono text-[9.5px] tracking-wider rounded-xs transition-all cursor-pointer ${
+            className={`px-2.5 py-0.5 font-mono text-[9.5px] tracking-wider rounded-full transition-all cursor-pointer ${
               mapMode === 'aerial'
                 ? 'bg-[#EA580C] text-white font-bold shadow-xs'
                 : 'text-[#6B7280] hover:text-[#111827]'
@@ -110,7 +110,7 @@ export default function RealisticLocationMap({ activeTab = 'work' }) {
             
             {/* Architectural Callout Overlay */}
             <div className="absolute top-3 left-3">
-              <span className="inline-flex items-center space-x-1.5 px-2.5 py-0.5 bg-white/95 backdrop-blur-md border border-gray-200 text-[#111827] font-mono text-[9px] tracking-[0.16em] rounded-xs shadow-md font-semibold">
+              <span className="inline-flex items-center space-x-1.5 px-2.5 py-0.5 bg-white/95 backdrop-blur-md border border-gray-200 text-[#111827] font-mono text-[9px] tracking-[0.16em] rounded-full shadow-md font-semibold">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#EA580C] animate-pulse" />
                 <span>10-Acre Botanical Sanctuary</span>
               </span>
@@ -128,7 +128,7 @@ export default function RealisticLocationMap({ activeTab = 'work' }) {
         )}
 
         {/* Permanent High-Contrast Floating Orange Highlight Card for Antelia Groves */}
-        <div className="absolute bottom-2.5 left-2.5 z-20 bg-white/95 backdrop-blur-md border border-[#EA580C] p-2.5 rounded-xs shadow-luxury max-w-[220px] pointer-events-none">
+        <div className="absolute bottom-2.5 left-2.5 z-20 bg-white/95 backdrop-blur-md border border-[#EA580C] p-2.5 rounded-[14px] shadow-luxury max-w-[220px] pointer-events-none">
           <div className="flex items-center space-x-1 mb-0.5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#EA580C] animate-ping" />
             <span className="font-mono text-[8.5px] font-bold text-[#EA580C] tracking-wider">

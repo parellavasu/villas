@@ -255,11 +255,11 @@ export default function Section02Masterplan() {
 
                 {/* Top Badge */}
                 <div className="absolute top-3 left-3 pointer-events-none flex items-center space-x-2">
-                  <span className="inline-block px-2.5 py-0.5 bg-white/95 backdrop-blur-md text-[#111827] font-mono text-[9px] tracking-[0.2em] border border-gray-200 rounded-xs shadow-sm font-semibold">
+                  <span className="inline-block px-2.5 py-0.5 bg-white/95 backdrop-blur-md text-[#111827] font-mono text-[9px] tracking-[0.2em] border border-gray-200 rounded-full shadow-sm font-semibold">
                     {currentView.badge}
                   </span>
                   {isAutoPlaying && (
-                    <span className="inline-block px-2 py-0.5 bg-[#EA580C] backdrop-blur-md text-white font-mono text-[8.5px] tracking-wider rounded-xs shadow-xs font-semibold">
+                    <span className="inline-block px-2 py-0.5 bg-[#EA580C] backdrop-blur-md text-white font-mono text-[8.5px] tracking-wider rounded-full shadow-xs font-semibold">
                       Auto-Rotating
                     </span>
                   )}
@@ -272,7 +272,7 @@ export default function Section02Masterplan() {
                     style={{ top: pin.top, left: pin.left }}
                     className="absolute -translate-x-1/2 -translate-y-1/2 group/pin cursor-pointer z-10"
                   >
-                    <div className="flex items-center space-x-1.5 bg-white/95 hover:bg-white backdrop-blur-md px-2.5 py-1 border border-[#EA580C] rounded-xs shadow-md transition-all hover:scale-105">
+                    <div className="flex items-center space-x-1.5 bg-white/95 hover:bg-white backdrop-blur-md px-2.5 py-1 border border-[#EA580C] rounded-full shadow-md transition-all hover:scale-105">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#EA580C] animate-ping shrink-0" />
                       <div className="text-left">
                         <div className="text-[9.5px] font-mono font-semibold text-[#111827] leading-tight whitespace-nowrap">
@@ -300,7 +300,7 @@ export default function Section02Masterplan() {
                   </div>
 
                   {/* Visual Step Indicator */}
-                  <div className="hidden sm:flex items-center space-x-1 font-mono text-[10px] text-[#EA580C] bg-white/95 backdrop-blur-sm px-2 py-0.5 rounded-xs border border-gray-200 font-semibold">
+                  <div className="hidden sm:flex items-center space-x-1 font-mono text-[10px] text-[#EA580C] bg-white/95 backdrop-blur-sm px-2.5 py-0.5 rounded-full border border-gray-200 font-semibold">
                     <span>View 0{imageTabs.indexOf(activeTab) + 1} / 04</span>
                   </div>
                 </div>

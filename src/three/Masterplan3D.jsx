@@ -177,7 +177,7 @@ export default function Masterplan3D({ activeSector = 'all' }) {
       </Canvas>
 
       {/* HUD Info Badges */}
-      <div className="absolute top-3 left-3 pointer-events-none flex flex-col space-y-0.5 bg-white/95 backdrop-blur-md px-3 py-1.5 border border-gray-200 text-[#111827] text-[10.5px] font-mono shadow-xs rounded-xs">
+      <div className="absolute top-3 left-3 pointer-events-none flex flex-col space-y-0.5 bg-white/95 backdrop-blur-md px-3 py-1.5 border border-gray-200 text-[#111827] text-[10.5px] font-mono shadow-xs rounded-[14px]">
         <div className="flex items-center space-x-1.5">
           <span className="w-1.5 h-1.5 rounded-full bg-[#EA580C] animate-pulse" />
           <span className="text-[#EA580C] font-semibold tracking-wider">10-Acre 3D Model</span>
@@ -189,7 +189,7 @@ export default function Masterplan3D({ activeSector = 'all' }) {
       <button
         type="button"
         onClick={() => setAutoRotate(!autoRotate)}
-        className="absolute top-3 right-3 z-10 bg-white/95 hover:bg-[#FFF7ED] active:scale-95 transition-all backdrop-blur-md px-2.5 py-1 border border-gray-200 text-[10px] font-mono tracking-wider text-[#111827] flex items-center space-x-1.5 shadow-xs cursor-pointer rounded-xs"
+        className="absolute top-3 right-3 z-10 bg-white/95 hover:bg-[#FFF7ED] active:scale-95 transition-all backdrop-blur-md px-3 py-1.5 border border-gray-200 text-[10px] font-mono tracking-wider text-[#111827] flex items-center space-x-1.5 shadow-xs cursor-pointer rounded-full"
         title="Toggle 360° Auto-Rotation"
         aria-label="Toggle 360° Auto-Rotation"
       >

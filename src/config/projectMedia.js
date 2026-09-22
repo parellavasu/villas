@@ -23,7 +23,7 @@ export const PROJECT_MEDIA = {
   hero: [
     {
       key: 'HERO_VILLA_EXTERIOR',
-      title: 'CONTEMPORARY VILLA FACADE',
+      title: 'Contemporary Villa Facade',
       subtitle: 'Travertine Stone, Teak Louvers & Landscaped Entrance',
       type: 'cgi',
       url: '/images/hero/01_hero_villa_exterior.jpg',
@@ -35,7 +35,7 @@ export const PROJECT_MEDIA = {
     },
     {
       key: 'HERO_LIVING_PAVILION',
-      title: 'DOUBLE-HEIGHT LIVING PAVILION',
+      title: 'Double-Height Living Pavilion',
       subtitle: '18-Foot Soaring Volume Opening to Courtyard Pool',
       type: 'cgi',
       url: '/images/hero/02_hero_living_pavilion.jpg',
@@ -47,7 +47,7 @@ export const PROJECT_MEDIA = {
     },
     {
       key: 'HERO_COURTYARD_DINING',
-      title: 'COURTYARD DINING & DECK',
+      title: 'Courtyard Dining & Deck',
       subtitle: 'Indoor-Outdoor Spatial Entertaining Harmony',
       type: 'cgi',
       url: '/images/hero/03_hero_dining_courtyard.jpg',
@@ -59,7 +59,7 @@ export const PROJECT_MEDIA = {
     },
     {
       key: 'HERO_SIGNATURE_CLUBHOUSE',
-      title: '15,000 SQ.FT RESORT CLUBHOUSE',
+      title: '15,000 Sq.Ft Resort Clubhouse',
       subtitle: '25-Meter Heated Lap Pool, Amphitheater & Wellness',
       type: 'cgi',
       url: '/images/hero/04_hero_clubhouse_pool.jpg',
@@ -71,7 +71,7 @@ export const PROJECT_MEDIA = {
     },
     {
       key: 'HERO_SUNSET_ENCLAVE',
-      title: 'SUNSET GARDEN RESIDENCES',
+      title: 'Sunset Garden Residences',
       subtitle: 'Split-Level Rooftop Terraces Framing Linear Green Park',
       type: 'cgi',
       url: '/images/hero/05_hero_sunset_enclave.jpg',
@@ -83,7 +83,7 @@ export const PROJECT_MEDIA = {
     },
     {
       key: 'HERO_AERIAL_MASTERPLAN',
-      title: '10-ACRE AERIAL SANCTUARY',
+      title: '10-Acre Aerial Sanctuary',
       subtitle: 'Low-Density Gated Villa Masterplan with 40ft Boulevards',
       type: 'cgi',
       url: '/images/hero/06_hero_aerial_sanctuary.jpg',

@@ -13,37 +13,37 @@ export default function Section01Vision({ onExploreJourney, onExploreVillas, onE
     : [
         {
           key: 'HERO_VILLA_EXTERIOR',
-          title: 'CONTEMPORARY VILLA FACADE',
+          title: 'Contemporary Villa Facade',
           subtitle: 'Travertine Stone, Teak Louvers & Landscaped Entrance',
           url: '/images/hero/01_hero_villa_exterior.jpg',
         },
         {
           key: 'HERO_LIVING_PAVILION',
-          title: 'DOUBLE-HEIGHT LIVING PAVILION',
+          title: 'Double-Height Living Pavilion',
           subtitle: '18-Foot Soaring Volume Opening to Courtyard Pool',
           url: '/images/hero/02_hero_living_pavilion.jpg',
         },
         {
           key: 'HERO_COURTYARD_DINING',
-          title: 'COURTYARD DINING & DECK',
+          title: 'Courtyard Dining & Deck',
           subtitle: 'Indoor-Outdoor Spatial Entertaining Harmony',
           url: '/images/hero/03_hero_dining_courtyard.jpg',
         },
         {
           key: 'HERO_SIGNATURE_CLUBHOUSE',
-          title: '15,000 SQ.FT RESORT CLUBHOUSE',
+          title: '15,000 Sq.Ft Resort Clubhouse',
           subtitle: '25-Meter Heated Lap Pool, Amphitheater & Wellness',
           url: '/images/hero/04_hero_clubhouse_pool.jpg',
         },
         {
           key: 'HERO_SUNSET_ENCLAVE',
-          title: 'SUNSET GARDEN RESIDENCES',
+          title: 'Sunset Garden Residences',
           subtitle: 'Split-Level Rooftop Terraces Framing Linear Green Park',
           url: '/images/hero/05_hero_sunset_enclave.jpg',
         },
         {
           key: 'HERO_AERIAL_MASTERPLAN',
-          title: '10-ACRE AERIAL SANCTUARY',
+          title: '10-Acre Aerial Sanctuary',
           subtitle: 'Low-Density Gated Villa Masterplan with 40ft Boulevards',
           url: '/images/hero/06_hero_aerial_sanctuary.jpg',
         },
@@ -238,7 +238,7 @@ export default function Section01Vision({ onExploreJourney, onExploreVillas, onE
                 loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
               }`}
             >
-              Independent 3 & 4 BHK split-level villas within a thoughtfully planned 10-acre gated sanctuary in South Bengaluru, where architectural clarity, serene nature and everyday living come together.
+              Independent 3 &amp; 4 BHK split-level villas set within a private 10-acre gated enclave in South Bengaluru, framed by quiet courtyards and expansive greenery.
             </p>
 
             {/* Clean Architectural Dual CTAs */}

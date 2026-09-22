@@ -5,7 +5,7 @@ import { Menu, X, ArrowUpRight } from 'lucide-react';
 export default function Navigation({ onOpenBooking, scrollProgress: externalProgress }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('VISION');
+  const [activeSection, setActiveSection] = useState('Vision');
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
@@ -106,7 +106,7 @@ export default function Navigation({ onOpenBooking, scrollProgress: externalProg
               href="#vision"
               onClick={(e) => {
                 e.preventDefault();
-                handleNavClick('#vision', 'VISION');
+                handleNavClick('#vision', 'Vision');
               }}
               className="flex items-center cursor-pointer"
             >

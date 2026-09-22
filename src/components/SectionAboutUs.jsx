@@ -37,9 +37,8 @@ export default function SectionAboutUs() {
         { label: 'Orientation', value: '100% Vastu' },
       ],
       highlights: [
-        'Expansive floor-to-ceiling acoustic glass walls',
+        'Floor-to-ceiling acoustic glass framing nature',
         'Floating natural travertine entrance plinth',
-        'Perimeter reflecting pool with warm cove illumination',
       ],
     },
     {
@@ -56,9 +55,8 @@ export default function SectionAboutUs() {
         { label: 'Ventilation', value: 'Cross-Breeze' },
       ],
       highlights: [
-        'Central open-to-sky Japanese zen garden with bonsai frangipani',
-        'Continuous cross-ventilation corridors cooling interiors naturally',
-        'Seamless transition between air-conditioned lounge and courtyard',
+        'Central open-to-sky Japanese zen garden core',
+        'Continuous cross-ventilation across all three levels',
       ],
     },
     {
@@ -70,33 +68,31 @@ export default function SectionAboutUs() {
       tag: 'Indoor-Outdoor',
       image: '/images/about/03_about_dining_zen.jpg',
       specs: [
-        { label: 'Private Lawn', value: 'Up to 1,200 Sft' },
+        { label: 'Private Garden', value: '180–450 Sq.Ft' },
         { label: 'Timber Finish', value: 'Acoustic Teak' },
         { label: 'Layout', value: 'Open-Concept' },
       ],
       highlights: [
-        'Floor-level sliding glass doors opening directly to private lawn',
-        'Handcrafted artisanal dining pavilion with ambient ceiling cove',
-        'Private breakfast terrace catching the gentle morning sun',
+        'Sliding glass walls opening to landscaped private lawns',
+        'Handcrafted artisanal dining pavilion with ambient coves',
       ],
     },
     {
       id: 'clubhouse-sanctuary',
       tabLabel: '04 / Clubhouse',
-      shortTitle: '20,000 Sft Club',
-      title: 'Resort-Grade Clubhouse & Infinity Pool',
-      subtitle: 'A majestic 20,000 sq.ft. community sanctuary offering Olympic-length swimming, rooftop lounges, and wellness spas.',
+      shortTitle: '15,000+ Sq.Ft Club',
+      title: 'Resort-Grade Clubhouse & Lap Pool',
+      subtitle: 'A signature 15,000+ sq.ft community sanctuary with a 25-meter heated lap pool, fitness club, and wellness lounges.',
       tag: 'Community & Wellness',
       image: '/images/about/04_about_resort_clubhouse.jpg',
       specs: [
-        { label: 'Clubhouse Area', value: '20,000 Sft' },
-        { label: 'Pool Type', value: 'Half-Olympic' },
+        { label: 'Clubhouse Area', value: '15,000+ Sq.Ft' },
+        { label: 'Pool Length', value: '25-Meter Heated' },
         { label: 'Wellness', value: 'Spa & Gym' },
       ],
       highlights: [
-        'Heated half-Olympic infinity swimming pool with sun cabanas',
-        'Rooftop stargazing terrace lounge overlooking the 10-acre canopy',
-        'Surrounded by shaded grove promenades and multi-tier gardens',
+        'Heated 25-meter lap pool with sun cabanas',
+        'Rooftop terrace lounge overlooking the 10-acre canopy',
       ],
     },
   ];
@@ -126,9 +122,9 @@ export default function SectionAboutUs() {
     },
     {
       title: 'Community',
-      desc: 'An intimate 76-family gated sanctuary anchored by a 20,000 sq.ft. clubhouse, pool, and sports lawns.',
+      desc: 'An intimate 189-residence gated sanctuary anchored by a 15,000+ sq.ft. clubhouse, pool, and sports lawns.',
       icon: Users,
-      metric: '76 Elite Families',
+      metric: '189 Residences',
       image: '/images/about/04_about_resort_clubhouse.jpg',
     },
   ];
@@ -450,7 +446,7 @@ export default function SectionAboutUs() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-2.5">
           {[
             { metric: '10+', unit: 'Acres', title: 'Gated Botanical Sanctuary', desc: 'Secure perimeter & central grove' },
-            { metric: '76', unit: 'Villas', title: 'Limited Edition Triplexes', desc: 'Low density for ultimate privacy' },
+            { metric: '189', unit: 'Villas', title: 'Limited Edition Triplexes', desc: 'Low density for ultimate privacy' },
             { metric: '65%', unit: 'Open', title: 'Landscape & Green Canopy', desc: 'Native trees, parks & walkways' },
             { metric: '100%', unit: 'Vastu', title: 'Conscious Orientation', desc: 'Optimal daylighting & airflow' },
           ].map((stat, idx) => (

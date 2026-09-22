@@ -190,7 +190,7 @@ export default function VillaCutaway3D({ activeFloor = 'all', villaType = 'east'
       </Canvas>
 
       {/* Orientation Compass Badge */}
-      <div className="absolute top-4 left-4 pointer-events-none bg-white/95 backdrop-blur-md px-3.5 py-2 border border-gray-200 text-[11px] font-mono text-[#111827] flex items-center space-x-2 shadow-sm rounded-xs">
+      <div className="absolute top-4 left-4 pointer-events-none bg-white/95 backdrop-blur-md px-3.5 py-1.5 border border-gray-200 text-[11px] font-mono text-[#111827] flex items-center space-x-2 shadow-sm rounded-full">
         <span className="w-2 h-2 rounded-full bg-[#EA580C] animate-pulse" />
         <span>Orientation: {villaType === 'east' ? 'East Entry · Morning Sun' : 'West Entry · Sunset Garden'}</span>
       </div>
@@ -199,7 +199,7 @@ export default function VillaCutaway3D({ activeFloor = 'all', villaType = 'east'
       <button
         type="button"
         onClick={() => setAutoRotate(!autoRotate)}
-        className="absolute top-4 right-4 z-10 bg-white/95 hover:bg-[#FFF7ED] active:scale-95 transition-all backdrop-blur-md px-3 py-1.5 border border-gray-200 text-[11px] font-mono tracking-wider text-[#111827] flex items-center space-x-2 shadow-xs cursor-pointer rounded-xs"
+        className="absolute top-4 right-4 z-10 bg-white/95 hover:bg-[#FFF7ED] active:scale-95 transition-all backdrop-blur-md px-3.5 py-1.5 border border-gray-200 text-[11px] font-mono tracking-wider text-[#111827] flex items-center space-x-2 shadow-xs cursor-pointer rounded-full"
         title="Toggle 360° Auto-Rotation"
         aria-label="Toggle 360° Auto-Rotation"
       >

@@ -19,15 +19,14 @@ export default function SectionProcess() {
       title: 'Land Survey',
       eyebrow: 'Step 01 Of 06',
       subheading: '10-Acre Untouched Terrain',
-      description: 'The journey begins on 10 acres of untouched natural countryside. Civil engineers and surveyors equipped with digital total stations and GPS mapping instruments map elevations while strictly demarcating tree conservation zones.',
+      description: 'Geotechnical engineers and certified surveyors map natural contours across 10 acres, cataloging specimen trees for 100% preservation.',
       scale: 'Approximately 10 Contiguous Acres',
-      vision: 'Comprehensive topographical survey, contour elevations, and green conservation baseline.',
+      vision: 'Comprehensive topographical survey and green conservation baseline.',
       image: '/images/process/01_raw_land_survey.jpg',
       badge: 'Site Survey & Topography',
       highlights: [
         'Digital Total Station & GPS Mapping on Ground',
-        '100% Boundary Demarcation & Contour Analysis',
-        'Specimen Tree & Natural Greenery Preservation Zones'
+        'Specimen Tree & Natural Greenery Preservation Zones',
       ],
     },
     {
@@ -35,15 +34,14 @@ export default function SectionProcess() {
       title: 'Site Preparation',
       eyebrow: 'Step 02 Of 06',
       subheading: 'Civil Grading & Tree Protection',
-      description: 'Modern heavy excavators and earthmoving machinery carefully clear wild scrub and grade the rich soil. All mature canopy trees are protected in place behind barricaded root protection zones under engineer supervision.',
+      description: 'Precision earthmovers clear wild scrub and grade the rich soil, protecting all mature canopy trees in dedicated conservation zones.',
       scale: 'Civil Earthwork & Selective Clearing',
-      vision: 'Engineered cut-and-fill equilibrium with site engineers verifying masterplan alignment.',
+      vision: 'Engineered cut-and-fill equilibrium with site engineers verifying alignment.',
       image: '/images/process/02_site_preparation.jpg',
       badge: 'Earthmoving & Root Zones',
       highlights: [
-        'Heavy Excavators & Earthmovers for Terrain Grading',
-        'Protective Root Demarcation for 100% Mature Canopy Trees',
-        'Civil Engineers Directing Site Masterplan Blueprints'
+        'Precision Earthmoving & Natural Terrain Terracing',
+        'Root Demarcation for 100% Mature Canopy Trees',
       ],
     },
     {
@@ -51,15 +49,14 @@ export default function SectionProcess() {
       title: 'Infrastructure',
       eyebrow: 'Step 03 Of 06',
       subheading: '40ft Boulevards & Concealed Utilities',
-      description: 'Heavy asphalt pavers and roller compactors lay smooth 40-foot wide tree-lined boulevards and quiet residential streets, alongside deep channels housing precast stormwater drains and color-coded underground conduits.',
+      description: 'Smooth 40-foot tree-lined boulevards and quiet avenues are paved alongside precast stormwater drains and concealed underground conduits.',
       scale: '40ft Avenues & Complete Subsurface Grid',
-      vision: '100% underground infrastructure ensuring zero overhead wires or visual utility clutter.',
+      vision: '100% underground infrastructure ensuring zero overhead wires.',
       image: '/images/process/03_infrastructure_roads.jpg',
       badge: 'Roads & Underground Utilities',
       highlights: [
-        'Asphalt Pavers & Heavy Rollers Creating 40ft Main Boulevards',
-        'Precast Stormwater Pipes & Color-Coded Power/Fiber Conduits',
-        'Granite Kerbing & Permeable Percolation Channels'
+        '40ft Boulevards with Granite Kerbing & Green Verges',
+        '100% Underground Power, Fiber & Stormwater Systems',
       ],
     },
     {
@@ -67,15 +64,14 @@ export default function SectionProcess() {
       title: 'Villa Construction',
       eyebrow: 'Step 04 Of 06',
       subheading: 'Engineered RCC Framing & Masonry',
-      description: 'Independent split-level residences take shape with earthquake-resistant reinforced concrete (RCC) skeletal frames, floor slabs, scaffolding, and precision aerated block masonry under crane-assisted material handling.',
+      description: 'Independent split-level residences take shape with earthquake-resistant RCC skeletal frames, double-height foyers, and precision block masonry.',
       scale: 'Split-Level 3 & 4 BHK Enclaves',
-      vision: 'High-strength structural skeleton featuring double-height foyers and soaring living volumes.',
+      vision: 'High-strength structural skeleton featuring double-height living volumes.',
       image: '/images/process/04_villa_construction.jpg',
       badge: 'Structural RCC Build',
       highlights: [
-        'Engineered RCC Columns, Beams & Multi-Tier Slabs',
-        'Autoclaved Aerated Thermal Block Masonry',
-        'Tower Crane Precision Material Handling & Expert Safety'
+        'Engineered RCC Structural Framing & Multi-Tier Slabs',
+        'Thermal Block Masonry & Double-Height Volumes',
       ],
     },
     {
@@ -83,15 +79,14 @@ export default function SectionProcess() {
       title: 'Finishes & Greens',
       eyebrow: 'Step 05 Of 06',
       subheading: 'Glass Façades & Private Landscaping',
-      description: 'Villas receive expansive floor-to-ceiling double-glazed sliding glass doors and warm teak wood privacy louvers, while landscape crews roll fresh Bermuda sod grass, plant frangipani trees, and lay flagstone courtyard paths.',
-      scale: '180+ Sq.Ft Private Rear Gardens',
-      vision: 'Biophilic integration connecting interior living pavilions directly to private outdoor nature.',
+      description: 'Villas receive floor-to-ceiling double-glazed sliding glass doors, teak louvers, and manicured private courtyard gardens.',
+      scale: '180–450 Sq.Ft Private Rear Gardens',
+      vision: 'Biophilic integration connecting interior living directly to private nature.',
       image: '/images/process/05_landscaping_finishes.jpg',
       badge: 'Glazing & Courtyards',
       highlights: [
         'Expansive Double-Glazed Glass Sliding Patio Systems',
-        'Warm Architectural Teak Privacy Louvers & Shading',
-        'Fresh Sod Turf, Mature Flowering Trees & Flagstone Trails'
+        'Warm Teak Shading Louvers & Private Courtyard Gardens',
       ],
     },
     {
@@ -99,15 +94,14 @@ export default function SectionProcess() {
       title: 'Completed Community',
       eyebrow: 'Step 06 Of 06',
       subheading: 'The Living Sanctuary',
-      description: 'The finished 10-acre sanctuary comes alive: luxury white-and-sand villas nestled in lush greenery, wide tree-lined avenues, a grand resort clubhouse with a glowing pool, and a thriving, active neighborhood.',
+      description: 'The finished 10-acre enclave comes alive with luxury split-level residences, wide avenues, a resort clubhouse, and lush tree canopies.',
       scale: '10+ Acres • 189 Villas • 15,000+ Sq.Ft Clubhouse',
-      vision: 'A tranquil architectural retreat where luxurious living seamlessly integrates with nature.',
+      vision: 'A tranquil architectural retreat where luxury seamlessly integrates with nature.',
       image: '/images/process/06_completed_community.jpg',
       badge: 'Completed Living Masterpiece',
       highlights: [
         '189 Bespoke Luxury Split-Level Villas with Private Gardens',
-        'Grand Resort-Style Clubhouse with Turquoise Swimming Pool',
-        'Tree-Lined Avenues, Parks, Jogging Trails & 24/7 Security'
+        '15,000+ Sq.Ft Resort Clubhouse with 25m Heated Pool',
       ],
     },
   ];
@@ -285,32 +279,13 @@ export default function SectionProcess() {
               {currentStepData.description}
             </p>
 
-            <div className="space-y-1.5 mb-3 pt-2.5 border-t border-gray-200">
-              {currentStepData.highlights.slice(0, 3).map((item, hIdx) => (
+            <div className="space-y-2 mb-4 pt-2.5 border-t border-gray-200">
+              {currentStepData.highlights.slice(0, 2).map((item, hIdx) => (
                 <div key={hIdx} className="flex items-start space-x-2 text-[11.5px] sm:text-[12px] text-[#4B5563]">
-                  <Check className="w-3 h-3 text-[#EA580C] mt-0.5 shrink-0" />
+                  <Check className="w-3.5 h-3.5 text-[#EA580C] mt-0.5 shrink-0" />
                   <span className="line-clamp-1">{item}</span>
                 </div>
               ))}
-            </div>
-
-            <div className="grid grid-cols-2 gap-2 p-2 bg-[#FAFAF9] border border-gray-200 rounded-xs mb-3">
-              <div>
-                <div className="font-mono text-[8.5px] tracking-widest text-[#6B7280] mb-0.5">
-                  Project Scale
-                </div>
-                <div className="font-sans text-[11.5px] font-semibold text-[#111827] line-clamp-1">
-                  {currentStepData.scale}
-                </div>
-              </div>
-              <div>
-                <div className="font-mono text-[8.5px] tracking-widest text-[#6B7280] mb-0.5">
-                  Vision
-                </div>
-                <div className="font-sans text-[11px] text-[#4B5563] line-clamp-1">
-                  {currentStepData.vision}
-                </div>
-              </div>
             </div>
 
             <div className="flex items-center justify-between pt-2.5 border-t border-gray-200">

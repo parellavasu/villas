@@ -19,12 +19,11 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
       era: '2019 – 2021',
       scale: '1,400 – 1,800 Sq.Ft',
       units: 'Boutique Cluster',
-      description: 'Our foundational residential venture under Krafted Homes: compact, individually crafted residences designed with exposed terracotta brick, solid teak doors, and private courtyard gardens.',
+      description: 'Our foundational boutique residences featuring exposed terracotta brick, solid teak joinery, and private courtyard gardens.',
       image: '/images/portfolio/01_krafted_artisan.jpg',
       highlights: [
         '100% On-Time Delivery & Handover',
         'Handcrafted Terracotta & Teak Details',
-        'Private Landscaped Backyard Sit-Out'
       ],
     },
     {
@@ -37,12 +36,11 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
       era: '2021 – 2023',
       scale: '1,650 – 2,100 Sq.Ft',
       units: 'Gated Enclave',
-      description: 'Carefully planned modern cluster homes offering young families smart split-level living, private terrace balconies, natural cross-ventilation, and dedicated covered car parking.',
+      description: 'Modern cluster homes offering smart split-level layouts, private terrace balconies, and covered parking.',
       image: '/images/portfolio/02_krafted_row_homes.jpg',
       highlights: [
         'Delivered with Zero Snags & Full Occupancy',
         'Smart Split-Level Floor Articulation',
-        'Covered Stilt Parking & Private Balconies'
       ],
     },
     {
@@ -55,12 +53,11 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
       era: '2022 – 2024',
       scale: '1,800 – 2,250 Sq.Ft',
       units: 'Artisan Gated Community',
-      description: 'Boutique residences integrating sustainable living: rainwater harvesting percolation, solar-ready terrace infrastructure, and peaceful landscaped stone pathways.',
+      description: 'Eco-centric residences integrating rainwater recharging, solar-ready infrastructure, and landscaped stone pathways.',
       image: '/images/portfolio/03_krafted_courtyard.jpg',
       highlights: [
         '100% Rainwater Recharging Integration',
         'Handcrafted Natural Stone Pathways',
-        'High Resale & Customer Satisfaction'
       ],
     },
     {
@@ -73,12 +70,11 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
       era: '2024 – Present',
       scale: '2,262 – 3,000 Sq.Ft',
       units: '189 Bespoke Villas',
-      description: 'The monumental evolution: 3 & 4 BHK independent residences featuring 18-foot soaring double-height living foyers, private 180+ sq.ft rear gardens, executive study, and open-air rooftop lounges.',
+      description: 'Independent 3 & 4 BHK residences with 18-foot double-height living foyers, private gardens, and rooftop sky decks.',
       image: '/images/portfolio/04_antelia_flagship_villa.jpg',
       highlights: [
         'Earthquake-Resistant RCC Framing',
         'Double-Height Glass Living Volumes',
-        '100% East & West Vastu-Compliant Entries'
       ],
     },
     {
@@ -91,12 +87,11 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
       era: 'Flagship Centerpiece',
       scale: '15,000+ Sq.Ft Footprint',
       units: 'Comprehensive Lifestyle',
-      description: 'A multi-tier resort sanctuary anchored by a 25-meter heated turquoise lap pool, grass amphitheater lawn, championship tennis court, wellness gym, and banquet hall.',
+      description: 'A multi-tier sanctuary anchored by a 25-meter heated lap pool, grass amphitheater, tennis court, and wellness suites.',
       image: '/images/portfolio/05_antelia_resort_clubhouse.jpg',
       highlights: [
-        '25m Heated Lap Pool & Poolside Cabanas',
+        '25m Heated Lap Pool & Sun Cabanas',
         'Championship Tennis & Pickleball Court',
-        'Terraced Outdoor Community Amphitheater'
       ],
     },
     {
@@ -109,12 +104,11 @@ export default function SectionPreviousWorks({ onOpenBooking, onExploreVillas })
       era: 'Grand Scale',
       scale: '10 Contiguous Acres',
       units: '189 Plotted Residences',
-      description: 'The crowning achievement of our evolution: a low-density sanctuary with 40-foot tree-lined boulevards, 100% underground cables, and over 45% preserved green open space.',
+      description: 'Low-density masterplanned sanctuary with 40-foot tree-lined boulevards and over 45% open green space.',
       image: '/images/portfolio/06_antelia_10acre_sanctuary.jpg',
       highlights: [
         '40ft & 30ft Tree-Shaded Avenue Spines',
         '100% Underground Utilities & Fiber Grid',
-        'Over 45% Green Open Space & 1,200+ Trees'
       ],
     },
   ];

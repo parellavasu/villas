@@ -58,12 +58,12 @@ export default function App() {
         {/* Chapter 05: The Masterplan (10-Acre Blueprint & Drone View) */}
         <Section02Masterplan />
 
-        {/* Chapter 05: The Villas (Type A East/West + 7-Part Architectural Story) */}
+        {/* Chapter 06: The Villas (Type A East/West + 7-Part Architectural Story) */}
         <Section03Villas
           onSelectVilla={() => setBookingOpen(true)}
         />
 
-        {/* Chapter 06: Previous Works & Evolution (From Krafted Homes to Antelia Groves) */}
+        {/* Chapter 07: Previous Works & Evolution (From Krafted Homes to Antelia Groves) */}
         <SectionPreviousWorks
           onOpenBooking={() => setBookingOpen(true)}
           onExploreVillas={() => scrollTo('#villas')}

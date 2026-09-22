@@ -27,23 +27,23 @@ export default function SectionCurrentProject({ onExploreVillas, onOpenBooking }
   // 4 Verified Architectural Features
   const architectureFeatures = [
     {
-      title: 'Split-Level Design',
-      desc: 'Spacious layouts with improved privacy and connection.',
+      title: 'Split-Level Volumes',
+      desc: 'Three distinct tiers maximizing natural light and acoustic separation.',
       icon: Layers,
     },
     {
-      title: 'Private Gardens',
-      desc: 'Lush garden sit-outs connected to the home.',
+      title: 'Private Garden Entries',
+      desc: 'Landscaped pedestrian thresholds buffering indoor living.',
       icon: Trees,
     },
     {
-      title: 'Home Office',
-      desc: 'Dedicated spaces for work and creativity.',
+      title: 'Executive Study',
+      desc: 'Dedicated quiet spaces designed for deep focus.',
       icon: Briefcase,
     },
     {
-      title: 'Terrace Lounge',
-      desc: 'Large outdoor areas for relaxed living.',
+      title: 'Rooftop Sky Deck',
+      desc: 'Open-air entertainment terraces with panoramic grove views.',
       icon: SunMedium,
     },
   ];
@@ -100,7 +100,7 @@ export default function SectionCurrentProject({ onExploreVillas, onOpenBooking }
 
             {/* Short Description */}
             <p className="font-sans text-[13px] sm:text-[14px] leading-[1.6] text-[#4B5563] max-w-[540px] font-normal mb-4">
-              Antelia Groves is a secure gated residential community spread across approximately 10 acres, offering independent 3 &amp; 4 BHK multi-level villas designed around space, privacy, nature and everyday connection.
+              An intimate masterplan balancing architectural rigor with biophilic calm. Each multi-level residence features independent garden entries, shaded outdoor lounges, and private courtyards.
             </p>
 
             {/* Compact 2x2 Project Facts Grid */}

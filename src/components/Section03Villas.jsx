@@ -11,7 +11,7 @@ export default function Section03Villas({ onSelectVilla }) {
     { label: 'Configuration', val: '3 & 4 BHK Split-Level' },
     { label: 'Built-Up Area', val: '2,262 – 3,000 Sq.Ft' },
     { label: 'Orientation', val: 'East-Facing Vastu Entrance' },
-    { label: 'Private Garden', val: '180+ Sq.Ft Rear Courtyard' },
+    { label: 'Private Garden', val: '180–450 Sq.Ft Rear Courtyard' },
     { label: 'Parking', val: '2 Covered Car Parks' },
     { label: 'Structure', val: 'Earthquake-Resistant RCC' },
   ];
@@ -20,7 +20,7 @@ export default function Section03Villas({ onSelectVilla }) {
     { label: 'Configuration', val: '3 & 4 BHK Split-Level' },
     { label: 'Built-Up Area', val: '2,262 – 3,000 Sq.Ft' },
     { label: 'Orientation', val: 'West-Facing Vastu Entrance' },
-    { label: 'Private Garden', val: '180+ Sq.Ft Rear Courtyard' },
+    { label: 'Private Garden', val: '180–450 Sq.Ft Rear Courtyard' },
     { label: 'Parking', val: '2 Covered Car Parks' },
     { label: 'Structure', val: 'Earthquake-Resistant RCC' },
   ];
